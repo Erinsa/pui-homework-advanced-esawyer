@@ -1,5 +1,5 @@
 # PUI:E homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed website:  [https://erinsa.github.io/pui-homework-advanced-esawyer/](https://erinsa.github.io/pui-homework-advanced-esawyer/)
 
-Repository link: `add the URL to this repository`
+Repository link: [https://github.com/Erinsa/pui-homework-advanced-esawyer](https://github.com/Erinsa/pui-homework-advanced-esawyer)
