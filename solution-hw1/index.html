@@ -1,15 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <title>Page Title</title>
-  
+  <head>
+    <meta charset="UTF-8">
+    <title>Bun Bun bake shop</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+
   <body>
+    
+    <div class = "header">
+      <div class = "logo">
+        <img src="./assets/logo/logo-01.svg"  alt = "Bun Bun bakeshop logo"/>
+      </div>
+      <div class = "header-right">
+          <!-- <nav>
+            <a href="#product">Product</a>
+            <a href="#cart">Cart</a>
+          </nav> -->
+          <div class = "header-nav">
+            <div class = "product">
+              PRODUCTS
+            </div>
+            <div class = "cart">
+              CART
+            </div>
+          </div>
+          <hr class="horizontal_line1"/>
+          <!-- Used this link for help with line styling 
+          https://www.w3schools.com/howto/howto_css_style_hr.asp/ -->
+          <div class = "slogan_box">
+            <div class = "slogan"></div>
+              Our hand-made cinnamon rolls
+            </div>
+          </div>
+      </div>
+    </div>
 
-    <h1>I am the solution to HW1!</h1>
 
-    <p>
-        And I can link to <a href="./otherpage.html">other pages.</a>
-    </p>
+    <section>
 
+
+      <article>
+        <!-- <img src="./assets/products/original-cinnamon-roll.jpg" width ="200" alt = "Picture of an original cinnamon roll"/>
+         -->
+        <div class = "figure_div"> 
+          <figure>
+            <img class = "product_image" src="./assets/products/original-cinnamon-roll.jpg" alt = "Picture of an original cinnamon roll"/>
+            <figcaption>Original cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+                <button class = "quantity_button first">1</button>
+                <button class = "quantity_button">3</button>
+                <button class = "quantity_button">6</button>
+                <button class = "quantity_button">12</button>
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+              <p><p>$2.49</p></p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+            
+      </article>
+
+      <article>
+        <!-- <img src="./assets/products/original-cinnamon-roll.jpg" width ="200" alt = "Picture of an original cinnamon roll"/>
+         -->
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/apple-cinnamon-roll.jpg" width = "200px" alt = "Picture of an apple cinnamon roll"/>
+            <figcaption>Apple cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+                <button class = "quantity_button first">1</button>
+                <button class = "quantity_button">3</button>
+                <button class = "quantity_button">6</button>
+                <button class = "quantity_button">12</button>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p><p>$3.49</p></p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+            
+      </article>
+
+      <article>
+        <!-- <img src="./assets/products/original-cinnamon-roll.jpg" width ="200" alt = "Picture of an original cinnamon roll"/>
+         -->
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/raisin-cinnamon-roll.jpg"width = "200px" alt = "Picture of a raisin cinnamon roll"/>
+            <figcaption>Raisin cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+                <button class = "quantity_button first">1</button>
+                <button class = "quantity_button">3</button>
+                <button class = "quantity_button">6</button>
+                <button class = "quantity_button">12</button>
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p><p>$2.99</p></p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+            
+      </article>
+    
+    </section>
+
+    <section>
+
+
+      <article>
+        <!-- <img src="./assets/products/original-cinnamon-roll.jpg" width ="200" alt = "Picture of an original cinnamon roll"/>
+         -->
+        <div class = "figure_div"> 
+          <figure>
+            <img class = "product_image" src="./assets/products/walnut-cinnamon-roll.jpg" alt = "Picture of a walnut cinnamon roll"/>
+            <figcaption>Walnut cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+                <button class = "quantity_button first">1</button>
+                <button class = "quantity_button">3</button>
+                <button class = "quantity_button">6</button>
+                <button class = "quantity_button">12</button>
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+              <p><p>$3.49</p></p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+            
+      </article>
+
+      <article>
+        <!-- <img src="./assets/products/original-cinnamon-roll.jpg" width ="200" alt = "Picture of an original cinnamon roll"/>
+         -->
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/double-chocolate-cinnamon-roll.jpg" width = "200px" alt = "Picture of a double-chocolate cinnamon roll"/>
+            <figcaption>Double-chocolate cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+                <button class = "quantity_button first">1</button>
+                <button class = "quantity_button">3</button>
+                <button class = "quantity_button">6</button>
+                <button class = "quantity_button">12</button>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p><p>$3.99</p></p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+            
+      </article>
+
+      <article>
+        <!-- <img src="./assets/products/original-cinnamon-roll.jpg" width ="200" alt = "Picture of an original cinnamon roll"/>
+         -->
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/strawberry-cinnamon-roll.jpg"width = "200px" alt = "Picture of a strawberry cinnamon roll"/>
+            <figcaption>Strawberry cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+                <button class = "quantity_button first">1</button>
+                <button class = "quantity_button">3</button>
+                <button class = "quantity_button">6</button>
+                <button class = "quantity_button">12</button>
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p><p>$3.99</p></p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+            
+      </article>
+    
+    </section>
+  
   </body>
 </html>
