@@ -1,14 +1,49 @@
+/* Generally used the following order within styling throughout
+width
+height
+display
+position
+flex
+direction
+wrap
+justify-content
+align-content
+align-items
+column-gap
+font-family
+font-size
+font-weight
+padding
+border
+margin
+color
+background-color
+opacity
+cursor
+anything else */
+
+/* Got this from css lecture */
 * {
     box-sizing: border-box;
 }
 
+/* Referenced css lecture */
 body {
     font-family: sans-serif;
     font-size: 14px;
-    color: black;
     margin: 50px;
+    color: black;
 }
 
+/* for flex boxes and alignment throughout I used the following references
+I'm not citing specific examples because I combined learnings from many of them 
+and built upon that learning as I progressed through the assignment. 
+I didn't necessarily used specific code chunks for a specific section */
+/* https://www.w3schools.com/css/css3_flexbox.asp
+https://css-tricks.com/guides/
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes
+https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween
+https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-container  */
 .header {
     width: 100%;
     display: flex;
@@ -23,44 +58,48 @@ body {
 
 .header-right {
     display: flex;
-    flex-wrap: wrap;
+    /* This reference (from above) also helped me with understanding calc()and wrap
+    https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween*/
     flex: 1 0 calc(100% - 400px - 30px);
+    flex-wrap: wrap;
 }
 
-.horizontal_line1 {
-    flex: 1 0 100%;
+/* References for styling a horizontal line:
+https://www.w3schools.com/howto/howto_css_style_hr.asp
+https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with-flex */
+.horizontal_line {
     height: 5px;
+    flex: 1 0 107%;
     color:black;
     background-color: black;
 }
 
 .slogan_box {
-    font-size: 24pt;
     display: flex;
     align-items: flex-end;
+    font-size: 24pt;
 }
 
 .header-nav{
     width:100%;
     display: flex;
-    font-size: 20pt;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     column-gap: 50px;
+    font-size: 20pt;
     margin-right: 75px;
 }
 
-.product{
-    width: fit-content;
-}
-
+/* Used this as reference for hover:
+ https://www.w3schools.com/cssref/sel_hover.php */
 .product:hover {
-    width: fit-content;
-    background-color: yellow;
     font-weight: bold;
+    background-color: yellow;
 }
 
+/* This reference (from above) also helped me with understanding flex boxes using sections and articles
+    https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes */
 section {
     width: calc(100%-100px);
     display: flex;
@@ -68,50 +107,54 @@ section {
     justify-content: space-between;
     align-items: flex-start;
     padding: 75px 75px 0px;
-  }
+}
 
-  article {
+article {
     width:275px;
-    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
-  }
+}
 
-
-  figure {
+figure {
     margin:20px 0px 15px 0px;
-  }
+}
 
-  .product_image{
+/* Used for reference for help adding a border to image:
+https://www.w3schools.com/howto/howto_css_border_image.asp */
+.product_image{
     width: 275px;
     border: 3px solid black;
-  }
-  
-  figcaption {
-    padding-top: 5px;
-    margin: auto;
+}
+
+/* Used for reference for figure and figcaption: 
+https://www.w3schools.com/tags/tag_figcaption.asp */
+figcaption {
     font-size: 17pt;
     font-weight: 600;
-    }
+    padding-top: 5px;
+}
 
+/* Used the following reference for ideas on structuring the buttons/options and labels.
+Thinking about it like outer, rows, and items really helped me.
+https://stackoverflow.com/questions/55738082/how-to-make-a-flexible-2x3-grid-using-flexbox */
 .outer{
     display: flex;
     flex-direction: column;
+    font-size: 14pt;
 }
 
 .row {
     display: flex;
     flex: 1;
     align-items: baseline;
-    font-size: 14pt;
 }
 
 .item {
     flex: 1;
     align-items: baseline;
-    font-size: 14pt;
 }
 
 .item.text{
@@ -122,101 +165,96 @@ section {
 .price_text{
     font-size: 16pt;
     font-weight: bold;
-    height: fit-content;
-    flex: 0 0 30%;
 }
 
-.item.option{
+.option{
     justify-content: center;
 }
 
-  .glaze_select {
+/* Used this reference for help styling dropdowns: 
+https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
+.glaze_select {
     width: calc(100% - 20px);
     flex: 1 0 100%;
-    margin-left: 20px;
+    font-size: 14pt;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 14pt;
+    border: 2px solid black;
     margin-top: 0px;
     margin-bottom: 0px;
-    border: 2px solid black;
-  }
+    margin-left: 20px;
+    /* Learned this cursor thing from a later reference about custom radio buttons*/
+    cursor: pointer;
+}
 
-  .quantity_button_container {
-    display:flex;
-    flex: 1 0 auto;
+/* Used a combination of the following references for custom radio buttons:
+https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+ https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+.quantity_button_container {
     width: calc(100% - 15px);
+    display: flex;
+    flex: 1 0 auto;
     justify-content: space-between;
     margin-left: 15px;
-  }
+}
 
-  .quantity_button {
+.quantity_button {
     flex: 1 0 auto;
-    background-color: white;
-    margin-left: 5px;
+    font-size: 14pt;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 14pt;
-    
+    margin-left: 5px;
+    background-color: white;
+}
 
-  }
-
-  .quantity_button.first {
-    background-color: lightgrey;
-
-  }
-
-  .quantity_button_container_radio{
+.quantity_buttons {
     display: block;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    font-size: 14pt;
     cursor: pointer;
-    font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
 
-  .quantity_button_container_radio input {
+.quantity_buttons input {
+    width: 0;
+    height: 0;
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  .clicked_indicator {
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
+}
+  
+.new_quantity_button {
+    flex: 1 0 auto;
+    font-size: 14pt;
+    padding: 5px 10px 5px 9px;
+    border: 2px solid black;
+    margin-left: 5px;
     background-color: white;
-  }
-
-  .quantity_button_container_radio input input:checked ~ .clicked_indicator {
-    background-color: lightgrey;
-  }
-
-  .cart_button {
+}
+  
+.quantity_buttons input:checked ~ .new_quantity_button {
+    background-color: lightgray;
+}
+  
+.cart_button {
     width: calc(100% - 20px);
-    font-weight: bold;
-    background-color: white;
     justify-content: space-between;
-    margin-left: 20px;
     font-size: 16pt;
+    font-weight: bold;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-left: 20px;
+    background-color: white;
+    cursor: pointer;
+}
 
-  }
-
-  .cart_button:hover {
+.cart_button:hover {
     background-color: yellow;
-
-  }
+}
 
 
 
