@@ -1,20 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
 
     font-family: sans-serif;
     font-size: 14px;
     color: black;
-    margin: 100px;
+    margin: 50px;
 }
 
 .header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    /* margin-bottom: 20px; */
     /* margin: 20px; */
 }
 .logo {
-    width: 450px;
+    width: 400px;
     display: flex;
     flex-shrink: 0;
     flex-grow: 0;
@@ -59,7 +63,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     column-gap: 50px;
-    margin-right: 125px;
+    margin-right: 75px;
     /* height: 20px; */
     /* float: right; */
 }
@@ -97,13 +101,13 @@ section {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    align-content: flex-start;
-    padding: 50px 100px 0px;
+    /* align-content: flex-start; */
+    padding: 75px 75px 0px;
   }
 
   article {
     /* background-color: blue; */
-    width:300px;
+    width:275px;
     /* flex-basis: 33%; */
     /* flex: 0 0 100%; */
     flex-wrap: wrap;
@@ -122,20 +126,21 @@ section {
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start; */
-    margin:20px 0px 20px 0px;
+    margin:20px 0px 15px 0px;
     /* background-color:aquamarine; */
   }
 
   .product_image{
-    width: 300px;
-    border: 2px solid black;
+    width: 275px;
+    border: 3px solid black;
   }
   
   figcaption {
     /* padding: 0px; */
+    padding-top: 5px;
     margin: auto;
-    font-size: 20pt;
-    font-weight: 525;
+    font-size: 17pt;
+    font-weight: 600;
     }
 
 .outer{
@@ -165,7 +170,7 @@ section {
     /* background-color: chartreuse; */
     /* font-size: 14pt; */
     height: 10px;
-    flex: 0 0 30%;
+    flex: 0 0 35%;
 }
 
 .price_text{
