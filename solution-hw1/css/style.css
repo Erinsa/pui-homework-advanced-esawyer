@@ -44,18 +44,21 @@ https://css-tricks.com/guides/
 https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes
 https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween
 https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-container  */
+ /* header class includes logo, and header right which has nav, line, and slogan - also a flex parent */
 .header {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
+/* logo image for header */
 .logo {
     width: 400px;
     display: flex;
     padding-right: 30px;
 }
 
+/* flex container that is also a flex parent, contains nav, line, slogan */
 .header-right {
     display: flex;
     /* This reference (from above) also helped me with understanding calc()and wrap
@@ -74,12 +77,14 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
     background-color: black;
 }
 
+/* flex child containing slogan */
 .slogan_box {
     display: flex;
     align-items: flex-end;
     font-size: 24pt;
 }
 
+/* holds products and cart nav options as flex children */
 .header-nav{
     width:100%;
     display: flex;
@@ -93,6 +98,7 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
 
 /* Used this as reference for hover:
  https://www.w3schools.com/cssref/sel_hover.php */
+ /* makes product yellow when you hover over it */
 .product:hover {
     font-weight: bold;
     background-color: yellow;
@@ -100,6 +106,7 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
 
 /* This reference (from above) also helped me with understanding flex boxes using sections and articles
     https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes */
+/* flex parent, contains first row of product cards (first 3) */
 section {
     width: calc(100% - 100px);
     display: flex;
@@ -109,6 +116,7 @@ section {
     padding: 75px 75px 0px;
 }
 
+/* the basis of the product cards - section is its flex parent and it is also a flex container */
 article {
     width:275px;
     display: flex;
@@ -118,12 +126,14 @@ article {
     align-content: center;
 }
 
+/* figure (flex container and flex child) containing image and caption */
 figure {
     margin:20px 0px 15px 0px;
 }
 
 /* Used for reference for help adding a border to image:
 https://www.w3schools.com/howto/howto_css_border_image.asp */
+/* product image - set border here also */
 .product_image{
     width: 275px;
     border: 3px solid black;
@@ -131,6 +141,7 @@ https://www.w3schools.com/howto/howto_css_border_image.asp */
 
 /* Used for reference for figure and figcaption: 
 https://www.w3schools.com/tags/tag_figcaption.asp */
+/* used for product name as a part of the figure */
 figcaption {
     font-size: 17pt;
     font-weight: 600;
@@ -140,39 +151,46 @@ figcaption {
 /* Used the following reference for ideas on structuring the buttons/options and labels.
 Thinking about it like outer, rows, and items really helped me.
 https://stackoverflow.com/questions/55738082/how-to-make-a-flexible-2x3-grid-using-flexbox */
+/* the outer flex container for our options/buttons and labels */
 .outer{
     display: flex;
     flex-direction: column;
     font-size: 14pt;
 }
 
+/* this row flex container helped organize the buttons and labels into grid */
 .row {
     display: flex;
     flex: 1;
     align-items: baseline;
 }
 
+/* button and/or label flex child */
 .item {
     flex: 1;
     align-items: baseline;
 }
 
+/* styling for just label text */
 .item.text{
     height: 10px;
     flex: 0 0 35%;
 }
 
+/* styling specifically for price label (bigger and bolder on mockup) */
 .price_text{
     font-size: 16pt;
     font-weight: bold;
 }
 
+/* styling for option item */
 .option{
     justify-content: center;
 }
 
 /* Used this reference for help styling dropdowns: 
 https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
+/* styling for dropdown for glazing */
 .glaze_select {
     width: calc(100% - 20px);
     flex: 1 0 100%;
@@ -191,6 +209,7 @@ https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
 https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
  https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+ /* start styling for custom radio buttons */
 .quantity_button_container {
     width: calc(100% - 15px);
     display: flex;
@@ -239,7 +258,9 @@ https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
 .quantity_buttons input:checked ~ .new_quantity_button {
     background-color: lightgray;
 }
-  
+ /* end styling for custom radio buttons */
+ 
+ /* styling for add to cart button */
 .cart_button {
     width: calc(100% - 20px);
     justify-content: space-between;
@@ -252,6 +273,7 @@ https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
     cursor: pointer;
 }
 
+/* hover functionality for add to cart button */
 .cart_button:hover {
     background-color: yellow;
 }
