@@ -101,7 +101,7 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
 /* This reference (from above) also helped me with understanding flex boxes using sections and articles
     https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes */
 section {
-    width: calc(100%-100px);
+    width: calc(100% - 100px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
