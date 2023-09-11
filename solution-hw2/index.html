@@ -1,0 +1,481 @@
+<!-- Referenced HTML lecture and references listed in style.css for code in index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bake Shop</title>
+    <!-- grabbing our styling -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    
+    <div class = "header">
+
+      <div class = "logo">
+        <img src="./assets/logo/logo-01.svg" width = "400" alt = "Bun Bun bakeshop logo" />
+      </div>
+
+      <div class = "header-right">
+
+          <div class = "header-nav">
+            <div class = "product">
+              PRODUCTS
+            </div>
+            <div class = "cart">
+              CART
+            </div>
+          </div>
+
+          <hr class="horizontal_line" />
+          <!-- Used this link for help with line styling 
+          https://www.w3schools.com/howto/howto_css_style_hr.asp/ -->
+
+          <div class = "slogan_box">
+            <div class = "slogan">
+              Our hand-made cinnamon rolls
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+
+    <section>
+
+      <article>
+
+        <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/original-cinnamon-roll.jpg" width = "200" alt = "Picture of an original cinnamon roll" />
+            <figcaption>Original cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+
+              <div class = quantity_button_container>
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_1" checked = "checked" />
+                  <span class="new_quantity_button">1</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_1" />
+                  <span class="new_quantity_button">3</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_1" />
+                  <span class="new_quantity_button">6</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_1" />
+                  <span class="new_quantity_button">12</span>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+              <p>$2.49</p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+            
+      </article>
+
+      <article>
+
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/apple-cinnamon-roll.jpg" width = "200" alt = "Picture of an apple cinnamon roll" />
+            <figcaption>Apple cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_2" checked = "checked" />
+                  <span class="new_quantity_button">1</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_2" />
+                  <span class="new_quantity_button">3</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_2" />
+                  <span class="new_quantity_button">6</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_2" />
+                  <span class="new_quantity_button">12</span>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p>$3.49</p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+            
+      </article>
+
+      <article>
+        
+        <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/raisin-cinnamon-roll.jpg" width = "200" alt = "Picture of a raisin cinnamon roll" />
+            <figcaption>Raisin cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_3" checked = "checked" />
+                  <span class="new_quantity_button">1</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_3" />
+                  <span class="new_quantity_button">3</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_3" />
+                  <span class="new_quantity_button">6</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_3" />
+                  <span class="new_quantity_button">12</span>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p>$2.99</p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>  
+      </article>
+    
+    </section>
+
+    <section>
+
+      <article>
+
+        <div class = "figure_div"> 
+          <figure>
+            <img class = "product_image" src="./assets/products/walnut-cinnamon-roll.jpg" width = "200" alt = "Picture of a walnut cinnamon roll" />
+            <figcaption>Walnut cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_4" checked = "checked" />
+                  <span class="new_quantity_button">1</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_4" />
+                  <span class="new_quantity_button">3</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_4" />
+                  <span class="new_quantity_button">6</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_4" />
+                  <span class="new_quantity_button">12</span>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+              <p>$3.49</p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+            
+      </article>
+
+      <article>
+
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/double-chocolate-cinnamon-roll.jpg" width = "200" alt = "Picture of a double-chocolate cinnamon roll" />
+            <figcaption>Double-chocolate cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_5" checked = "checked" />
+                  <span class="new_quantity_button">1</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_5" />
+                  <span class="new_quantity_button">3</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_5" />
+                  <span class="new_quantity_button">6</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_5" />
+                  <span class="new_quantity_button">12</span>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p>$3.99</p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>  
+      </article>
+
+      <article>
+
+         <div> 
+          <figure>
+            <img class = "product_image" src="./assets/products/strawberry-cinnamon-roll.jpg" width = "200" alt = "Picture of a strawberry cinnamon roll" />
+            <figcaption>Strawberry cinnamon roll</figcaption>
+            <!-- Used W3 schools as reference: 
+            https://www.w3schools.com/tags/tag_figcaption.asp -->
+          </figure>
+        </div>
+
+        <div class = "outer">
+          <div class = "row">
+            <div class = "item text">
+              <p>Glazing:</p>
+            </div>
+            <div class = "item option">
+              <select class = "glaze_select">
+                <option value="0">Keep original</option>
+                <option value="1">Sugar milk</option>
+                <option value="2">Vanilla milk</option>
+                <option value="3">Double chocolate</option>
+              </select>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <p>Pack size:</p>
+            </div>
+            <div class = "item option">
+              <div class = quantity_button_container>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_6" checked = "checked" />
+                  <span class="new_quantity_button">1</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_6" />
+                  <span class="new_quantity_button">3</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_6" />
+                  <span class="new_quantity_button">6</span>
+                </label>
+
+                <label class="quantity_buttons">
+                  <input type="radio" name="radio_6" />
+                  <span class="new_quantity_button">12</span>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "item text">
+              <div class = "price_text">
+                <p>$3.99</p>
+              </div>
+            </div>
+            <div class = "item option">
+              <button class = "cart_button">Add to cart</button>
+            </div>
+          </div>
+        </div>  
+      </article>
+    
+    </section>
+  
+  </body>
+
+</html>
