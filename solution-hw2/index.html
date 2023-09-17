@@ -24,6 +24,9 @@
 
           <nav class = "header-nav">
             <div class = "product">
+              <!-- Reference for labels for links
+                "for links, buttons and clickable elements, the text content of the element typically provides the label."
+                https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Text_labels_and_names -->
               <a href="#products_page" class = "product_link">PRODUCTS</a>
             </div>
             <div class = "cart-box">
@@ -86,6 +89,10 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select" id = "original" onchange="glazingChange(this)" >
+                <!-- Used this for help with labels
+                  https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Text_labels_and_names -->
+                <optgroup label="Glazing Options">
+                </optgroup>
               </select>
             </div>
           </div>
@@ -95,7 +102,9 @@
               <p>Pack size:</p>
             </div>
             <div class = "item option">
-
+              <!-- Reference for labels for radio and add to cart buttons
+                "for links, buttons and clickable elements, the text content of the element typically provides the label."
+                https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Text_labels_and_names -->
               <div class = quantity_button_container >
                 <label class="quantity_buttons" >
                   <input type="radio" name="radio_1" checked = "checked"/>
@@ -156,6 +165,8 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select" id = "apple" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options">
+                </optgroup>
               </select>
             </div>
           </div>
@@ -226,6 +237,8 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select" id = "raisin" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options">
+                </optgroup>
               </select>
             </div>
           </div>
@@ -238,7 +251,7 @@
               <div class = quantity_button_container>
 
                 <label class="quantity_buttons">
-                  <input type="radio" name="radio_3" checked = "checked" />
+                  <input type="radio" id = name="radio_3" checked = "checked" />
                   <span class="new_quantity_button radio-1" id = "raisin" onclick="quantityChange(this)" ></span>
                 </label>
 
@@ -299,6 +312,8 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select" id = "walnut" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options">
+                </optgroup>
               </select>
             </div>
           </div>
@@ -368,7 +383,10 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "doublechocolate" onchange="glazingChange(this)"></select>
+              <select class = "glaze_select" id = "doublechocolate" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options">
+                </optgroup>
+              </select>
             </div>
           </div>
 
@@ -437,6 +455,8 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select" id = "strawberry" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options">
+                </optgroup>
               </select>
             </div>
           </div>

@@ -36,6 +36,8 @@
 class Roll {
 
   // Constructor to make an instance of this class with certain values
+  // Used this as reference in addition to lab example
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
   constructor(type, price, glazing, packSize, elementID) {
     this.rolltype = type;
     this.rollprice = price;
@@ -134,7 +136,9 @@ rolls = [original_roll, apple_roll, raisin_roll, walnut_roll,
 // Used this reference for populating dropdown
 // https://stackoverflow.com/questions/65502247/how-to-load-dropdown-menu-from-obj
 
-//  gets all html elements with class "glaze_select"
+// Gets all html elements with class "glaze_select"
+// Used this as reference for querySelectorAll
+// https://www.w3schools.com/jsref/met_document_queryselectorall.asp
 let glazeSelects = document.querySelectorAll(".glaze_select");
 
 // loops through each selector (selector for each type of cinnamon roll)
@@ -175,6 +179,12 @@ for (let item of quantities){
 }
 
 // Helper function to calculate price based on type, glaze, and quantity
+// Params:
+// base_price: base price of that type of cinammon roll
+// glaze_price_adjust: value of price adjustment for selected glaze
+// quantity_price_adjust: value of price adjustment for selected quantity
+// Output: new_price: adjusted price with two decimal places
+
 function priceCalculator (base_price, glaze_price_adjust, quantity_price_adjust) {
 
   // calculation: (base price + glaze price adjustment) * quantity price adjustment
@@ -191,8 +201,13 @@ function priceCalculator (base_price, glaze_price_adjust, quantity_price_adjust)
 }
 
 // Function that handles changes associated with glazing options
+// Updates current roll object and price displayed
+// Params:
+// element: comes from what's interacted with
 function glazingChange(element) {
   // Gets id of particular selector (to tell which roll to update)
+  // This reference helped understand how to get id value
+  // https://stackoverflow.com/questions/3623110/how-can-i-get-an-elements-id-value-with-javascript
   let id = element.id;
 
   // Finds roll with matching id to selector
@@ -210,29 +225,34 @@ function glazingChange(element) {
   
   // Getting needed values for price calculation
 
-  // getting price adjustment due to glaze from selected option
+  // Getting price adjustment due to glaze from selected option
   const glaze_price_change = element.value;
 
-  // getting the price adjustment due to current quantity we have selected
+  // Getting the price adjustment due to current quantity we have selected
   const current_quantity_price_change = roll_to_change.rollpackSize.value;
 
-  // getting base roll price for this type
+  // Getting base roll price for this type
   let base_roll = base_rolls.find((base_roll_object) => base_roll_object.rollelementID == `${id}_base`);
   const base_price = base_roll.rollprice;
 
-  // using helper function to calculate updated price
+  // Using helper function to calculate updated price
   let new_price = priceCalculator(base_price, glaze_price_change, 
                                   current_quantity_price_change);
 
-  // update price on client-facing page
+  // Update price on client-facing page
+  // Reference for getElementById
+  // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
   document.getElementById(`${id}_price_text_number`).textContent = new_price;
 
-  // updating price for roll we are currently working with
+  // Updating price for roll we are currently working with
   roll_to_change.rollprice = new_price;
 
 }
 
 // Function that handles changes associated with quantity options
+// Updates current roll object and price displayed
+// Params:
+// element: comes from what's interacted with
 function quantityChange(element) {
 
   // Gets id of particular radio button(to tell which roll to update)
@@ -249,23 +269,23 @@ function quantityChange(element) {
 
   // Getting needed values for price calculation
 
-  // getting price adjustment due to quantity from selected option
+  // Getting price adjustment due to quantity from selected option
   const quantity_price_change = element.value;
 
-  // getting the price adjustment due to current glaze we have selected
+  // Getting the price adjustment due to current glaze we have selected
   const current_glazing_price_change = roll_to_change.rollglazing.value;
 
-  // getting base roll price for this type
+  // Getting base roll price for this type
   let base_roll = base_rolls.find((base_roll_object) => base_roll_object.rollelementID == `${id}_base`);
   const base_price = base_roll.rollprice;
 
-  // using helper function to calculate updated price
+  // Using helper function to calculate updated price
   let new_price = priceCalculator(base_price, current_glazing_price_change, quantity_price_change);
 
-  // update price on client-facing page
+  // Update price on client-facing page
   document.getElementById(`${id}_price_text_number`).textContent = new_price;
 
-  // updating price for roll we are currently working with
+  // Updating price for roll we are currently working with
   roll_to_change.rollprice = new_price;
       
 }
@@ -275,13 +295,20 @@ function quantityChange(element) {
 // Creating an array to store rolls once we add them to cart
 let cart = [];
 
-// helper function for our cart pop up
+// Helper function for our cart pop up
+// Removes visibility class
+// Params:
+// element: comes from what's interacted with
 function removeVisibility (element){
-  // removing class that makes cart pop up visible
+  // Removing class that makes cart pop up visible
   element.classList.remove('cart_pop_up_visibility_visible')
 }
 
-// function that handles adding rolls to cart when add to cart button is pushed
+// Function that handles adding rolls to cart when add to cart button is pushed
+// Adds roll with current settings to cart, updates cart display, and
+// displays cart pop up
+// Params:
+// element: comes from what's interacted with
 function addtoCart(element) {
 
   // Gets id of particular add to cart button (to tell which roll to update)
@@ -330,7 +357,7 @@ function addtoCart(element) {
 
   // Filling in info for our pop up
   document.querySelector(`.cart-pop_up-type`).textContent = `${cart_roll.rolltype} cinammon roll`;
-  document.querySelector(`.cart-pop_up-glaze`).textContent = `${cart_roll.rollglazing.name}`;
+  document.querySelector(`.cart-pop_up-glaze`).textContent = `${cart_roll.rollglazing.name} glazing`;
   document.querySelector(`.cart-pop_up-pack`).textContent = `Pack of ${cart_roll.rollpackSize.name}`;
   document.querySelector(`.cart-pop_up-price`).textContent = `Price $${cart_roll.rollprice}`;
 
@@ -348,16 +375,6 @@ function addtoCart(element) {
   // Waits 3 seconds, then removes the class that makes the pop up visible
   // Used this for reference for Timeout
   // https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
-  setTimeout(removeVisibility, 5000, pop_up)
-
-  // resetting roll so that 
-   // Finds base roll of the type of our current roll
-  //  let roll_to_add_base = base_rolls.find((roll_object) => roll_object.rollelementID == `${id}_base`);
-
-  //  roll_to_add.rollprice = roll_to_add_base.rollprice;
-  //  this.rollglazing = keepOriginal;
-  //  this.rollpackSize = quantity1;
-
-  // reset roll by chnaging roll that was added to based roll
+  setTimeout(removeVisibility, 3000, pop_up)
 
 }
