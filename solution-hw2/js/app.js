@@ -106,11 +106,11 @@ const quantities = [quantity1, quantity3, quantity6, quantity12];
 
 // default roll objects (to reference)
 original_roll_base = new Roll("Original", 2.49, keepOriginal, quantity1, "original_base");
-apple_roll_base = new Roll("apple", 3.49, keepOriginal, quantity1);
-raisin_roll_base = new Roll("raisin", 2.99, keepOriginal, quantity1);
-walnut_roll_base = new Roll("walnut", 3.49, keepOriginal, quantity1);
-doublechocolate_roll_base = new Roll("double-chocolate", 3.99, keepOriginal, quantity1);
-strawberry_roll_base = new Roll("strawberry", 3.99, keepOriginal, quantity1);
+apple_roll_base = new Roll("Apple", 3.49, keepOriginal, quantity1, "apple_base");
+raisin_roll_base = new Roll("Raisin", 2.99, keepOriginal, quantity1, "raisin_base");
+walnut_roll_base = new Roll("Walnut", 3.49, keepOriginal, quantity1, "walnut_base");
+doublechocolate_roll_base = new Roll("Double-chocolate", 3.99, keepOriginal, quantity1, "doublechocolate_base");
+strawberry_roll_base = new Roll("Strawberry", 3.99, keepOriginal, quantity1, "strawberry_base");
 
 // Creating an array storing this group of base roll objects
 base_rolls = [original_roll_base, apple_roll_base, raisin_roll_base, 
@@ -119,11 +119,11 @@ base_rolls = [original_roll_base, apple_roll_base, raisin_roll_base,
 
 // roll objects to change / update
 original_roll = new Roll("Original", 2.49, keepOriginal, quantity1, "original");
-apple_roll = new Roll("apple", 3.49, keepOriginal, quantity1);
-raisin_roll = new Roll("raisin", 2.99, keepOriginal, quantity1);
-walnut_roll = new Roll("walnut", 3.49, keepOriginal, quantity1);
-doublechocolate_roll = new Roll("double-chocolate", 3.99, keepOriginal, quantity1);
-strawberry_roll = new Roll("strawberry", 3.99, keepOriginal, quantity1);
+apple_roll = new Roll("Apple", 3.49, keepOriginal, quantity1, "apple");
+raisin_roll = new Roll("Raisin", 2.99, keepOriginal, quantity1, "raisin");
+walnut_roll = new Roll("Walnut", 3.49, keepOriginal, quantity1, "walnut");
+doublechocolate_roll = new Roll("Double-chocolate", 3.99, keepOriginal, quantity1, "doublechocolate");
+strawberry_roll = new Roll("Strawberry", 3.99, keepOriginal, quantity1, "strawberry");
 
 // Creating an array storing this group of roll objects to be updated
 rolls = [original_roll, apple_roll, raisin_roll, walnut_roll,
@@ -225,7 +225,7 @@ function glazingChange(element) {
                                   current_quantity_price_change);
 
   // update price on client-facing page
-  document.querySelector(`.price_text_number`).textContent = new_price;
+  document.getElementById(`${id}_price_text_number`).textContent = new_price;
 
   // updating price for roll we are currently working with
   roll_to_change.rollprice = new_price;
@@ -263,7 +263,7 @@ function quantityChange(element) {
   let new_price = priceCalculator(base_price, current_glazing_price_change, quantity_price_change);
 
   // update price on client-facing page
-  document.querySelector(`.price_text_number`).textContent = new_price;
+  document.getElementById(`${id}_price_text_number`).textContent = new_price;
 
   // updating price for roll we are currently working with
   roll_to_change.rollprice = new_price;
@@ -329,7 +329,7 @@ function addtoCart(element) {
   document.querySelector(`.cart-total-text`).textContent = `Total: $${cart_value}`;
 
   // Filling in info for our pop up
-  document.querySelector(`.cart-pop_up-type`).textContent = `${cart_roll.rolltype}`;
+  document.querySelector(`.cart-pop_up-type`).textContent = `${cart_roll.rolltype} cinammon roll`;
   document.querySelector(`.cart-pop_up-glaze`).textContent = `${cart_roll.rollglazing.name}`;
   document.querySelector(`.cart-pop_up-pack`).textContent = `Pack of ${cart_roll.rollpackSize.name}`;
   document.querySelector(`.cart-pop_up-price`).textContent = `Price $${cart_roll.rollprice}`;
@@ -348,7 +348,7 @@ function addtoCart(element) {
   // Waits 3 seconds, then removes the class that makes the pop up visible
   // Used this for reference for Timeout
   // https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
-  setTimeout(removeVisibility, 3000, pop_up)
+  setTimeout(removeVisibility, 5000, pop_up)
 
   // resetting roll so that 
    // Finds base roll of the type of our current roll
