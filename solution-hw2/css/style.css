@@ -49,6 +49,7 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
     width: 100%;
     display: flex;
     flex-direction: row;
+    background-color: chocolate;
 }
 
 /* logo image for header */
@@ -65,6 +66,7 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
     https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween*/
     flex: 1 0 calc(100% - 400px - 30px);
     flex-wrap: wrap;
+    background-color: brown;
 }
 
 /* References for styling a horizontal line:
@@ -88,6 +90,7 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
 .header-nav{
     width:100%;
     height: 10%;
+    flex: 1 0 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -95,6 +98,15 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
     column-gap: 50px;
     font-size: 20pt;
     margin-right: 75px;
+    background-color: purple;
+}
+
+/* Used this for reference on styling links
+https://www.w3schools.com/Css/css_link.asp */
+.product_link {
+    color: black;
+    text-decoration: none;
+    background-color: pink;
 }
 
 /* Used this as reference for hover:
@@ -108,6 +120,7 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
 .cart-box {
     display: flex;
     flex-direction: column;
+    background-color: chartreuse;
 }
 
 .cart-text {
@@ -130,12 +143,13 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
     https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes */
 /* flex parent, contains first row of product cards (first 3) */
 section {
-    width: calc(100% - 100px);
+    /* width: calc(100% - 100px); */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     padding: 75px 75px 0px;
+    background-color: aquamarine;
 }
 
 /* the basis of the product cards - section is its flex parent and it is also a flex container */
@@ -213,6 +227,8 @@ https://stackoverflow.com/questions/55738082/how-to-make-a-flexible-2x3-grid-usi
 /* Used this reference for help styling dropdowns: 
 https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
 /* styling for dropdown for glazing */
+/* Learned about cursor option from this reference (used for radio buttons later)
+https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
 .glaze_select {
     width: calc(100% - 20px);
     flex: 1 0 100%;
@@ -223,7 +239,6 @@ https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 20px;
-    /* Learned this cursor thing from a later reference about custom radio buttons*/
     cursor: pointer;
 }
 

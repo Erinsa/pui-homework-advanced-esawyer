@@ -21,9 +21,10 @@
 
       <div class = "header-right">
 
-          <div class = "header-nav">
+          <nav class = "header-nav">
             <div class = "product">
-              PRODUCTS
+              <a href="#products_page" class = "product_link" >PRODUCTS</a>
+              <!-- PRODUCTS -->
             </div>
             <div class = "cart-box">
                 <div class = "cart-text">
@@ -38,7 +39,7 @@
                     </div>
                 </div>
             </div>
-          </div>
+          </nav>
 
           <hr class="horizontal_line" />
           <!-- Used this link for help with line styling 
@@ -55,9 +56,9 @@
     </div>
 
 
-    <section>
+    <section id = "products_page">
 
-      <article>
+      <article id = "roll-original">
 
         <div> 
           <figure>
@@ -75,11 +76,8 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select">
-                <option value="0">Keep original</option>
-                <option value="1">Sugar milk</option>
-                <option value="2">Vanilla milk</option>
-                <option value="3">Double chocolate</option>
+              <select class = "glaze_select" id = "original" onchange="glazingChange(this, id)" >
+                
               </select>
             </div>
           </div>
@@ -90,25 +88,25 @@
             </div>
             <div class = "item option">
 
-              <div class = quantity_button_container>
+              <div class = quantity_button_container >
+                <label class="quantity_buttons" >
+                  <input type="radio" name="radio_1" checked = "checked"/>
+                  <span class="new_quantity_button radio-1" id = "original" onclick="quantityChange(this, id)" ></span>
+                </label>
+
                 <label class="quantity_buttons">
-                  <input type="radio" name="radio_1" checked = "checked" />
-                  <span class="new_quantity_button">1</span>
+                  <input type="radio" name="radio_1"/>
+                  <span class="new_quantity_button radio-3" onclick="quantityChange(this, id)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button">3</span>
+                  <span class="new_quantity_button radio-6" id = "original" onclick="quantityChange(this, id)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button">6</span>
-                </label>
-
-                <label class="quantity_buttons">
-                  <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button">12</span>
+                  <span class="new_quantity_button radio-12"  id = "original" onclick="quantityChange(this, id)"></span>
                 </label>
 
               </div>
@@ -118,11 +116,14 @@
           <div class = "row">
             <div class = "item text">
               <div class = "price_text">
-              <p>$2.49</p>
+              <p>
+                <span>$</span>
+                <span class = "price_text_number" value = "2.49">2.49</span>
+              </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button">Add to cart</button>
+              <button class = "cart_button" id = "original" onclick="addtoCart(this, id)">Add to cart</button>
             </div>
           </div>
         </div>
@@ -146,11 +147,11 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select">
-                <option value="0">Keep original</option>
+              <select class = "glaze_select" onchange="glazingChange(this)">
+                <!-- <option value="0">Keep original</option>
                 <option value="1">Sugar milk</option>
                 <option value="2">Vanilla milk</option>
-                <option value="3">Double chocolate</option>
+                <option value="3">Double chocolate</option> -->
               </select>
             </div>
           </div>
@@ -164,22 +165,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" checked = "checked" />
-                  <span class="new_quantity_button">1</span>
+                  <span class="new_quantity_button radio-1"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" />
-                  <span class="new_quantity_button">3</span>
+                  <span class="new_quantity_button radio-3"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" />
-                  <span class="new_quantity_button">6</span>
+                  <span class="new_quantity_button radio-6"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" />
-                  <span class="new_quantity_button">12</span>
+                  <span class="new_quantity_button radio-12"></span>
                 </label>
 
               </div>
@@ -218,10 +219,10 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select">
-                <option value="0">Keep original</option>
+                <!-- <option value="0">Keep original</option>
                 <option value="1">Sugar milk</option>
                 <option value="2">Vanilla milk</option>
-                <option value="3">Double chocolate</option>
+                <option value="3">Double chocolate</option> -->
               </select>
             </div>
           </div>
@@ -235,22 +236,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" checked = "checked" />
-                  <span class="new_quantity_button">1</span>
+                  <span class="new_quantity_button radio-1"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" />
-                  <span class="new_quantity_button">3</span>
+                  <span class="new_quantity_button radio-3"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" />
-                  <span class="new_quantity_button">6</span>
+                  <span class="new_quantity_button radio-6"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" />
-                  <span class="new_quantity_button">12</span>
+                  <span class="new_quantity_button radio-12"></span>
                 </label>
 
               </div>
@@ -292,10 +293,10 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select">
-                <option value="0">Keep original</option>
+                <!-- <option value="0">Keep original</option>
                 <option value="1">Sugar milk</option>
                 <option value="2">Vanilla milk</option>
-                <option value="3">Double chocolate</option>
+                <option value="3">Double chocolate</option> -->
               </select>
             </div>
           </div>
@@ -309,22 +310,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" checked = "checked" />
-                  <span class="new_quantity_button">1</span>
+                  <span class="new_quantity_button radio-1"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" />
-                  <span class="new_quantity_button">3</span>
+                  <span class="new_quantity_button radio-3"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" />
-                  <span class="new_quantity_button">6</span>
+                  <span class="new_quantity_button radio-6"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" />
-                  <span class="new_quantity_button">12</span>
+                  <span class="new_quantity_button radio-12"></span>
                 </label>
 
               </div>
@@ -363,10 +364,10 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select">
-                <option value="0">Keep original</option>
+                <!-- <option value="0">Keep original</option>
                 <option value="1">Sugar milk</option>
                 <option value="2">Vanilla milk</option>
-                <option value="3">Double chocolate</option>
+                <option value="3">Double chocolate</option> -->
               </select>
             </div>
           </div>
@@ -380,22 +381,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" checked = "checked" />
-                  <span class="new_quantity_button">1</span>
+                  <span class="new_quantity_button radio-1"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" />
-                  <span class="new_quantity_button">3</span>
+                  <span class="new_quantity_button radio-3"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" />
-                  <span class="new_quantity_button">6</span>
+                  <span class="new_quantity_button radio-6"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" />
-                  <span class="new_quantity_button">12</span>
+                  <span class="new_quantity_button radio-12"></span>
                 </label>
 
               </div>
@@ -433,10 +434,10 @@
             </div>
             <div class = "item option">
               <select class = "glaze_select">
-                <option value="0">Keep original</option>
+                <!-- <option value="0">Keep original</option>
                 <option value="1">Sugar milk</option>
                 <option value="2">Vanilla milk</option>
-                <option value="3">Double chocolate</option>
+                <option value="3">Double chocolate</option> -->
               </select>
             </div>
           </div>
@@ -450,22 +451,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" checked = "checked" />
-                  <span class="new_quantity_button">1</span>
+                  <span class="new_quantity_button radio-1"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" />
-                  <span class="new_quantity_button">3</span>
+                  <span class="new_quantity_button radio-3"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" />
-                  <span class="new_quantity_button">6</span>
+                  <span class="new_quantity_button radio-6"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" />
-                  <span class="new_quantity_button">12</span>
+                  <span class="new_quantity_button radio-12"></span>
                 </label>
 
               </div>
