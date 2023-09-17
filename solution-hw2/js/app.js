@@ -220,13 +220,20 @@ base_rolls = [
 
 // }]
 
-function glazingChange(element, id) {
+function glazingChange(element) {
   // console.log(rolls[0]);
-
+  let id = element.id;
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
   let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == id);
   console.log(roll_to_change);
-  roll_to_change.rollglazing = element;
+  console.log("element", element, element.options);
+
+  // Used this to help understand how to get text content of selected option
+  // https://stackoverflow.com/questions/610336/retrieving-the-text-of-the-selected-option-in-select-element
+  let glazingchoice = glazes.find((glaze_object) => glaze_object.name == element.options[element.selectedIndex].textContent);
+  console.log("choice",glazingchoice);
+  roll_to_change.rollglazing = glazingchoice;
+  console.log("changed", roll_to_change);
 
   // let selecteditem = id;
   // console.log(selecteditem.id)
@@ -257,7 +264,7 @@ function glazingChange(element, id) {
   let new_price = ((parseFloat(base_price) + parseFloat(priceChange)) * parseFloat(current_quantity_price_adjust)).toFixed(2);
   console.log("new", new_price)
 
-
+  
 
   // document.querySelector(`.price_text_number`).value = new_price;
   document.querySelector(`.price_text_number`).textContent = new_price;
@@ -272,7 +279,9 @@ function glazingChange(element, id) {
     // add your code to do update the price ...
   }
 
-function quantityChange(element, id) {
+function quantityChange(element) {
+  let id = element.id;
+  // console.log("id",new_id);
   let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == id);
   console.log(roll_to_change);
 
@@ -315,7 +324,13 @@ function quantityChange(element, id) {
 
 let cart = [];
 
-function addtoCart(element, id) {
+function removeVisibility (element){
+  element.classList.remove('cart_pop_up_visibility_visible')
+}
+
+function addtoCart(element) {
+  let id = element.id;
+
   console.log("ref1", element, id);
   let roll_to_add = rolls.find((roll_object) => roll_object.rollelementID == id);
   let roll_to_add_base = base_rolls.find((roll_object) => roll_object.rollelementID == `${id}_base`);
@@ -328,22 +343,36 @@ function addtoCart(element, id) {
   cart.push(cart_roll);
   console.log("cart",cart);
 
+  document.querySelector(`.cart-pop_up-type`).textContent = `${cart_roll.rolltype}`;
+  document.querySelector(`.cart-pop_up-glaze`).textContent = `${cart_roll.rollglazing.name}`;
+  document.querySelector(`.cart-pop_up-pack`).textContent = `Pack of ${cart_roll.rollpackSize.name}`;
+  document.querySelector(`.cart-pop_up-price`).textContent = `Price $${cart_roll.rollprice}`;
+
+
   roll_to_add.rollprice = roll_to_add_base.rollprice;
   this.rollglazing = keepOriginal;
   this.rollpackSize = quantity1;
   console.log("roll_to_add",roll_to_add);
   console.log("actualobject",original_roll);
-
-  document.querySelector(`.cart-items-text`).textContent = `${cart.length} items`;
-
+  let item_text = "items";
+  if (cart.length == 1){
+    item_text = "item"
+  };
+  document.querySelector(`.cart-items-text`).textContent = `${cart.length} ${item_text}`;
+  console.log("cart2",cart);
   let cart_value = 0.00
   for (let added_item of cart){
     cart_value = (parseFloat(cart_value) + parseFloat(added_item.rollprice)).toFixed(2);
   }
-
   document.querySelector(`.cart-total-text`).textContent = `Total: $${cart_value}`;
 
-  
+  console.log("cartval",cart_value);
+  let popup = document.getElementById("cartpopUp");
+  popup.classList.add('cart_pop_up_visibility_visible')
+  console.log("pop",popup);
+  setTimeout(removeVisibility, 3000, popup)
+
+
   // reset roll by chnaging roll that was added to based roll
 
 }

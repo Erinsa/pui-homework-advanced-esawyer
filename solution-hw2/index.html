@@ -12,6 +12,7 @@
   </head>
 
   <body>
+
     
     <div class = "header">
 
@@ -31,6 +32,23 @@
                     CART
                 </div>
                 <div class = "cart-contents">
+                    <div class = "cart_pop_up" id = "cartpopUp">
+                      <div class = "cart-pop_up-added">
+                        Added to cart:
+                      </div>
+                      <div class = "cart-pop_up-type">
+                        Type:
+                      </div>
+                      <div class = "cart-pop_up-glaze">
+                        Glaze:
+                      </div>
+                      <div class = "cart-pop_up-pack">
+                        Pack
+                      </div>
+                      <div class = "cart-pop_up-price">
+                        Price
+                      </div>
+                    </div>
                     <div class = "cart-items-text">
                         0 items
                     </div>
@@ -76,7 +94,7 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "original" onchange="glazingChange(this, id)" >
+              <select class = "glaze_select" id = "original" onchange="glazingChange(this)" >
                 
               </select>
             </div>
@@ -91,22 +109,22 @@
               <div class = quantity_button_container >
                 <label class="quantity_buttons" >
                   <input type="radio" name="radio_1" checked = "checked"/>
-                  <span class="new_quantity_button radio-1" id = "original" onclick="quantityChange(this, id)" ></span>
+                  <span class="new_quantity_button radio-1" id = "original" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1"/>
-                  <span class="new_quantity_button radio-3" onclick="quantityChange(this, id)"></span>
+                  <span class="new_quantity_button radio-3" id = "original" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button radio-6" id = "original" onclick="quantityChange(this, id)"></span>
+                  <span class="new_quantity_button radio-6" id = "original" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button radio-12"  id = "original" onclick="quantityChange(this, id)"></span>
+                  <span class="new_quantity_button radio-12"  id = "original" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -123,7 +141,7 @@
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "original" onclick="addtoCart(this, id)">Add to cart</button>
+              <button class = "cart_button" id = "original" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>
