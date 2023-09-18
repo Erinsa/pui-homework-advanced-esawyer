@@ -208,12 +208,12 @@ function glazingChange(element) {
   // Gets id of particular selector (to tell which roll to update)
   // This reference helped understand how to get id value
   // https://stackoverflow.com/questions/3623110/how-can-i-get-an-elements-id-value-with-javascript
-  let id = element.id;
+  let roll_name = element.name;
 
   // Finds roll with matching id to selector
   // Used this as reference for the find method with arrays
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-  let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == id);
+  let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
 
   // Gets text content of option to associate it with glaze object in our array
   // Used this to help understand how to get text content of selected option
@@ -232,7 +232,7 @@ function glazingChange(element) {
   const current_quantity_price_change = roll_to_change.rollpackSize.value;
 
   // Getting base roll price for this type
-  let base_roll = base_rolls.find((base_roll_object) => base_roll_object.rollelementID == `${id}_base`);
+  let base_roll = base_rolls.find((base_roll_object) => base_roll_object.rollelementID == `${roll_name}_base`);
   const base_price = base_roll.rollprice;
 
   // Using helper function to calculate updated price
@@ -242,7 +242,7 @@ function glazingChange(element) {
   // Update price on client-facing page
   // Reference for getElementById
   // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
-  document.getElementById(`${id}_price_text_number`).textContent = new_price;
+  document.getElementById(`${roll_name}_price_text_number`).textContent = new_price;
 
   // Updating price for roll we are currently working with
   roll_to_change.rollprice = new_price;
@@ -256,10 +256,11 @@ function glazingChange(element) {
 function quantityChange(element) {
 
   // Gets id of particular radio button(to tell which roll to update)
-  let id = element.id;
+  let roll_name = element.getAttribute("name")
+  console.log("element", element, "roll_name", roll_name)
 
   // Finds roll with matching id to selector
-  let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == id);
+  let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
 
   // Gets value of quantity option to associate it with glaze object in our array
   let quantity_choice = quantities.find((quantity_object) => quantity_object.value == element.value);
@@ -276,14 +277,14 @@ function quantityChange(element) {
   const current_glazing_price_change = roll_to_change.rollglazing.value;
 
   // Getting base roll price for this type
-  let base_roll = base_rolls.find((base_roll_object) => base_roll_object.rollelementID == `${id}_base`);
+  let base_roll = base_rolls.find((base_roll_object) => base_roll_object.rollelementID == `${roll_name}_base`);
   const base_price = base_roll.rollprice;
 
   // Using helper function to calculate updated price
   let new_price = priceCalculator(base_price, current_glazing_price_change, quantity_price_change);
 
   // Update price on client-facing page
-  document.getElementById(`${id}_price_text_number`).textContent = new_price;
+  document.getElementById(`${roll_name}_price_text_number`).textContent = new_price;
 
   // Updating price for roll we are currently working with
   roll_to_change.rollprice = new_price;
@@ -312,10 +313,10 @@ function removeVisibility (element){
 function addtoCart(element) {
 
   // Gets id of particular add to cart button (to tell which roll to update)
-  let id = element.id;
+  let roll_name = element.name;
 
   // Finds roll with matching id to button
-  let roll_to_add = rolls.find((roll_object) => roll_object.rollelementID == id);
+  let roll_to_add = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
 
   // Makes (functionally) a copy of the roll we want to add
   // In reality I make a new roll object and fill it with the values of our 

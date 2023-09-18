@@ -88,10 +88,10 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "original" onchange="glazingChange(this)" >
+              <select class = "glaze_select" name = "original" onchange="glazingChange(this)" >
                 <!-- Used this for help with labels
                   https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Text_labels_and_names -->
-                <optgroup label="Glazing Options">
+                <optgroup label="Glazing Options" hidden = "hidden">
                 </optgroup>
               </select>
             </div>
@@ -108,22 +108,22 @@
               <div class = quantity_button_container >
                 <label class="quantity_buttons" >
                   <input type="radio" name="radio_1" checked = "checked"/>
-                  <span class="new_quantity_button radio-1" id = "original" onclick="quantityChange(this)" ></span>
+                  <span class="new_quantity_button radio-1" name = "original" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1"/>
-                  <span class="new_quantity_button radio-3" id = "original" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-3" name = "original" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button radio-6" id = "original" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-6" name = "original" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_1" />
-                  <span class="new_quantity_button radio-12"  id = "original" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-12"  name = "original" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -135,12 +135,12 @@
               <div class = "price_text">
                 <p>
                   <span>$</span>
-                  <span class = "price_text_number" id = "original_price_text_number" value = "2.49">2.49</span>
+                  <span class = "price_text_number" id = "original_price_text_number">2.49</span>
                 </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "original" onclick="addtoCart(this)">Add to cart</button>
+              <button class = "cart_button" name = "original" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>
@@ -164,8 +164,8 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "apple" onchange="glazingChange(this)">
-                <optgroup label="Glazing Options">
+              <select class = "glaze_select" name = "apple" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options" hidden = "hidden">
                 </optgroup>
               </select>
             </div>
@@ -180,22 +180,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" checked = "checked" />
-                  <span class="new_quantity_button radio-1" id = "apple" onclick="quantityChange(this)" ></span>
+                  <span class="new_quantity_button radio-1" name = "apple" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" />
-                  <span class="new_quantity_button radio-3" id = "apple" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-3" name = "apple" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" />
-                  <span class="new_quantity_button radio-6" id = "apple" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-6" name = "apple" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_2" />
-                  <span class="new_quantity_button radio-12"  id = "apple" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-12"  name = "apple" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -207,12 +207,12 @@
               <div class = "price_text" id = "apple_price_text">
                 <p>
                   <span>$</span>
-                  <span class = "price_text_number" id = "apple_price_text_number" value = "3.49">3.49</span>
+                  <span class = "price_text_number" id = "apple_price_text_number">3.49</span>
                 </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "apple" onclick="addtoCart(this)">Add to cart</button>
+              <button class = "cart_button" name = "apple" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>
@@ -236,8 +236,8 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "raisin" onchange="glazingChange(this)">
-                <optgroup label="Glazing Options">
+              <select class = "glaze_select" name = "raisin" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options" hidden = "hidden">
                 </optgroup>
               </select>
             </div>
@@ -252,22 +252,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" checked = "checked" />
-                  <span class="new_quantity_button radio-1" id = "raisin" onclick="quantityChange(this)" ></span>
+                  <span class="new_quantity_button radio-1" name = "raisin" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" />
-                  <span class="new_quantity_button radio-3" id = "raisin" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-3" name = "raisin" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" />
-                  <span class="new_quantity_button radio-6" id = "raisin" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-6" name = "raisin" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_3" />
-                  <span class="new_quantity_button radio-12"  id = "raisin" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-12"  name = "raisin" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -279,12 +279,12 @@
               <div class = "price_text">
                 <p>
                   <span>$</span>
-                  <span class = "price_text_number" id = "raisin_price_text_number" value = "2.99">2.99</span>
+                  <span class = "price_text_number" id = "raisin_price_text_number">2.99</span>
                 </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "raisin" onclick="addtoCart(this)">Add to cart</button>
+              <button class = "cart_button" name = "raisin" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>  
@@ -311,8 +311,8 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "walnut" onchange="glazingChange(this)">
-                <optgroup label="Glazing Options">
+              <select class = "glaze_select" name = "walnut" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options" hidden = "hidden">
                 </optgroup>
               </select>
             </div>
@@ -327,22 +327,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" checked = "checked" />
-                  <span class="new_quantity_button radio-1" id = "walnut" onclick="quantityChange(this)" ></span>
+                  <span class="new_quantity_button radio-1" name = "walnut" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" />
-                  <span class="new_quantity_button radio-3" id = "walnut" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-3" name = "walnut" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" />
-                  <span class="new_quantity_button radio-6" id = "walnut" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-6" name = "walnut" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_4" />
-                  <span class="new_quantity_button radio-12"  id = "walnut" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-12"  name = "walnut" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -354,12 +354,12 @@
               <div class = "price_text">
                 <p>
                   <span>$</span>
-                  <span class = "price_text_number" id = "walnut_price_text_number" value = "3.49">3.49</span>
+                  <span class = "price_text_number" id = "walnut_price_text_number">3.49</span>
                 </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "walnut" onclick="addtoCart(this)">Add to cart</button>
+              <button class = "cart_button" name = "walnut" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>
@@ -383,8 +383,8 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "doublechocolate" onchange="glazingChange(this)">
-                <optgroup label="Glazing Options">
+              <select class = "glaze_select" name = "doublechocolate" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options" hidden = "hidden">
                 </optgroup>
               </select>
             </div>
@@ -399,22 +399,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" checked = "checked" />
-                  <span class="new_quantity_button radio-1" id = "doublechocolate" onclick="quantityChange(this)" ></span>
+                  <span class="new_quantity_button radio-1" name = "doublechocolate" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" />
-                  <span class="new_quantity_button radio-3" id = "doublechocolate" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-3" name = "doublechocolate" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" />
-                  <span class="new_quantity_button radio-6" id = "doublechocolate" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-6" name = "doublechocolate" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_5" />
-                  <span class="new_quantity_button radio-12"  id = "doublechocolate" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-12"  name = "doublechocolate" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -426,12 +426,12 @@
               <div class = "price_text">
                 <p>
                   <span>$</span>
-                  <span class = "price_text_number" id = "doublechocolate_price_text_number" value = "3.99">3.99</span>
+                  <span class = "price_text_number" id = "doublechocolate_price_text_number">3.99</span>
                 </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "doublechocolate" onclick="addtoCart(this)">Add to cart</button>
+              <button class = "cart_button" name = "doublechocolate" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>  
@@ -454,8 +454,8 @@
               <p>Glazing:</p>
             </div>
             <div class = "item option">
-              <select class = "glaze_select" id = "strawberry" onchange="glazingChange(this)">
-                <optgroup label="Glazing Options">
+              <select class = "glaze_select" name = "strawberry" onchange="glazingChange(this)">
+                <optgroup label="Glazing Options" hidden = "hidden">
                 </optgroup>
               </select>
             </div>
@@ -470,22 +470,22 @@
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" checked = "checked" />
-                  <span class="new_quantity_button radio-1" id = "strawberry" onclick="quantityChange(this)" ></span>
+                  <span class="new_quantity_button radio-1" name = "strawberry" onclick="quantityChange(this)" ></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" />
-                  <span class="new_quantity_button radio-3" id = "strawberry" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-3" name = "strawberry" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" />
-                  <span class="new_quantity_button radio-6" id = "strawberry" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-6" name = "strawberry" onclick="quantityChange(this)"></span>
                 </label>
 
                 <label class="quantity_buttons">
                   <input type="radio" name="radio_6" />
-                  <span class="new_quantity_button radio-12"  id = "strawberry" onclick="quantityChange(this)"></span>
+                  <span class="new_quantity_button radio-12"  name = "strawberry" onclick="quantityChange(this)"></span>
                 </label>
 
               </div>
@@ -497,12 +497,12 @@
               <div class = "price_text">
                 <p>
                   <span>$</span>
-                  <span class = "price_text_number" id = "strawberry_price_text_number" value = "3.99">3.99</span>
+                  <span class = "price_text_number" id = "strawberry_price_text_number">3.99</span>
                 </p>
               </div>
             </div>
             <div class = "item option">
-              <button class = "cart_button" id = "strawberry" onclick="addtoCart(this)">Add to cart</button>
+              <button class = "cart_button" name = "strawberry" onclick="addtoCart(this)">Add to cart</button>
             </div>
           </div>
         </div>  
