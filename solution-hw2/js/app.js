@@ -205,10 +205,10 @@ function priceCalculator (base_price, glaze_price_adjust, quantity_price_adjust)
 // Params:
 // element: comes from what's interacted with
 function glazingChange(element) {
-  // Gets name of particular selector (to tell which roll to update)
-  // This reference helped understand how to get name value
+  // Gets title of particular selector (to tell which roll to update)
+  // This reference helped understand how to get name value (then applied to title)
   // https://stackoverflow.com/questions/11020274/get-name-of-form-element
-  let roll_name = element.name;
+  let roll_name = element.getAttribute("title")
 
   // Finds roll with matching name to selector
   // Used this as reference for the find method with arrays
@@ -255,8 +255,8 @@ function glazingChange(element) {
 // element: comes from what's interacted with
 function quantityChange(element) {
 
-  // Gets name of particular radio button(to tell which roll to update)
-  let roll_name = element.getAttribute("name")
+  // Gets title of particular radio button(to tell which roll to update)
+  let roll_name = element.getAttribute("title")
 
   // Finds roll with matching id to selector
   let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
@@ -312,7 +312,7 @@ function removeVisibility (element){
 function addtoCart(element) {
 
   // Gets id of particular add to cart button (to tell which roll to update)
-  let roll_name = element.name;
+  let roll_name = element.getAttribute("title");
 
   // Finds roll with matching id to button
   let roll_to_add = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
