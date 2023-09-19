@@ -205,12 +205,12 @@ function priceCalculator (base_price, glaze_price_adjust, quantity_price_adjust)
 // Params:
 // element: comes from what's interacted with
 function glazingChange(element) {
-  // Gets id of particular selector (to tell which roll to update)
-  // This reference helped understand how to get id value
-  // https://stackoverflow.com/questions/3623110/how-can-i-get-an-elements-id-value-with-javascript
+  // Gets name of particular selector (to tell which roll to update)
+  // This reference helped understand how to get name value
+  // https://stackoverflow.com/questions/11020274/get-name-of-form-element
   let roll_name = element.name;
 
-  // Finds roll with matching id to selector
+  // Finds roll with matching name to selector
   // Used this as reference for the find method with arrays
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
   let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
@@ -255,9 +255,8 @@ function glazingChange(element) {
 // element: comes from what's interacted with
 function quantityChange(element) {
 
-  // Gets id of particular radio button(to tell which roll to update)
+  // Gets name of particular radio button(to tell which roll to update)
   let roll_name = element.getAttribute("name")
-  console.log("element", element, "roll_name", roll_name)
 
   // Finds roll with matching id to selector
   let roll_to_change = rolls.find((roll_object) => roll_object.rollelementID == roll_name);
