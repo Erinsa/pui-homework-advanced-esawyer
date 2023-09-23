@@ -15,7 +15,7 @@ class RollCard extends Component {
 
             <div> 
             <figure>
-                <img class = "product_image" src= {this.props.roll_img_src} width = "200" alt = "original cinnamon roll" />
+                <img class = "product_image" src= {this.props.roll_img_src} width = "200" alt = {this.props.roll_img_alt} />
                 <figcaption>{this.props.roll_figcaption}</figcaption>
             </figure>
             </div>

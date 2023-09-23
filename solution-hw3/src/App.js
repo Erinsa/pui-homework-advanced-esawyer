@@ -39,31 +39,37 @@ class App extends Component {
             roll_img_src: "assets/products/original-cinnamon-roll.jpg",
             roll_figcaption: "Original cinnamon roll",
             roll_price: "2.49",
+            roll_img_alt: "Picture of original cinnamon roll"
           },
           {
             roll_img_src: "assets/products/apple-cinnamon-roll.jpg",
             roll_figcaption: "Apple cinnamon roll",
             roll_price: "3.49",
+            roll_img_alt: "Picture of apple cinnamon roll"
           },
           {
-            roll_img_src: "assets/products/Raisin-cinnamon-roll.jpg",
+            roll_img_src: "assets/products/raisin-cinnamon-roll.jpg",
             roll_figcaption: "Raisin cinnamon roll",
             roll_price: "2.99",
+            roll_img_alt: "Picture of raisin cinnamon roll"
           },
           {
-            roll_img_src: "assets/products/Walnut-cinnamon-roll.jpg",
+            roll_img_src: "assets/products/walnut-cinnamon-roll.jpg",
             roll_figcaption: "Walnut cinnamon roll",
             roll_price: "3.49",
+            roll_img_alt: "Picture of walnut cinnamon roll"
           },
           {
             roll_img_src: "assets/products/double-chocolate-cinnamon-roll.jpg",
             roll_figcaption: "Double-chocolate cinnamon roll",
             roll_price: "3.99",
+            roll_img_alt: "Picture of double chocolate cinnamon roll"
           },
           {
-            roll_img_src: "assets/products/Strawberry-cinnamon-roll.jpg",
+            roll_img_src: "assets/products/strawberry-cinnamon-roll.jpg",
             roll_figcaption: "Strawberry cinnamon roll",
             roll_price: "3.99",
+            roll_img_alt: "Picture of strawberry cinnamon roll"
           }
         //   {
         //     imageURL: "assets/warhol-orangutan.png" ,
@@ -141,17 +147,20 @@ class App extends Component {
               <RollCard
                 cardIndex={0}
                 roll_img_src={this.state.notecardData[0].roll_img_src}
+                roll_img_alt={this.state.notecardData[0].roll_img_alt}
                 roll_figcaption={this.state.notecardData[0].roll_figcaption}
                 roll_price={this.state.notecardData[0].roll_price}/>
 
               <RollCard
                 cardIndex={1}
                 roll_img_src={this.state.notecardData[1].roll_img_src}
+                roll_img_alt={this.state.notecardData[1].roll_img_alt}
                 roll_figcaption={this.state.notecardData[1].roll_figcaption}
                 roll_price={this.state.notecardData[1].roll_price}/>
               <RollCard
                 cardIndex={2}
                 roll_img_src={this.state.notecardData[2].roll_img_src}
+                roll_img_alt={this.state.notecardData[2].roll_img_alt}
                 roll_figcaption={this.state.notecardData[2].roll_figcaption}
                 roll_price={this.state.notecardData[2].roll_price}/>
             </div>
@@ -159,16 +168,19 @@ class App extends Component {
               <RollCard
                   cardIndex={3}
                   roll_img_src={this.state.notecardData[3].roll_img_src}
+                  roll_img_alt={this.state.notecardData[3].roll_img_alt}
                   roll_figcaption={this.state.notecardData[3].roll_figcaption}
                   roll_price={this.state.notecardData[3].roll_price}/>
                 <RollCard
                   cardIndex={4}
                   roll_img_src={this.state.notecardData[4].roll_img_src}
+                  roll_img_alt={this.state.notecardData[4].roll_img_alt}
                   roll_figcaption={this.state.notecardData[4].roll_figcaption}
                   roll_price={this.state.notecardData[4].roll_price}/>
                 <RollCard
                   cardIndex={5}
                   roll_img_src={this.state.notecardData[5].roll_img_src}
+                  roll_img_alt={this.state.notecardData[5].roll_img_alt}
                   roll_figcaption={this.state.notecardData[5].roll_figcaption}
                   roll_price={this.state.notecardData[5].roll_price}/>
 
