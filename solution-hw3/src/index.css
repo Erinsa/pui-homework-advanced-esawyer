@@ -147,7 +147,7 @@ https://www.w3schools.com/cssref/sel_hover.php */
   /* background-color: aqua; */
 }
 
-#notecard-list {
+#rollcard-list {
   width: calc(100% - 100px);
   display: flex;
   flex-direction: row;
