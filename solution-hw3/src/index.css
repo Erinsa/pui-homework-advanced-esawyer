@@ -144,7 +144,7 @@ https://www.w3schools.com/cssref/sel_hover.php */
   justify-content: center;
   align-items: center;
   /* padding: 75px 75px 0px; */
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 #notecard-list {
@@ -154,7 +154,7 @@ https://www.w3schools.com/cssref/sel_hover.php */
   justify-content: space-between;
   align-items: flex-start;
   padding: 75px 0px 0px;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
 
 /* the basis of the product cards - section is its flex parent and it is also a flex container */
@@ -165,7 +165,7 @@ article {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-  background-color: brown;
+  /* background-color: brown; */
   text-align: left;
 }
 
