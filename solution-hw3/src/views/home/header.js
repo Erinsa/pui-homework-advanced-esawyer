@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import './header.css';
 
-class HeaderChunk extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {};    
@@ -14,25 +14,25 @@ class HeaderChunk extends Component {
       
       <div className = "header">
 
-        <div class = "logo">
-          <img src= "assets/logo/logo-01.svg" width = "400" alt = "Bun Bun bakeshop logo" />
+        <div className = "logo">
+          <img src = "assets/logo/logo-01.svg" width = "400" alt = "Bun Bun bakeshop logo" />
         </div>
 
-        <div class = "header-right">
+        <div className = "header-right">
 
-          <div class = "header-nav">
-            <div class = "product">
-              <a href="#products_page" class = "product_link">PRODUCTS</a>
+          <div className = "header-nav">
+            <div className = "product">
+              <a href = "#products_page" className = "product_link">PRODUCTS</a>
             </div>
-            <div class = "cart">
-              CART
+            <div className = "cart">
+              <a href = "" className = "cart_link">CART</a>
             </div>
           </div>
 
-          <hr class="horizontal_line" />
+          <hr className = "horizontal_line" />
 
-          <div class = "slogan_box">
-            <div class = "slogan">
+          <div className = "slogan_box">
+            <div className = "slogan">
               Our hand-made cinnamon rolls
             </div>
           </div>
@@ -45,4 +45,4 @@ class HeaderChunk extends Component {
   }
 }
 
-export default HeaderChunk;
+export default Header;

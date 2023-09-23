@@ -16,19 +16,19 @@ class RollCard extends Component {
 
             <div> 
                 <figure>
-                    <img class = "product_image" src= {this.props.roll_img_src} width = "200" alt = {this.props.roll_img_alt} />
+                    <img className = "product_image" src = {this.props.roll_img_src} width = "200" alt = {this.props.roll_img_alt} />
                     <figcaption>{this.props.roll_figcaption}</figcaption>
                 </figure>
             </div>
 
-            <div class = "outer">
+            <div className = "outer">
 
-                <div class = "row">
-                    <div class = "item text">
+                <div className = "row">
+                    <div className = "item text">
                         <p>Glazing:</p>
                     </div>
-                    <div class = "item option">
-                        <select class = "glaze_select">
+                    <div className = "item option">
+                        <select className = "glaze_select">
                             <option value="0">Keep original</option>
                             <option value="1">Sugar milk</option>
                             <option value="2">Vanilla milk</option>
@@ -37,46 +37,46 @@ class RollCard extends Component {
                     </div>
                 </div>
 
-                <div class = "row">
-                    <div class = "item text">
+                <div className = "row">
+                    <div className = "item text">
                         <p>Pack size:</p>
                     </div>
-                    <div class = "item option">
-                        <div class = "quantity_button_container">
+                    <div className = "item option">
+                        <div className = "quantity_button_container">
 
                             {/*Used this to help troubleshoot glicth due to using checked as an attribute: https://stackoverflow.com/questions/48423061/radio-buttons-need-to-click-twice-to-reflect-change */}
-                            <label class="quantity_buttons">
-                            <input type="radio" name= {`radio_${this.props.cardIndex}`} defaultChecked = "checked" />
-                            <span class="new_quantity_button">1</span>
+                            <label className = "quantity_buttons">
+                            <input type = "radio" name = {`radio_${this.props.cardIndex}`} defaultChecked = "checked" />
+                            <span className ="new_quantity_button">1</span>
                             </label>
 
-                            <label class="quantity_buttons">
-                            <input type="radio" name= {`radio_${this.props.cardIndex}`}/>
-                            <span class="new_quantity_button">3</span>
+                            <label className ="quantity_buttons">
+                            <input type = "radio" name = {`radio_${this.props.cardIndex}`}/>
+                            <span className ="new_quantity_button">3</span>
                             </label>
 
-                            <label class="quantity_buttons">
+                            <label className ="quantity_buttons">
+                            <input type = "radio" name = {`radio_${this.props.cardIndex}`} />
+                            <span className ="new_quantity_button">6</span>
+                            </label>
+
+                            <label className ="quantity_buttons">
                             <input type="radio" name= {`radio_${this.props.cardIndex}`} />
-                            <span class="new_quantity_button">6</span>
-                            </label>
-
-                            <label class="quantity_buttons">
-                            <input type="radio" name= {`radio_${this.props.cardIndex}`} />
-                            <span class="new_quantity_button">12</span>
+                            <span className ="new_quantity_button">12</span>
                             </label>
 
                         </div>
                     </div>
                 </div>
 
-                <div class = "row">
-                    <div class = "item text">
-                        <div class = "price_text">
+                <div className = "row">
+                    <div className = "item text">
+                        <div className = "price_text">
                             <p>{`$ ${this.props.roll_price}`}</p>
                         </div>
                     </div>
-                    <div class = "item option">
-                        <button class = "cart_button">Add to cart</button>
+                    <div className = "item option">
+                        <button className = "cart_button">Add to cart</button>
                     </div>
                 </div>
 

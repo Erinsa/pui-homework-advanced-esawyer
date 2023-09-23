@@ -86,3 +86,8 @@ https://www.w3schools.com/cssref/sel_hover.php */
     font-weight: bold;
     background-color: yellow;
 }
+
+.cart_link {
+    color: black;
+    text-decoration: none;
+}

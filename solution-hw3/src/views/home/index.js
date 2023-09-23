@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import RollCard from './rollcard.js';
-import HeaderChunk from './header.js';
+import Header from './header.js';
 
 class HomePage extends Component {
   constructor(props) {
@@ -55,14 +55,14 @@ class HomePage extends Component {
 
       <div className = "HomePage">
 
-        <div id ="container">
+        <div id = "container">
 
-          <div class = "header_stuff">
-            <HeaderChunk/>
+          <div className = "header_holder">
+            <Header/>
           </div>
 
-          <div class = "section" id = "products_page">
-            <div id="rollcard-list"> 
+          <div className = "section" id = "products_page">
+            <div id = "rollcard-list"> 
               <RollCard
                 cardIndex = {0}
                 roll_img_src = {this.state.rollcardData[0].roll_img_src}
@@ -83,7 +83,7 @@ class HomePage extends Component {
                 roll_price = {this.state.rollcardData[2].roll_price}/>
             </div>
 
-            <div id="rollcard-list"> 
+            <div id = "rollcard-list"> 
               <RollCard
                   cardIndex = {3}
                   roll_img_src = {this.state.rollcardData[3].roll_img_src}
