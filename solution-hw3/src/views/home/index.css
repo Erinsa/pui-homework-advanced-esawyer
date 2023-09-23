@@ -1,0 +1,63 @@
+/* Generally used the following order within styling throughout
+width
+height
+display
+position
+flex
+direction
+wrap
+justify-content
+align-content
+align-items
+column-gap
+font-family
+font-size
+font-weight
+padding
+border
+margin
+color
+background-color
+opacity
+cursor
+anything else */
+
+/* for flex boxes and alignment throughout I used the following references
+I'm not citing specific examples because I combined learnings from many of them 
+and built upon that learning as I progressed through the assignment. 
+I didn't necessarily used specific code chunks for a specific section */
+/* https://www.w3schools.com/css/css3_flexbox.asp
+https://css-tricks.com/guides/
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes
+https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween
+https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-container  */
+
+/* Got this from css lecture */
+* {
+  box-sizing: border-box;
+}
+
+/* Referenced css lecture */
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 50px;
+  color: black;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#rollcard-list {
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 75px 0px 0px;
+}
