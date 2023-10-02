@@ -25,6 +25,7 @@ anything else */
 /* the basis of the product cards - section is its flex parent and it is also a flex container */
 .roll_card {
     width:275px;
+    /* width: calc((100% - 100px) / 3); */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
