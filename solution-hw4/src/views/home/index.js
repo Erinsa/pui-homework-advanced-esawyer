@@ -72,7 +72,7 @@ class HomePage extends Component {
         }
       ],
       popUpVisible: false,
-      totalPrice: 0.00,
+      totalPrice: "0.00",
       totalItems: 0,
       totalItemsText: " items",
       cart_roll_type: "Original",

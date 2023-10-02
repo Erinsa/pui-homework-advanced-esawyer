@@ -35,6 +35,7 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
 /* Got this from css lecture */
 * {
   box-sizing: border-box;
+  max-width: 1200px;
 }
 
 /* Referenced css lecture */
