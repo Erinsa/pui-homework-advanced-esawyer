@@ -6,30 +6,17 @@ import './header.css';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // popUpVisible: false
-    };    
-    // this.togglePopUp = this.togglePopUp.bind(this);
+    this.state = {};    
   }
 
-  // togglePopUp() {
-  //   this.setState({
-  //     popUpVisible: !this.state.popUpVisible
-  //   })
-  // }
-
-
   render() {
-
     let popupClass = 'cart_pop_up';
-
-      if (this.state.popUpVisible) {
+      if (this.props.popUpVisible) {
         popupClass += ' cart_pop_up_visibility_visible';
       }
 
     return (
 
-      
       <div className = "header">
 
         <div className = "logo">
@@ -39,6 +26,7 @@ class Header extends Component {
         <div className = "header-right">
 
           <div className = "header-nav">
+
             <div className = "product">
               <a href = "#products_page" className = "product_link">PRODUCTS</a>
             </div>
@@ -46,34 +34,29 @@ class Header extends Component {
             <div className = "cart-box">
               <a href = "" className = "cart_link">CART</a>
               <div className = "cart-contents">
-                  {/* <div className = {popupClass} id = "cartpopUp">
-                    <div className = "cart-pop_up-added">
-                      Added to cart:
-                    </div>
-                    <div className = "cart-pop_up-type"></div>
-                    <div className = "cart-pop_up-glaze"></div>
-                    <div className = "cart-pop_up-pack"></div>
-                    <div className = "cart-pop_up-price"></div>
-                  </div> */}
-                  <div className = "cart-items-text">
-                      {/* 0 items */}
-                      {/* {`${this.props.totalItems}`+ " items"} */}
-                      {`${this.props.totalItems}`+ `${this.props.totalItemsText}`}
+
+                <div className = {popupClass} id = "cartpopUp">
+                  <div className = "cart-pop_up-added">
+                    Added to cart:
                   </div>
-                  <div className = "cart-total-text">
-                    {/* Total: {this.state.totalPrice} */}
-                    {/* {"Total: "+ `${this.state.totalPrice}`} */}
-                    {"Total: "+ `${this.props.totalPrice}`}
-                    {/* {`$ ${this.props.roll_price}`} */}
-                  </div>
+                  <div className = "cart-pop_up-type">{`${this.props.cart_roll_type}` + " cinnamon roll"}</div>
+                  <div className = "cart-pop_up-glaze">{`${this.props.cart_roll_glazing}` + " glazing"}</div>
+                  <div className = "cart-pop_up-pack">{"Pack of " + `${this.props.cart_roll_pack}`}</div>
+                  <div className = "cart-pop_up-price">{"Price " + `${this.props.cart_roll_price}`}</div>
+                </div>
+
+                <div className = "cart-items-text">
+                    {`${this.props.totalItems}`+ `${this.props.totalItemsText}`}
+                </div>
+
+                <div className = "cart-total-text">
+                  {"Total: "+ `${this.props.totalPrice}`}
+                </div>
+
               </div>
             </div>
 
-            {/* <div className = "cart">
-              <a href = "" className = "cart_link">CART</a>
-            </div> */}
           </div>
-
 
           <hr className = "horizontal_line" />
 
@@ -83,9 +66,9 @@ class Header extends Component {
             </div>
           </div>
 
+        </div>
+        
       </div>
-
-    </div>
 
     );
   }
