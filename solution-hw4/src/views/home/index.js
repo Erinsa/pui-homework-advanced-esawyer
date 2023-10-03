@@ -86,21 +86,20 @@ class HomePage extends Component {
 
   }
 
+  // This function helps us calculate the price based on the given formula
   priceCalculator (base_price, glazing, quantity) {
     const glazes = {"Keep original": 0.00, "Sugar milk": 0.00, "Vanilla milk": 0.50, "Double chocolate": 1.50};
     const quantities = {"1": 1, "3": 3, "6": 5, "12": 10};
-    console.log("glazing", glazing)
     let glaze_price_adjust = glazes[glazing];
     let quantity_price_adjust = quantities[quantity];
     let new_price = ((parseFloat(base_price) + parseFloat(glaze_price_adjust)) * parseFloat(quantity_price_adjust)).toFixed(2);
     return new_price;
   }
 
+  // This function helps us handle what needs to happen (price change, etc) when a different glaze is selected 
   glazeChangeSelectorHandler = (event, cardIndex) => {
-    console.log("backlog2", this.state.cart_list);
     let selectValue = event.target.value;
     let newRollData = this.state.rollcardData;
-    console.log("index", cardIndex)
     newRollData[cardIndex].roll_glazing = selectValue;
     let new_price = this.priceCalculator (newRollData[cardIndex].roll_base_price, newRollData[cardIndex].roll_glazing, newRollData[cardIndex].roll_pack_size);
     newRollData[cardIndex].roll_price = new_price;
@@ -110,10 +109,10 @@ class HomePage extends Component {
     }))
   };
 
-  quantityChangeSelectorHandler = (event, cardIndex) => {
+  // This function helps us handle what needs to happen (price change, etc) when a different quantity is selected 
+  quantityChangeHandler = (event, cardIndex) => {
     let buttonValue = event.target.value;
     let newRollData = this.state.rollcardData;
-    console.log("index", cardIndex)
     newRollData[cardIndex].roll_pack_size = buttonValue;
     let new_price = this.priceCalculator (newRollData[cardIndex].roll_base_price, newRollData[cardIndex].roll_glazing, newRollData[cardIndex].roll_pack_size);
     newRollData[cardIndex].roll_price = new_price;
@@ -123,13 +122,22 @@ class HomePage extends Component {
     }))
   };
 
-  addToCartHandler = (event, cardIndex) => {
-    console.log("backlog", this.state.cart_list);
-    let newRoll = this.state.rollcardData[cardIndex];
-    this.state.cart_list.push(newRoll);
-    let item_count = this.state.cart_list.length;
-    let itemText = "";
+  // This function helps us handle what happens when a roll is added to the cart (store roll in cart list, etc)
+  addToCartHandler = (cardIndex) => {
+    const newRoll = this.state.rollcardData[cardIndex];
 
+    let newCartRoll = {
+      roll_base_price: newRoll.roll_base_price,
+      roll_price: newRoll.roll_price,
+      roll_type: newRoll.roll_type,
+      roll_glazing: newRoll.roll_glazing,
+      roll_pack_size: newRoll.roll_pack_size,
+    }
+    let newCartList = this.state.cart_list
+    newCartList.push(newCartRoll)
+
+    let item_count = newCartList.length;
+    let itemText = "";
     if (item_count == 1) {
       itemText = " item";
     } else {
@@ -138,18 +146,18 @@ class HomePage extends Component {
 
     this.setState(prevState => ({
       ...prevState,
-      cart_roll_type: this.state.rollcardData[cardIndex].roll_type,
-      cart_roll_glazing: this.state.rollcardData[cardIndex].roll_glazing,
-      cart_roll_pack: this.state.rollcardData[cardIndex].roll_pack_size,
-      cart_roll_price: this.state.rollcardData[cardIndex].roll_price,
-      totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(this.state.rollcardData[cardIndex].roll_price)).toFixed(2),
-      // totalItems: this.state.totalItems += 1,
+      cart_roll_type: newRoll.roll_type,
+      cart_roll_glazing: newRoll.roll_glazing,
+      cart_roll_pack: newRoll.roll_pack_size,
+      cart_roll_price: newRoll.roll_price,
+      cart_list: newCartList,
+      totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
       totalItems: item_count,
       totalItemsText: itemText,
-      // cart_list: this.state.cart_list.push(newRoll),
     }))
   };
 
+  // This function helps us adjust the visibility of the cart pop up
   togglePopUp() {
     this.setState({
       popUpVisible: true
@@ -170,6 +178,7 @@ class HomePage extends Component {
         <div id = "container">
 
           <div className = "header_holder">
+            {/* Used this for help better understanding parent and child components: https://medium.com/@livajorge7/introduction-9e84391f4b83#:~:text=The%20parent%20component%20can%20define%20a%20function%20and%20pass%20it,to%20maintain%2C%20and%20more%20flexible. */}
             <Header
             totalItems = {this.state.totalItems}
             totalItemsText = {this.state.totalItemsText}
@@ -192,16 +201,13 @@ class HomePage extends Component {
                   roll_img_src={rollcard.roll_img_src}
                   roll_img_alt={rollcard.roll_img_alt}
                   roll_figcaption={rollcard.roll_figcaption}
-                  // roll_price={this.state.roll_price}
-                  // roll_price= {this.priceCalculator(this, this.roll_base_price, this.roll_glazing, this.roll_pack_size)}
-                  // noteCategory={notecard.noteCategory}
                   roll_base_price={rollcard.roll_base_price}
                   roll_type={rollcard.roll_type}
                   roll_glazing={rollcard.roll_glazing}
                   roll_pack_size={rollcard.roll_pack_size}
                   roll_price= {this.priceCalculator(rollcard.roll_base_price, rollcard.roll_glazing, rollcard.roll_pack_size)}
                   onGlazeChange={this.glazeChangeSelectorHandler}
-                  onQuantityChange={this.quantityChangeSelectorHandler}
+                  onQuantityChange={this.quantityChangeHandler}
                   onAddCart={this.addToCartHandler}
                   onTogglePopUp={this.togglePopUp}
                   />;

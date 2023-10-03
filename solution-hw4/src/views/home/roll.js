@@ -29,6 +29,9 @@ class Roll extends Component {
                         <p>Glazing:</p>
                     </div>
                     <div className = "item option">
+                        {/* Used the following sources for help calling functions with parameters in the jsx: 
+                        https://stackoverflow.com/questions/42597602/react-onclick-pass-event-with-parameter
+                        https://legacy.reactjs.org/docs/faq-functions.html */}
                         <select className = "glaze_select" onChange={(event) => this.props.onGlazeChange(event, this.props.cardIndex)}>
                             <option value="Keep original">Keep original</option>
                             <option value="Sugar milk">Sugar milk</option>
@@ -45,9 +48,10 @@ class Roll extends Component {
                     <div className = "item option">
                         <div className = "quantity_button_container">
 
-                            {/*Used this to help troubleshoot glicth due to using checked as an attribute: https://stackoverflow.com/questions/48423061/radio-buttons-need-to-click-twice-to-reflect-change */}
+                            {/*Used this to help troubleshoot glitch due to using checked as an attribute: https://stackoverflow.com/questions/48423061/radio-buttons-need-to-click-twice-to-reflect-change */}
                             <label className = "quantity_buttons">
                             <input value = '1' type = "radio" name = {`radio_${this.props.cardIndex}`} defaultChecked = "checked" onClick={(event) => this.props.onQuantityChange(event, this.props.cardIndex)}/>
+                            {/* Used this for help adding two classes w/ react and jsx: https://stackoverflow.com/questions/34521797/how-to-add-multiple-classes-to-a-reactjs-component */}
                             <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`}>1</span>
                             </label>
 
@@ -77,7 +81,8 @@ class Roll extends Component {
                         </div>
                     </div>
                     <div className = "item option">
-                        <button className = "cart_button" onClick={(event) => {this.props.onAddCart(event, this.props.cardIndex); this.props.onTogglePopUp();}}>Add to cart</button>
+                        {/* Used this for help calling multple functions with onClick: https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs */}
+                        <button className = "cart_button" onClick={() => {this.props.onAddCart(this.props.cardIndex); this.props.onTogglePopUp();}}>Add to cart</button>
                     </div>
                 </div>
 
