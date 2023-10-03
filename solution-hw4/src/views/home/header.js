@@ -42,7 +42,7 @@ class Header extends Component {
                   <div className = "cart-pop_up-type">{`${this.props.cart_roll_type}` + " cinnamon roll"}</div>
                   <div className = "cart-pop_up-glaze">{`${this.props.cart_roll_glazing}` + " glazing"}</div>
                   <div className = "cart-pop_up-pack">{"Pack of " + `${this.props.cart_roll_pack}`}</div>
-                  <div className = "cart-pop_up-price">{"Price " + `${this.props.cart_roll_price}`}</div>
+                  <div className = "cart-pop_up-price">{"Price: " + `${this.props.cart_roll_price}`}</div>
                 </div>
 
                 <div className = "cart-items-text">
@@ -67,7 +67,7 @@ class Header extends Component {
           </div>
 
         </div>
-        
+
       </div>
 
     );
