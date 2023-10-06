@@ -7,18 +7,100 @@ import './roll.css';
 class Roll extends Component {
   constructor(props) {
     super(props);
-    this.state = {};    
+    this.state = {
+        // radio1State
+    };   
   }
 
   render() {
+
+    // const buttonStyle = {
+    //     flex: "1 0 auto",
+    //     fontSize: "14pt",
+    //     padding: "5px 10px 5px 9px",
+    //     border: "2px solid black",
+    //     marginLeft: "5px",
+    //     // background-color: white,
+    //     backgroundColor: this.props.radio1State == "checked" ? "lightgray" : "white",
+    // }
+
+    const buttonStyle1 = {
+        flex: "1 0 auto",
+        fontSize: "14pt",
+        padding: "5px 10px 5px 9px",
+        border: "2px solid black",
+        marginLeft: "5px",
+        // background-color: white,
+        backgroundColor: this.props.radioChecked == "radio1" ? "lightgray" : "white",
+    }
+    
+    const buttonStyle3 = {
+        flex: "1 0 auto",
+        fontSize: "14pt",
+        padding: "5px 10px 5px 9px",
+        border: "2px solid black",
+        marginLeft: "5px",
+        // background-color: white,
+        backgroundColor: this.props.radioChecked == "radio3" ? "lightgray" : "white",
+    }
+
+    
+    const buttonStyle6 = {
+        flex: "1 0 auto",
+        fontSize: "14pt",
+        padding: "5px 10px 5px 9px",
+        border: "2px solid black",
+        marginLeft: "5px",
+        // background-color: white,
+        backgroundColor: this.props.radioChecked == "radio6" ? "lightgray" : "white",
+    }
+
+    
+    const buttonStyle12 = {
+        flex: "1 0 auto",
+        fontSize: "14pt",
+        padding: "5px 10px 5px 9px",
+        border: "2px solid black",
+        marginLeft: "5px",
+        // background-color: white,
+        backgroundColor: this.props.radioChecked == "radio12" ? "lightgray" : "white",
+    }
+    // buttonStyle1
+    // buttonStyle2
+    // buttonStyle3
+    // buttonStyle4
+
+    // const buttonChecked = {
+    //     flex: "1 0 auto",
+    //     fontSize: "14pt",
+    //     padding: "5px 10px 5px 9px",
+    //     border: "2px solid black",
+    //     marginLeft: "5px",
+    //     // background-color: white,
+    //     backgroundColor: "lightgray"
+    // }
+
+    // const buttonUnchecked = {
+    //     flex: "1 0 auto",
+    //     fontSize: "14pt",
+    //     padding: "5px 10px 5px 9px",
+    //     border: "2px solid black",
+    //     marginLeft: "5px",
+    //     // background-color: white,
+    //     backgroundColor: "white"
+    // }
+
+    // let style6 = buttonUnchecked;
+    
+
     return (
 
         <article className = "roll_card">
 
             <div> 
-                <figure>
+                <figure className= "roll_figure">
                     <img className = "product_image" src = {this.props.roll_img_src} width = "200" alt = {this.props.roll_img_alt} />
-                    <figcaption>{this.props.roll_figcaption}</figcaption>
+                    <figcaption className = "roll_title">{this.props.roll_figcaption}</figcaption>
                 </figure>
             </div>
 
@@ -52,22 +134,25 @@ class Roll extends Component {
                             <label className = "quantity_buttons">
                             <input value = '1' type = "radio" name = {`radio_${this.props.cardIndex}`} defaultChecked = "checked" onClick={(event) => this.props.onQuantityChange(event, this.props.cardIndex)}/>
                             {/* Used this for help adding two classes w/ react and jsx: https://stackoverflow.com/questions/34521797/how-to-add-multiple-classes-to-a-reactjs-component */}
-                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`}>1</span>
+                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`} style={buttonStyle1}>1</span>
                             </label>
 
                             <label className ="quantity_buttons">
                             <input value = '3' type = "radio" name = {`radio_${this.props.cardIndex}`} onClick={(event) => this.props.onQuantityChange(event, this.props.cardIndex)}/>
-                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`}>3</span>
+                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`} style={buttonStyle3}>3</span>
                             </label>
 
+                            {/* if ({this.props.radioChecked} == "radio6"){
+                                style6 = buttonChecked;
+                            }; */}
                             <label className ="quantity_buttons">
                             <input value = '6' type = "radio" name = {`radio_${this.props.cardIndex}`} onClick={(event) => this.props.onQuantityChange(event, this.props.cardIndex)} />
-                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`}>6</span>
+                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`} style={buttonStyle6}>6</span>
                             </label>
 
                             <label className ="quantity_buttons">
                             <input value = '12' type="radio" name= {`radio_${this.props.cardIndex}`} onClick={(event) => this.props.onQuantityChange(event, this.props.cardIndex)}/>
-                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`}>12</span>
+                            <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`} style={buttonStyle12}>12</span>
                             </label>
 
                         </div>

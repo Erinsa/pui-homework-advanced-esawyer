@@ -32,10 +32,11 @@ anything else */
     justify-content: space-between;
     align-content: center;
     text-align: left;
+    margin: 0px 0px 60px 0px;
 }
 
 /* figure (flex container and flex child) containing image and caption */
-figure {
+figure.roll_figure {
     margin:20px 0px 15px 0px;
 }
 
@@ -50,7 +51,7 @@ https://www.w3schools.com/howto/howto_css_border_image.asp */
 /* Used for reference for figure and figcaption: 
 https://www.w3schools.com/tags/tag_figcaption.asp */
 /* used for product name as a part of the figure */
-figcaption {
+.roll_title {
     font-size: 17pt;
     font-weight: 600;
     padding-top: 5px;
@@ -153,7 +154,7 @@ https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
     cursor: pointer;
 }
 
-.new_quantity_button {
+/* .new_quantity_button {
     flex: 1 0 auto;
     font-size: 14pt;
     padding: 5px 10px 5px 9px;
@@ -164,7 +165,7 @@ https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
 
 .quantity_buttons input:checked ~ .new_quantity_button {
     background-color: lightgray;
-}
+} */
 /* end styling for custom radio buttons */
 
 /* styling for add to cart button */

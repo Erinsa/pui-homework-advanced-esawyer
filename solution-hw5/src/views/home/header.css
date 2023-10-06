@@ -50,7 +50,7 @@ https://www.w3schools.com/howto/howto_css_style_hr.asp
 https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with-flex */
 .horizontal_line {
     height: 5px;
-    flex: 1 0 107%;
+    flex: 1 0 102%;
     color:black;
     background-color: black;
 }

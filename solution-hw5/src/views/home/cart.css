@@ -1,0 +1,60 @@
+/* Generally used the following order within styling throughout
+width
+height
+display
+position
+flex
+direction
+wrap
+justify-content
+align-content
+align-items
+column-gap
+font-family
+font-size
+font-weight
+padding
+border
+margin
+color
+background-color
+opacity
+cursor
+anything else */
+
+
+/* Used the following source for help with setting just top and bottom borders
+https://www.w3schools.com/cssref/pr_border-top.php */
+/* Used this source to help find the hex code I wanted::afterhttps://colors.artyclick.com/color-names-dictionary/color-names/brownish-grey-color#:~:text=The%20color%20Brownish%20Grey%20corresponds,Green%2C%20and%2037%25%20Blue. */
+/* .cart_holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 50px;
+    border-top: solid 15px #86775F;
+    border-bottom: solid 15px #86775F;
+    font-size: 10pt;
+    margin: 5px 0px 5px 0px;
+    padding: 75px;
+  } */
+  /* .cart_roll_holder{
+    margin: 0px 0px 50px 0px;
+  } */
+  .cart_roll_holder, .product_image.cart_image {
+    width: 150px;
+  }
+  
+  .cart_roll_figure {
+    margin:0px 0px 0px 0px;
+  }
+  
+  .price_cart_text {
+    font-weight: 900;
+  }
+  
+  .remove_button {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    text-decoration: underline;
+    font-size: 10pt;
+  }
