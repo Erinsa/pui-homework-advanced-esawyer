@@ -36,7 +36,7 @@ class CartRoll extends Component {
               </div>
 
               <div className = "remove_cart">
-                <button className = "remove_button">Remove</button>
+                <button className = "remove_button" onClick={() => this.props.onRemove(this.props.rollIndex)}>Remove</button>
               </div>
 
             </div>

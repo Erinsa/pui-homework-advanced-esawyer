@@ -12,6 +12,7 @@ class HomePage extends Component {
     this.state = {
       rollcardData: [
         {
+          roll_name: "Original cinnamon roll",
           roll_img_src: "assets/products/original-cinnamon-roll.jpg",
           roll_figcaption: "Original cinnamon roll",
           roll_img_alt: "Picture of original cinnamon roll",
@@ -20,13 +21,10 @@ class HomePage extends Component {
           roll_type: "Original",
           roll_glazing: "Keep original",
           roll_pack_size: "1",
-          // radio1State: "checked", 
-          // radio3State: "unchecked", 
-          // radio6State: "unchecked",
-          // radio12State: "unchecked",
           radioChecked: "radio1",
         },
         {
+          roll_name: "Apple cinnamon roll",
           roll_img_src: "assets/products/apple-cinnamon-roll.jpg",
           roll_figcaption: "Apple cinnamon roll",
           roll_img_alt: "Picture of apple cinnamon roll",
@@ -35,13 +33,10 @@ class HomePage extends Component {
           roll_type: "Apple",
           roll_glazing: "Keep original",
           roll_pack_size: "1",
-          // radio1State: "checked", 
-          // radio3State: "unchecked", 
-          // radio6State: "unchecked",
-          // radio12State: "unchecked",
           radioChecked: "radio1",
         },
         {
+          roll_name: "Raisin cinnamon roll",
           roll_img_src: "assets/products/raisin-cinnamon-roll.jpg",
           roll_figcaption: "Raisin cinnamon roll",
           roll_img_alt: "Picture of raisin cinnamon roll",
@@ -50,13 +45,10 @@ class HomePage extends Component {
           roll_type: "Raisin",
           roll_glazing: "Keep original",
           roll_pack_size: "1",
-          // radio1State: "checked", 
-          // radio3State: "unchecked", 
-          // radio6State: "unchecked",
-          // radio12State: "unchecked",
           radioChecked: "radio1",
         },
         {
+          roll_name: "Walnut cinnamon roll",
           roll_img_src: "assets/products/walnut-cinnamon-roll.jpg",
           roll_figcaption: "Walnut cinnamon roll",
           roll_img_alt: "Picture of walnut cinnamon roll",
@@ -65,13 +57,10 @@ class HomePage extends Component {
           roll_type: "Walnut",
           roll_glazing: "Keep original",
           roll_pack_size: "1",
-          // radio1State: "checked", 
-          // radio3State: "unchecked", 
-          // radio6State: "unchecked",
-          // radio12State: "unchecked",
           radioChecked: "radio1",
         },
         {
+          roll_name: "Double-chocolate cinnamon roll",
           roll_img_src: "assets/products/double-chocolate-cinnamon-roll.jpg",
           roll_figcaption: "Double-chocolate cinnamon roll",
           roll_img_alt: "Picture of double chocolate cinnamon roll",
@@ -80,13 +69,10 @@ class HomePage extends Component {
           roll_type: "Double-chocolate",
           roll_glazing: "Keep original",
           roll_pack_size: "1",
-          // radio1State: "checked", 
-          // radio3State: "unchecked", 
-          // radio6State: "unchecked",
-          // radio12State: "unchecked",
           radioChecked: "radio1",
         },
         {
+          roll_name: "Strawberry cinnamon roll",
           roll_img_src: "assets/products/strawberry-cinnamon-roll.jpg",
           roll_figcaption: "Strawberry cinnamon roll",
           roll_img_alt: "Picture of strawberry cinnamon roll",
@@ -95,48 +81,28 @@ class HomePage extends Component {
           roll_type: "Strawberry",
           roll_glazing: "Keep original",
           roll_pack_size: "1",
-          // radio1State: "checked", 
-          // radio3State: "unchecked", 
-          // radio6State: "unchecked",
-          // radio12State: "unchecked",
           radioChecked: "radio1",
         }
       ],
 
-      cartrollData: [        
-      //   {
-      //   roll_img_src: "assets/products/original-cinnamon-roll.jpg",
-      //   roll_figcaption: "Original cinnamon roll",
-      //   roll_img_alt: "Picture of original cinnamon roll",
-      //   roll_base_price: "2.49",
-      //   roll_price: "2.49",
-      //   roll_type: "Original",
-      //   roll_glazing: "Keep original",
-      //   roll_pack_size: "1",
-      // },
-      // {
-      //   roll_img_src: "assets/products/apple-cinnamon-roll.jpg",
-      //   roll_figcaption: "Apple cinnamon roll",
-      //   roll_img_alt: "Picture of apple cinnamon roll",
-      //   roll_base_price: "3.49",
-      //   roll_price: "3.49",
-      //   roll_type: "Apple",
-      //   roll_glazing: "Keep original",
-      //   roll_pack_size: "1",
-      // }
-    ],
-
+      cartrollData: [],
       popUpVisible: false,
       totalPrice: "0.00",
       totalItems: 0,
       totalItemsText: " items",
+      cartShowing: false,
+      searchText: "",
+      termToSearch: "",
+      found: false,
       cart_roll_type: "Original",
       cart_roll_glazing: "Keep original",
       cart_roll_pack: 1,
       cart_roll_price: 2.49,
-      cart_list: [],
+
     };
+    
     this.togglePopUp = this.togglePopUp.bind(this);
+    this.toggleCart = this.toggleCart.bind(this);
 
   }
 
@@ -186,22 +152,25 @@ class HomePage extends Component {
     }))
   };
 
-  // This function helps us handle what happens when a roll is added to the cart (store roll in cart list, etc)
   addToCartHandler = (cardIndex) => {
-    console.log("cartrolldata", this.state.cartrollData.length)
     const newRoll = this.state.rollcardData[cardIndex];
 
     let newCartRoll = {
+      roll_name: newRoll.roll_name,
+      roll_img_src: newRoll.roll_img_src,
+      roll_figcaption: newRoll.roll_figcaption,
+      roll_img_alt: newRoll.roll_img_alt,
       roll_base_price: newRoll.roll_base_price,
       roll_price: newRoll.roll_price,
       roll_type: newRoll.roll_type,
       roll_glazing: newRoll.roll_glazing,
       roll_pack_size: newRoll.roll_pack_size,
     }
-    let newCartList = this.state.cart_list
-    newCartList.push(newCartRoll)
 
-    let item_count = newCartList.length;
+    const newCartRollData = this.state.cartrollData
+    newCartRollData.push(newCartRoll)
+
+    let item_count = newCartRollData.length;
     let itemText = "";
     if (item_count == 1) {
       itemText = " item";
@@ -215,10 +184,88 @@ class HomePage extends Component {
       cart_roll_glazing: newRoll.roll_glazing,
       cart_roll_pack: newRoll.roll_pack_size,
       cart_roll_price: newRoll.roll_price,
-      cart_list: newCartList,
+      cartrollData: newCartRollData,
       totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
       totalItems: item_count,
       totalItemsText: itemText,
+    }))
+  };
+
+  removeButtonHandler = (rollIndex) => {
+    const newCartRollData = this.state.cartrollData;
+    let newTotalPrice = this.state.totalPrice;
+    newTotalPrice = (parseFloat(newTotalPrice) - parseFloat(newCartRollData[rollIndex].roll_price)).toFixed(2)
+
+    newCartRollData.splice(rollIndex, 1);
+
+    let item_count = newCartRollData.length;
+    let itemText = "";
+    if (item_count == 1) {
+      itemText = " item";
+    } else {
+      itemText = " items";
+    }
+
+    this.setState(prevState => ({
+      ...prevState,
+      totalPrice: newTotalPrice,
+      totalItems: item_count,
+      totalItemsText: itemText,
+      cartrollData: newCartRollData
+    }))
+  };
+
+  handleSearchTextChange = (event) => {
+    let newTerm = event.target.value;
+    this.setState(prevState => ({
+      ...prevState,
+      searchText: newTerm
+    }))
+  };
+
+
+  searchButtonHandler = () => {
+    const newTermToSearch = this.state.searchText;
+    this.setState(prevState => ({
+      ...prevState,
+      found: false,
+      termToSearch: newTermToSearch
+    }))
+  };
+
+  nameCompareHelper = (a, b) => {
+    return function(a, b) {
+    let compareValue = 0;
+    if (a.roll_name > b.roll_name){
+      compareValue = 1;
+    }
+    if (a.roll_name < b.roll_name){
+      compareValue = -1;
+    }
+    if (a.roll_name == b.roll_name){
+      compareValue = 0;
+    }
+    return compareValue;
+  }
+  };
+
+  handleSortChange = (event) => {
+    let sortValue = event.target.value;
+    console.log(sortValue);
+    let newRollData = this.state.rollcardData;
+
+    if (sortValue == "Name"){
+      newRollData = newRollData;
+      newRollData.sort(this.nameCompareHelper())
+    }
+
+    if (sortValue == "Base Price"){
+      newRollData.sort(function(a, b){return a.roll_base_price - b.roll_base_price})
+    }
+    console.log(newRollData)
+    this.setState(prevState => ({
+      ...prevState,
+      rollcardData: newRollData
     }))
   };
 
@@ -234,6 +281,12 @@ class HomePage extends Component {
     }, 3000);
   };
 
+  toggleCart() {
+    this.setState({
+      cartShowing: !this.state.cartShowing
+    })
+  };
+
   render() {
 
     return (
@@ -245,27 +298,35 @@ class HomePage extends Component {
           <div className = "header_holder">
             {/* Used this for help better understanding parent and child components: https://medium.com/@livajorge7/introduction-9e84391f4b83#:~:text=The%20parent%20component%20can%20define%20a%20function%20and%20pass%20it,to%20maintain%2C%20and%20more%20flexible. */}
             <Header
-            totalItems = {this.state.totalItems}
-            totalItemsText = {this.state.totalItemsText}
-            totalPrice = {this.state.totalPrice}
             popUpVisible = {this.state.popUpVisible}
             cart_roll_type = {this.state.cart_roll_type}
             cart_roll_glazing = {this.state.cart_roll_glazing}
             cart_roll_pack = {this.state.cart_roll_pack}
             cart_roll_price = {this.state.cart_roll_price}
             onTogglePopUp = {this.togglePopUp}
+            onToggleCart = {this.toggleCart}
             />
           </div>
 
+        {this.state.cartShowing &&
           <div className = "cart_holder" >
-          {/* <CartRoll/>
-          <CartRoll/>
-          <CartRoll/>
-          <CartRoll/>
-          <CartRoll/>
-          <CartRoll/> */}
+          {(this.state.cartrollData.length == 0) &&
+                <div className = "cart_empty_text">The cart is empty!</div>
+          }
+          {(this.state.cartrollData.length >= 1) &&
+          <div className = "cart_shown_holder">
+            <div className = "cart_shown_price_items_text_holder">
+              <div className = "cart-items-text-shown">
+                {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`}
+              </div>
+
+              <div className = "cart-total-text-shown">
+                {"Total: "+ `${this.state.totalPrice}`}
+              </div>
+            </div>
+
+            <div className = "cartcard-list"> 
               {this.state.cartrollData.map((cartroll, idx) => {
-                if (this.state.cartrollData.length >= 1){
                 return <CartRoll
                   key={idx}
                   rollIndex={idx}
@@ -277,179 +338,33 @@ class HomePage extends Component {
                   roll_glazing={cartroll.roll_glazing}
                   roll_pack_size={cartroll.roll_pack_size}
                   roll_price= {this.priceCalculator(cartroll.roll_base_price, cartroll.roll_glazing, cartroll.roll_pack_size)}
-                  // roll_price= {this.priceCalculator(rollcard.roll_base_price, rollcard.roll_glazing, rollcard.roll_pack_size)}
-                  // onGlazeChange={this.glazeChangeSelectorHandler}
-                  // onQuantityChange={this.quantityChangeHandler}
-                  // onAddCart={this.addToCartHandler}
-                  // onTogglePopUp={this.togglePopUp}
+                  onRemove = {this.removeButtonHandler}
                   />;
               }
-              if (this.state.cartrollData.length == 0) {
-                return <div>cart is empty</div>;
-              }
-              }
               )}
+            </div>
           </div>
-
-          {/* <div className = "cart_holder" >
-            <div className = "cart_roll_holder">
-              <div> 
-                  <figure className="cart_roll_figure">
-                      <img className = "product_image cart_image" src = "assets/products/original-cinnamon-roll.jpg" width = "200" alt = "Picture of original cinnamon roll" />
-                      <figcaption className= "cart_caption">Original cinnamon roll</figcaption>
-                  </figure>
-              </div>
-
-              <div className = "glazing_cart_text">
-                Glazing: Keep Original
-              </div>
-
-              <div className = "pack_cart_text">
-                Pack Size: 1
-              </div>
-
-              <div className = "price_cart_text">
-                $ 2.99
-              </div>
-
-              <div className = "remove_cart">
-                <button className = "remove_button">Remove</button>
-              </div>
-
-            </div>
-
-            <div className = "cart_roll_holder">
-              <div> 
-                  <figure className="cart_roll_figure">
-                      <img className = "product_image cart_image" src = "assets/products/original-cinnamon-roll.jpg" width = "200" alt = "Picture of original cinnamon roll" />
-                      <figcaption className= "cart_caption">Original cinnamon roll</figcaption>
-                  </figure>
-              </div>
-
-              <div className = "glazing_cart_text">
-                Glazing: Keep Original
-              </div>
-
-              <div className = "pack_cart_text">
-                Pack Size: 1
-              </div>
-
-              <div className = "price_cart_text">
-                2.99
-              </div>
-
-              <div className = "remove_cart">
-                <button className = "remove_button">Remove</button>
-              </div>
-
-            </div>
-
-            <div className = "cart_roll_holder">
-              <div> 
-                  <figure className="cart_roll_figure">
-                      <img className = "product_image cart_image" src = "assets/products/original-cinnamon-roll.jpg" width = "200" alt = "Picture of original cinnamon roll" />
-                      <figcaption className= "cart_caption">Original cinnamon roll</figcaption>
-                  </figure>
-              </div>
-
-              <div className = "glazing_cart_text">
-                Glazing: Keep Original
-              </div>
-
-              <div className = "pack_cart_text">
-                Pack Size: 1
-              </div>
-
-              <div className = "price_cart_text">
-                2.99
-              </div>
-
-              <div className = "remove_cart">
-                <button className = "remove_button">Remove</button>
-              </div>
-
-            </div>
-
-            <div className = "cart_roll_holder">
-              <div> 
-                  <figure className="cart_roll_figure">
-                      <img className = "product_image cart_image" src = "assets/products/original-cinnamon-roll.jpg" width = "200" alt = "Picture of original cinnamon roll" />
-                      <figcaption className= "cart_caption">Original cinnamon roll</figcaption>
-                  </figure>
-              </div>
-
-              <div className = "glazing_cart_text">
-                Glazing: Keep Original
-              </div>
-
-              <div className = "pack_cart_text">
-                Pack Size: 1
-              </div>
-
-              <div className = "price_cart_text">
-                2.99
-              </div>
-
-              <div className = "remove_cart">
-                <button className = "remove_button">Remove</button>
-              </div>
-
-            </div>
-
-            <div className = "cart_roll_holder">
-              <div> 
-                  <figure className="cart_roll_figure">
-                      <img className = "product_image cart_image" src = "assets/products/original-cinnamon-roll.jpg" width = "200" alt = "Picture of original cinnamon roll" />
-                      <figcaption className= "cart_caption">Original cinnamon roll</figcaption>
-                  </figure>
-              </div>
-
-              <div className = "glazing_cart_text">
-                Glazing: Keep Original
-              </div>
-
-              <div className = "pack_cart_text">
-                Pack Size: 1
-              </div>
-
-              <div className = "price_cart_text">
-                2.99
-              </div>
-
-              <div className = "remove_cart">
-                <button className = "remove_button">Remove</button>
-              </div>
-
-            </div>
-
-
-
-
-          </div> */}
-
-          {/* roll_img_src: "assets/products/original-cinnamon-roll.jpg",
-          roll_figcaption: "Original cinnamon roll",
-          roll_img_alt: "Picture of original cinnamon roll",
-          roll_base_price: "2.49",
-          roll_price: "2.49",
-          roll_type: "Original",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1", */}
+        }
+        </div>
+          }
 
           <div className = "search_filter_container">
-            <label className = "search_bar">
-              <input className = "text_bar" name="myInput" />
-              {/* Used these sources for help with the search bar:
-              https://www.w3schools.com/howto/howto_css_searchbar.asp
-              https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar2 */}
-              <button type="submit">Search</button>
-            </label>
+            <div className = "search_holder">
+                <form className = "search_bar">
+                  <input className = "text_bar" name="myInput" onChange={(event) => this.handleSearchTextChange(event)} value={this.state.searchText}/>
+                  {/* Used these sources for help with the search bar:
+                  https://www.w3schools.com/howto/howto_css_searchbar.asp
+                  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar2 */}
+                </form>
+                <button className = "searchButton" onClick={() => this.searchButtonHandler()}>Search</button>
+              </div>
             <div className = "filter_option">
                 {/* Used the following sources for help calling functions with parameters in the jsx: 
                 https://stackoverflow.com/questions/42597602/react-onclick-pass-event-with-parameter
                 https://legacy.reactjs.org/docs/faq-functions.html */}
                 <span className = "filter_text">sort by:</span>
-                <select className = "filter_select">
+                <select className = "filter_select" onChange={(event) => this.handleSortChange(event)}>
+                    <option value={null} hidden = "hidden" >Name</option>
                     <option value="Name">Name</option>
                     <option value="Base Price">Base Price</option>
                 </select>
@@ -458,36 +373,38 @@ class HomePage extends Component {
 
           <div className = "section" id = "products_page">
 
-          {/* <div className = "search_filter_container">
-            <label className = "search_bar">
-              Text input: <input name="myInput" />
-            </label>
-          </div> */}
 
             <div id = "rollcard-list"> 
               {this.state.rollcardData.map((rollcard, idx) => {
-                return <Roll
-                  key={idx}
-                  cardIndex={idx}
-                  roll_img_src={rollcard.roll_img_src}
-                  roll_img_alt={rollcard.roll_img_alt}
-                  roll_figcaption={rollcard.roll_figcaption}
-                  roll_base_price={rollcard.roll_base_price}
-                  roll_type={rollcard.roll_type}
-                  roll_glazing={rollcard.roll_glazing}
-                  roll_pack_size={rollcard.roll_pack_size}
-                  // radio1State = {rollcard.radio1State}
-                  // radio3State = {rollcard.radio3State}
-                  // radio6State = {rollcard.radio6State}
-                  // radio12State = {rollcard.radio12State}
-                  radioChecked = {rollcard.radioChecked}
-                  roll_price= {this.priceCalculator(rollcard.roll_base_price, rollcard.roll_glazing, rollcard.roll_pack_size)}
-                  onGlazeChange={this.glazeChangeSelectorHandler}
-                  onQuantityChange={this.quantityChangeHandler}
-                  onAddCart={this.addToCartHandler}
-                  onTogglePopUp={this.togglePopUp}
-                  />;
+                // Used this to help figure out how to use includes in a way that's case insenitive
+                // https://stackoverflow.com/questions/48145432/javascript-includes-case-insensitive
+                if ((this.state.termToSearch == "") || 
+                (rollcard.roll_figcaption.toLowerCase().includes(this.state.termToSearch.toLowerCase()))) {
+                  this.state.found = true;
+                  return <Roll
+                    key={rollcard.roll_name}
+                    cardIndex={idx}
+                    roll_img_src={rollcard.roll_img_src}
+                    roll_img_alt={rollcard.roll_img_alt}
+                    roll_figcaption={rollcard.roll_figcaption}
+                    roll_base_price={rollcard.roll_base_price}
+                    roll_type={rollcard.roll_type}
+                    roll_glazing={rollcard.roll_glazing}
+                    roll_pack_size={rollcard.roll_pack_size}
+                    radioChecked = {rollcard.radioChecked}
+                    roll_price= {this.priceCalculator(rollcard.roll_base_price, rollcard.roll_glazing, rollcard.roll_pack_size)}
+                    onGlazeChange={this.glazeChangeSelectorHandler}
+                    onQuantityChange={this.quantityChangeHandler}
+                    onAddCart={this.addToCartHandler}
+                    onTogglePopUp={this.togglePopUp}
+                    />
+                } else {
+                }
               })}
+
+              { !this.state.found &&
+                <div className = "search_empty_text">No Match!</div>
+              }
             </div>
 
           </div>
