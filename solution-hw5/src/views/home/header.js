@@ -32,8 +32,9 @@ class Header extends Component {
             </div>
 
             <div className = "cart-box">
-              {/* <a href = "" className = "cart_link">CART</a> */}
+
               <button className = "cart_show_button" onClick={() => this.props.onToggleCart()}>CART</button>
+              
               <div className = "cart-contents">
 
                 <div className = {popupClass} id = "cartpopUp">
@@ -45,16 +46,9 @@ class Header extends Component {
                   <div className = "cart-pop_up-pack">{"Pack of " + `${this.props.cart_roll_pack}`}</div>
                   <div className = "cart-pop_up-price">{"Price: " + `${this.props.cart_roll_price}`}</div>
                 </div>
-{/* 
-                <div className = "cart-items-text">
-                    {`${this.props.totalItems}`+ `${this.props.totalItemsText}`}
-                </div>
-
-                <div className = "cart-total-text">
-                  {"Total: "+ `${this.props.totalPrice}`}
-                </div> */}
 
               </div>
+              
             </div>
 
           </div>

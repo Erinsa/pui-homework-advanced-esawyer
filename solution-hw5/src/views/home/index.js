@@ -152,6 +152,7 @@ class HomePage extends Component {
     }))
   };
 
+  // This function handles adding rolls to the cart, updating associated values, and displaying the pop up and roll cards when the cart button is pressed.
   addToCartHandler = (cardIndex) => {
     const newRoll = this.state.rollcardData[cardIndex];
 
@@ -191,6 +192,7 @@ class HomePage extends Component {
     }))
   };
 
+  // This function handles removing rolls from the cart via the remove button on the cart roll cards, and updating associated values
   removeButtonHandler = (rollIndex) => {
     const newCartRollData = this.state.cartrollData;
     let newTotalPrice = this.state.totalPrice;
@@ -215,6 +217,7 @@ class HomePage extends Component {
     }))
   };
 
+  // This function handles updating the value we store when users type new values in to the search bar
   handleSearchTextChange = (event) => {
     let newTerm = event.target.value;
     this.setState(prevState => ({
@@ -223,7 +226,7 @@ class HomePage extends Component {
     }))
   };
 
-
+  // This function handles what happens when the search button is pressed and we actually search for that value in the search bar
   searchButtonHandler = () => {
     const newTermToSearch = this.state.searchText;
     this.setState(prevState => ({
@@ -233,8 +236,14 @@ class HomePage extends Component {
     }))
   };
 
+  // Used this reference for help with custom sorting functions
+  // https://stackoverflow.com/questions/5002848/how-to-define-custom-sort-function-in-javascript
+  // This is a helper function for comparing roll names for sorting
   nameCompareHelper = (a, b) => {
     return function(a, b) {
+
+    // Used this for help with comparing strings
+    // https://stackoverflow.com/questions/10198257/comparing-2-strings-alphabetically-for-sorting-purposes
     let compareValue = 0;
     if (a.roll_name > b.roll_name){
       compareValue = 1;
@@ -246,12 +255,13 @@ class HomePage extends Component {
       compareValue = 0;
     }
     return compareValue;
-  }
+
+    }
   };
 
+  // This function deals with sorting the rolls and displaying them in the new order when a sort by value is selected
   handleSortChange = (event) => {
     let sortValue = event.target.value;
-    console.log(sortValue);
     let newRollData = this.state.rollcardData;
 
     if (sortValue == "Name"){
@@ -260,9 +270,11 @@ class HomePage extends Component {
     }
 
     if (sortValue == "Base Price"){
+      // Used this reference for help with sorting by custom function:
+      // https://www.w3schools.com/js/js_array_sort.asp
       newRollData.sort(function(a, b){return a.roll_base_price - b.roll_base_price})
     }
-    console.log(newRollData)
+
     this.setState(prevState => ({
       ...prevState,
       rollcardData: newRollData
@@ -281,6 +293,7 @@ class HomePage extends Component {
     }, 3000);
   };
 
+  // This function helps us adjust the visibility of the cart display
   toggleCart() {
     this.setState({
       cartShowing: !this.state.cartShowing
@@ -308,47 +321,57 @@ class HomePage extends Component {
             />
           </div>
 
-        {this.state.cartShowing &&
-          <div className = "cart_holder" >
-          {(this.state.cartrollData.length == 0) &&
+          {this.state.cartShowing &&
+
+            <div className = "cart_holder" >
+
+              {(this.state.cartrollData.length == 0) &&
                 <div className = "cart_empty_text">The cart is empty!</div>
-          }
-          {(this.state.cartrollData.length >= 1) &&
-          <div className = "cart_shown_holder">
-            <div className = "cart_shown_price_items_text_holder">
-              <div className = "cart-items-text-shown">
-                {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`}
-              </div>
-
-              <div className = "cart-total-text-shown">
-                {"Total: "+ `${this.state.totalPrice}`}
-              </div>
-            </div>
-
-            <div className = "cartcard-list"> 
-              {this.state.cartrollData.map((cartroll, idx) => {
-                return <CartRoll
-                  key={idx}
-                  rollIndex={idx}
-                  roll_img_src={cartroll.roll_img_src}
-                  roll_img_alt={cartroll.roll_img_alt}
-                  roll_figcaption={cartroll.roll_figcaption}
-                  roll_base_price={cartroll.roll_base_price}
-                  roll_type={cartroll.roll_type}
-                  roll_glazing={cartroll.roll_glazing}
-                  roll_pack_size={cartroll.roll_pack_size}
-                  roll_price= {this.priceCalculator(cartroll.roll_base_price, cartroll.roll_glazing, cartroll.roll_pack_size)}
-                  onRemove = {this.removeButtonHandler}
-                  />;
               }
-              )}
+
+              {(this.state.cartrollData.length >= 1) &&
+
+                <div className = "cart_shown_holder">
+
+                  <div className = "cart_shown_price_items_text_holder">
+
+                    <div className = "cart-items-text-shown">
+                      {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`}
+                    </div>
+
+                    <div className = "cart-total-text-shown">
+                      {"Total: "+ `${this.state.totalPrice}`}
+                    </div>
+
+                  </div>
+
+                  <div className = "cartcard-list"> 
+                    {this.state.cartrollData.map((cartroll, idx) => {
+                      return <CartRoll
+                        key={idx}
+                        rollIndex={idx}
+                        roll_img_src={cartroll.roll_img_src}
+                        roll_img_alt={cartroll.roll_img_alt}
+                        roll_figcaption={cartroll.roll_figcaption}
+                        roll_base_price={cartroll.roll_base_price}
+                        roll_type={cartroll.roll_type}
+                        roll_glazing={cartroll.roll_glazing}
+                        roll_pack_size={cartroll.roll_pack_size}
+                        roll_price= {this.priceCalculator(cartroll.roll_base_price, cartroll.roll_glazing, cartroll.roll_pack_size)}
+                        onRemove = {this.removeButtonHandler}
+                        />;
+                    })}
+                  </div>
+
+                </div>
+              }
+
             </div>
-          </div>
-        }
-        </div>
+
           }
 
-          <div className = "search_filter_container">
+          <div className = "search_sort_container">
+
             <div className = "search_holder">
                 <form className = "search_bar">
                   <input className = "text_bar" name="myInput" onChange={(event) => this.handleSearchTextChange(event)} value={this.state.searchText}/>
@@ -357,30 +380,38 @@ class HomePage extends Component {
                   https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar2 */}
                 </form>
                 <button className = "searchButton" onClick={() => this.searchButtonHandler()}>Search</button>
-              </div>
-            <div className = "filter_option">
+            </div>
+
+            <div className = "sort_option">
+
                 {/* Used the following sources for help calling functions with parameters in the jsx: 
                 https://stackoverflow.com/questions/42597602/react-onclick-pass-event-with-parameter
                 https://legacy.reactjs.org/docs/faq-functions.html */}
-                <span className = "filter_text">sort by:</span>
-                <select className = "filter_select" onChange={(event) => this.handleSortChange(event)}>
+                <span className = "sort_text">sort by:</span>
+                <select className = "sort_select" onChange={(event) => this.handleSortChange(event)}>
                     <option value={null} hidden = "hidden" >Name</option>
                     <option value="Name">Name</option>
                     <option value="Base Price">Base Price</option>
                 </select>
+
             </div>
+
           </div>
 
           <div className = "section" id = "products_page">
 
-
             <div id = "rollcard-list"> 
+
               {this.state.rollcardData.map((rollcard, idx) => {
                 // Used this to help figure out how to use includes in a way that's case insenitive
                 // https://stackoverflow.com/questions/48145432/javascript-includes-case-insensitive
+                // Used this for help with includes
+                //  https://www.w3schools.com/jsref/jsref_includes.asp
                 if ((this.state.termToSearch == "") || 
                 (rollcard.roll_figcaption.toLowerCase().includes(this.state.termToSearch.toLowerCase()))) {
+
                   this.state.found = true;
+
                   return <Roll
                     key={rollcard.roll_name}
                     cardIndex={idx}
@@ -398,13 +429,17 @@ class HomePage extends Component {
                     onAddCart={this.addToCartHandler}
                     onTogglePopUp={this.togglePopUp}
                     />
-                } else {
-                }
+
+                } 
+
+                else {}
+
               })}
 
               { !this.state.found &&
                 <div className = "search_empty_text">No Match!</div>
               }
+              
             </div>
 
           </div>

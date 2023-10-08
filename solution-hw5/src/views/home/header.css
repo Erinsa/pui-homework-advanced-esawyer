@@ -10,6 +10,7 @@ justify-content
 align-content
 align-items
 column-gap
+text-align
 font-family
 font-size
 font-weight
@@ -27,7 +28,7 @@ anything else */
     width: 100%;
     display: flex;
     flex-direction: row;
-  }
+}
   
 /* logo image for header */
 .logo {
@@ -76,6 +77,7 @@ https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with
     margin-right: 75px;
 }
 
+/* Styling of product text / link in nav bar */
 .product_link {
     color: black;
     text-decoration: none;
@@ -89,15 +91,16 @@ https://www.w3schools.com/cssref/sel_hover.php */
     background-color: yellow;
 }
 
+/* Styling of cart button in nav bar to make it look like plain text */
 .cart_show_button {
+    font-size: 20pt;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
     color: black;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0);
-    border: 0px;
-    padding: 0px;
-    margin: 0px;
-    font-size: 20pt;
 }
 
 .cart-box {
@@ -105,10 +108,6 @@ https://www.w3schools.com/cssref/sel_hover.php */
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
-}
-
-.cart-text {
-    padding-bottom: 5px;
 }
 
 .cart-contents {
@@ -137,16 +136,16 @@ https://www.w3schools.com/cssref/pr_class_visibility.php */
     border: solid black 1px;
     background-color: white;
     visibility: hidden;
-  }
+}
   
-  .cart_pop_up_visibility_visible {
-    visibility: visible;
-  }
-  
-  .cart-pop_up-added {
-    padding-bottom: 10px;
-  }
-  
-  .cart-pop_up-type {
-    font-weight: bolder;
-  }
+.cart_pop_up_visibility_visible {
+visibility: visible;
+}
+
+.cart-pop_up-added {
+padding-bottom: 10px;
+}
+
+.cart-pop_up-type {
+font-weight: bolder;
+}

@@ -7,91 +7,50 @@ import './roll.css';
 class Roll extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-        // radio1State
-    };   
+    this.state = {};   
   }
 
   render() {
 
-    // const buttonStyle = {
-    //     flex: "1 0 auto",
-    //     fontSize: "14pt",
-    //     padding: "5px 10px 5px 9px",
-    //     border: "2px solid black",
-    //     marginLeft: "5px",
-    //     // background-color: white,
-    //     backgroundColor: this.props.radio1State == "checked" ? "lightgray" : "white",
-    // }
-
+    // Inline style for when quanity button 1 is selected or not
     const buttonStyle1 = {
         flex: "1 0 auto",
         fontSize: "14pt",
         padding: "5px 10px 5px 9px",
         border: "2px solid black",
         marginLeft: "5px",
-        // background-color: white,
         backgroundColor: this.props.radioChecked == "radio1" ? "lightgray" : "white",
     }
     
+    // Inline style for when quanity button 3 is selected or not
     const buttonStyle3 = {
         flex: "1 0 auto",
         fontSize: "14pt",
         padding: "5px 10px 5px 9px",
         border: "2px solid black",
         marginLeft: "5px",
-        // background-color: white,
         backgroundColor: this.props.radioChecked == "radio3" ? "lightgray" : "white",
     }
 
-    
+    // Inline style for when quanity button 6 is selected or not
     const buttonStyle6 = {
         flex: "1 0 auto",
         fontSize: "14pt",
         padding: "5px 10px 5px 9px",
         border: "2px solid black",
         marginLeft: "5px",
-        // background-color: white,
         backgroundColor: this.props.radioChecked == "radio6" ? "lightgray" : "white",
     }
 
-    
+    // Inline style for when quanity button 12 is selected or not
     const buttonStyle12 = {
         flex: "1 0 auto",
         fontSize: "14pt",
         padding: "5px 10px 5px 9px",
         border: "2px solid black",
         marginLeft: "5px",
-        // background-color: white,
         backgroundColor: this.props.radioChecked == "radio12" ? "lightgray" : "white",
     }
-    // buttonStyle1
-    // buttonStyle2
-    // buttonStyle3
-    // buttonStyle4
-
-    // const buttonChecked = {
-    //     flex: "1 0 auto",
-    //     fontSize: "14pt",
-    //     padding: "5px 10px 5px 9px",
-    //     border: "2px solid black",
-    //     marginLeft: "5px",
-    //     // background-color: white,
-    //     backgroundColor: "lightgray"
-    // }
-
-    // const buttonUnchecked = {
-    //     flex: "1 0 auto",
-    //     fontSize: "14pt",
-    //     padding: "5px 10px 5px 9px",
-    //     border: "2px solid black",
-    //     marginLeft: "5px",
-    //     // background-color: white,
-    //     backgroundColor: "white"
-    // }
-
-    // let style6 = buttonUnchecked;
-    
 
     return (
 
@@ -142,9 +101,6 @@ class Roll extends Component {
                             <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`} style={buttonStyle3}>3</span>
                             </label>
 
-                            {/* if ({this.props.radioChecked} == "radio6"){
-                                style6 = buttonChecked;
-                            }; */}
                             <label className ="quantity_buttons">
                             <input value = '6' type = "radio" name = {`radio_${this.props.cardIndex}`} onClick={(event) => this.props.onQuantityChange(event, this.props.cardIndex)} />
                             <span className ={"new_quantity_button "+ `radio_${this.props.cardIndex}`} style={buttonStyle6}>6</span>

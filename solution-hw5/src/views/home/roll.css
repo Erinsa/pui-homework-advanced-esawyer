@@ -10,6 +10,7 @@ justify-content
 align-content
 align-items
 column-gap
+text-align
 font-family
 font-size
 font-weight
@@ -24,8 +25,7 @@ anything else */
   
 /* the basis of the product cards - section is its flex parent and it is also a flex container */
 .roll_card {
-    width:275px;
-    /* width: calc((100% - 100px) / 3); */
+    width: 275px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -37,7 +37,7 @@ anything else */
 
 /* figure (flex container and flex child) containing image and caption */
 figure.roll_figure {
-    margin:20px 0px 15px 0px;
+    margin: 20px 0px 15px 0px;
 }
 
 /* Used for reference for help adding a border to image:
@@ -61,7 +61,7 @@ https://www.w3schools.com/tags/tag_figcaption.asp */
 Thinking about it like outer, rows, and items really helped me.
 https://stackoverflow.com/questions/55738082/how-to-make-a-flexible-2x3-grid-using-flexbox */
 /* the outer flex container for our options/buttons and labels */
-.outer{
+.outer {
     display: flex;
     flex-direction: column;
     font-size: 14pt;
@@ -81,19 +81,19 @@ https://stackoverflow.com/questions/55738082/how-to-make-a-flexible-2x3-grid-usi
 }
 
 /* styling for just label text */
-.item.text{
+.item.text {
     height: 10px;
     flex: 0 0 35%;
 }
 
 /* styling specifically for price label (bigger and bolder on mockup) */
-.price_text{
+.price_text {
     font-size: 16pt;
     font-weight: bold;
 }
 
 /* styling for option item */
-.option{
+.option {
     justify-content: center;
 }
 
@@ -117,7 +117,7 @@ https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
 https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
 https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
-/* start styling for custom radio buttons */
+/* start styling for custom radio buttons - basic form ONLY - used inline and state for color / selection */
 .quantity_button_container {
     width: calc(100% - 15px);
     display: flex;
@@ -132,7 +132,6 @@ https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
     padding-top: 5px;
     padding-bottom: 5px;
     margin-left: 5px;
-    background-color: white;
 }
 
 .quantity_buttons {
@@ -153,20 +152,7 @@ https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
     opacity: 0;
     cursor: pointer;
 }
-
-/* .new_quantity_button {
-    flex: 1 0 auto;
-    font-size: 14pt;
-    padding: 5px 10px 5px 9px;
-    border: 2px solid black;
-    margin-left: 5px;
-    background-color: white;
-}
-
-.quantity_buttons input:checked ~ .new_quantity_button {
-    background-color: lightgray;
-} */
-/* end styling for custom radio buttons */
+/* end styling for custom radio buttons - basic form ONLY - used inline and state for color / selection */
 
 /* styling for add to cart button */
 .cart_button {
