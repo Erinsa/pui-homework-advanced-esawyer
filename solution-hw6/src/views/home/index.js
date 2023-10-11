@@ -5,6 +5,7 @@ import './index.css';
 import Roll from './roll.js';
 import Header from './header.js';
 import CartRoll from './cartroll.js';
+import Cart from './cart.js';
 
 class HomePage extends Component {
   constructor(props) {
@@ -85,7 +86,7 @@ class HomePage extends Component {
         }
       ],
 
-      cartrollData: JSON.parse(localStorage.getItem("cartrollData")) || [],
+      // cartrollData: JSON.parse(localStorage.getItem("cartrollData")) || [],
       // cartrollData: [],
       popUpVisible: false,
       totalPrice: "0.00",
@@ -108,13 +109,16 @@ class HomePage extends Component {
 
   }
 
-  componentDidMount() {
-    localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
-  }
+  // componentDidMount() {
+  //   localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
+  // }
 
-  componentDidUpdate() {
-    localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
-  }
+  // componentDidUpdate() {
+  //   localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
+  //   // console.log("cart", this.state.cartrollData)
+  //   // if 
+  //   // console.log("cart add", JSON.parse(localStorage.getItem("cartrollData")))
+  // }
 
   // This function helps us calculate the price based on the given formula
   priceCalculator (base_price, glazing, quantity) {
@@ -181,13 +185,15 @@ class HomePage extends Component {
     const newCartRollData = this.state.cartrollData
     newCartRollData.push(newCartRoll)
 
-    let item_count = newCartRollData.length;
-    let itemText = "";
-    if (item_count == 1) {
-      itemText = " item";
-    } else {
-      itemText = " items";
-    }
+    // let item_count = newCartRollData.length;
+    // let itemText = "";
+    // if (item_count == 1) {
+    //   itemText = " item";
+    // } else {
+    //   itemText = " items";
+    // }
+
+    // console.log("cart add", JSON.parse(localStorage.getItem("cartrollData")))
 
     this.setState(prevState => ({
       ...prevState,
@@ -196,9 +202,9 @@ class HomePage extends Component {
       cart_roll_pack: newRoll.roll_pack_size,
       cart_roll_price: newRoll.roll_price,
       cartrollData: newCartRollData,
-      totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
-      totalItems: item_count,
-      totalItemsText: itemText,
+      // totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
+      // totalItems: item_count,
+      // totalItemsText: itemText,
     }))
   };
 
@@ -210,19 +216,20 @@ class HomePage extends Component {
 
     newCartRollData.splice(rollIndex, 1);
 
-    let item_count = newCartRollData.length;
-    let itemText = "";
-    if (item_count == 1) {
-      itemText = " item";
-    } else {
-      itemText = " items";
-    }
+    // let item_count = newCartRollData.length;
+    // let itemText = "";
+    // if (item_count == 1) {
+    //   itemText = " item";
+    // } else {
+    //   itemText = " items";
+    // }
 
+    // console.log("cart remove", newCartRollData)
     this.setState(prevState => ({
       ...prevState,
-      totalPrice: newTotalPrice,
-      totalItems: item_count,
-      totalItemsText: itemText,
+      // totalPrice: newTotalPrice,
+      // totalItems: item_count,
+      // totalItemsText: itemText,
       cartrollData: newCartRollData
     }))
   };
@@ -346,16 +353,27 @@ class HomePage extends Component {
                   <div className = "cart_shown_price_items_text_holder">
 
                     <div className = "cart-items-text-shown">
-                      {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`}
+                      {/* {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`} */}
+                      {console.log("cart roll check", JSON.parse(localStorage.getItem("cartrollData")))}
+                      {`Shopping Cart (`+`${JSON.parse(localStorage.getItem("cartrollData")).length}`+ `${JSON.parse(localStorage.getItem("cartrollData")).length == 1 ? " item" : " items"}`+`)`}
+                      {/* "Work" ? "blue" : "green" */}
                     </div>
 
                     <div className = "cart-total-text-shown">
-                      {"Total: "+ `${this.state.totalPrice}`}
+                      {"Total: "+ `${JSON.parse(localStorage.getItem("cartrollData")).reduce((sum, num) => parseFloat(sum) + parseFloat(num.roll_price), 0).toFixed(2)}`}
+                      {/* {"Total: "+ `${this.state.cartrollData.reduce((sum, num) => console.log("num", num) )}`} */}
                     </div>
 
                   </div>
 
-                  <div className = "cartcard-list"> 
+                  <Cart
+                    // cartrollData = {this.state.cartrollData}
+                    onRemove = {this.removeButtonHandler}
+                    priceCalculator = {this.priceCalculator}
+                  />
+
+                  {/* <div className = "cartcard-list"> 
+
                     {this.state.cartrollData.map((cartroll, idx) => {
                       return <CartRoll
                         key={idx}
@@ -371,7 +389,7 @@ class HomePage extends Component {
                         onRemove = {this.removeButtonHandler}
                         />;
                     })}
-                  </div>
+                  </div> */}
 
                 </div>
               }
