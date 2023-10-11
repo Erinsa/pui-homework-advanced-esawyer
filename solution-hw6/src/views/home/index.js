@@ -85,7 +85,8 @@ class HomePage extends Component {
         }
       ],
 
-      cartrollData: [],
+      cartrollData: JSON.parse(localStorage.getItem("cartrollData")) || [],
+      // cartrollData: [],
       popUpVisible: false,
       totalPrice: "0.00",
       totalItems: 0,
@@ -98,12 +99,21 @@ class HomePage extends Component {
       cart_roll_glazing: "Keep original",
       cart_roll_pack: 1,
       cart_roll_price: 2.49,
+      
 
     };
     
     this.togglePopUp = this.togglePopUp.bind(this);
     this.toggleCart = this.toggleCart.bind(this);
 
+  }
+
+  componentDidMount() {
+    localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
   }
 
   // This function helps us calculate the price based on the given formula
