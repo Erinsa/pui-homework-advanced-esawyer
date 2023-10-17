@@ -87,6 +87,7 @@ class HomePage extends Component {
       ],
 
       // cartrollData: JSON.parse(localStorage.getItem("cartrollData")) || [],
+      cartRollData: JSON.parse(localStorage.getItem("cartRollData")) || [],
       // cartrollData: [],
       popUpVisible: false,
       totalPrice: "0.00",
@@ -111,6 +112,7 @@ class HomePage extends Component {
 
   // componentDidMount() {
   //   localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
+  //   // console.log("cart", this.state.cartrollData)
   // }
 
   // componentDidUpdate() {
@@ -168,6 +170,7 @@ class HomePage extends Component {
 
   // This function handles adding rolls to the cart, updating associated values, and displaying the pop up and roll cards when the cart button is pressed.
   addToCartHandler = (cardIndex) => {
+    console.log("cart add", JSON.parse(localStorage.getItem("cartRollData")))
     const newRoll = this.state.rollcardData[cardIndex];
 
     let newCartRoll = {
@@ -182,8 +185,13 @@ class HomePage extends Component {
       roll_pack_size: newRoll.roll_pack_size,
     }
 
-    const newCartRollData = this.state.cartrollData
+    // const newCartRollData = this.state.cartrollData
+    // let newCartRollData = JSON.parse(localStorage.getItem("cartrollData"))
+    let newCartRollData = JSON.parse(localStorage.getItem("cartRollData"))
+    console.log("cart new add", newCartRollData)
     newCartRollData.push(newCartRoll)
+    console.log("cart new add post push", newCartRollData)
+    localStorage.setItem("cartRollData", JSON.stringify(newCartRollData));
 
     // let item_count = newCartRollData.length;
     // let itemText = "";
@@ -201,38 +209,44 @@ class HomePage extends Component {
       cart_roll_glazing: newRoll.roll_glazing,
       cart_roll_pack: newRoll.roll_pack_size,
       cart_roll_price: newRoll.roll_price,
-      cartrollData: newCartRollData,
+      // cartrollData: newCartRollData,
       // totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
       // totalItems: item_count,
       // totalItemsText: itemText,
     }))
   };
 
-  // This function handles removing rolls from the cart via the remove button on the cart roll cards, and updating associated values
-  removeButtonHandler = (rollIndex) => {
-    const newCartRollData = this.state.cartrollData;
-    let newTotalPrice = this.state.totalPrice;
-    newTotalPrice = (parseFloat(newTotalPrice) - parseFloat(newCartRollData[rollIndex].roll_price)).toFixed(2)
+  // // This function handles removing rolls from the cart via the remove button on the cart roll cards, and updating associated values
+  // removeButtonHandler = (rollIndex) => {
+  //   let newCartRollData = JSON.parse(localStorage.getItem("cartrollData"))
+  //   // newCartRollData.push(newCartRoll)
+  //   // localStorage.setItem("cartrollData", JSON.stringify(newCartRollData));
+  //   // let newCartRollData = this.state.cartrollData;
+  //   // let newCartRollData = JSON.parse(localStorage.getItem("cartrollData"))
+  //   // let newTotalPrice = this.state.totalPrice;
+  //   // newTotalPrice = (parseFloat(newTotalPrice) - parseFloat(newCartRollData[rollIndex].roll_price)).toFixed(2)
 
-    newCartRollData.splice(rollIndex, 1);
+  //   newCartRollData.splice(rollIndex, 1);
 
-    // let item_count = newCartRollData.length;
-    // let itemText = "";
-    // if (item_count == 1) {
-    //   itemText = " item";
-    // } else {
-    //   itemText = " items";
-    // }
+  //   // let item_count = newCartRollData.length;
+  //   // let itemText = "";
+  //   // if (item_count == 1) {
+  //   //   itemText = " item";
+  //   // } else {
+  //   //   itemText = " items";
+  //   // }
 
-    // console.log("cart remove", newCartRollData)
-    this.setState(prevState => ({
-      ...prevState,
-      // totalPrice: newTotalPrice,
-      // totalItems: item_count,
-      // totalItemsText: itemText,
-      cartrollData: newCartRollData
-    }))
-  };
+  //   // console.log("cart remove", newCartRollData)
+  //   // localStorage.setItem("cartrollData", JSON.stringify(newCartRollData));
+  //   localStorage.setItem("cartrollData", JSON.stringify(newCartRollData));
+  //   // this.setState(prevState => ({
+  //   //   ...prevState,
+  //   //   // totalPrice: newTotalPrice,
+  //   //   // totalItems: item_count,
+  //   //   // totalItemsText: itemText,
+  //   //   cartrollData: newCartRollData
+  //   // }))
+  // };
 
   // This function handles updating the value we store when users type new values in to the search bar
   handleSearchTextChange = (event) => {
@@ -319,6 +333,10 @@ class HomePage extends Component {
 
   render() {
 
+    const cartVisibility = {
+      visibility: this.state.cartShowing == true ? "visible" : "hidden"
+    }
+
     return (
 
       <div className = "HomePage">
@@ -338,33 +356,35 @@ class HomePage extends Component {
             />
           </div>
 
-          {this.state.cartShowing &&
+          {/* {console.log("cart roll check", JSON.parse(localStorage.getItem("cartrollData")))} */}
 
-            <div className = "cart_holder" >
+          {/* {this.state.cartShowing && */}
 
-              {(this.state.cartrollData.length == 0) &&
-                <div className = "cart_empty_text">The cart is empty!</div>
-              }
+          <div className = "cart_holder" style={cartVisibility}>
+            <div className = "cart_holder">
 
-              {(this.state.cartrollData.length >= 1) &&
+              {/* {(this.state.cartrollData.length == 0) && */}
+              {/* //   <div className = "cart_empty_text">The cart is empty!</div>
 
-                <div className = "cart_shown_holder">
+              // {(this.state.cartrollData.length >= 1) && */}
 
-                  <div className = "cart_shown_price_items_text_holder">
+                {/* <div className = "cart_shown_holder">  */}
 
-                    <div className = "cart-items-text-shown">
+                  {/* <div className = "cart_shown_price_items_text_holder">
+
+                    <div className = "cart-items-text-shown"> */}
                       {/* {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`} */}
-                      {console.log("cart roll check", JSON.parse(localStorage.getItem("cartrollData")))}
-                      {`Shopping Cart (`+`${JSON.parse(localStorage.getItem("cartrollData")).length}`+ `${JSON.parse(localStorage.getItem("cartrollData")).length == 1 ? " item" : " items"}`+`)`}
+                      {/* {console.log("cart roll check", JSON.parse(localStorage.getItem("cartrollData")))}
+                      {`Shopping Cart (`+`${JSON.parse(localStorage.getItem("cartrollData")).length}`+ `${JSON.parse(localStorage.getItem("cartrollData")).length == 1 ? " item" : " items"}`+`)`} */}
                       {/* "Work" ? "blue" : "green" */}
-                    </div>
+                    {/* </div> */}
 
-                    <div className = "cart-total-text-shown">
-                      {"Total: "+ `${JSON.parse(localStorage.getItem("cartrollData")).reduce((sum, num) => parseFloat(sum) + parseFloat(num.roll_price), 0).toFixed(2)}`}
+                    {/* <div className = "cart-total-text-shown">
+                      {"Total: "+ `${JSON.parse(localStorage.getItem("cartrollData")).reduce((sum, num) => parseFloat(sum) + parseFloat(num.roll_price), 0).toFixed(2)}`} */}
                       {/* {"Total: "+ `${this.state.cartrollData.reduce((sum, num) => console.log("num", num) )}`} */}
-                    </div>
+                    {/* </div> */}
 
-                  </div>
+                  {/* </div> */}
 
                   <Cart
                     // cartrollData = {this.state.cartrollData}
@@ -392,11 +412,10 @@ class HomePage extends Component {
                   </div> */}
 
                 </div>
-              }
 
             </div>
 
-          }
+          {/* } */}
 
           <div className = "search_sort_container">
 
