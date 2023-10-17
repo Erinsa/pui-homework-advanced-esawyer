@@ -41,8 +41,6 @@ class Cart extends Component {
 
                   </div>
 
-                  
-
                   <div className = "cartcard-list"> 
                     {this.props.cartData.map((cartroll, idx) => {
                       return <CartRoll
@@ -57,7 +55,7 @@ class Cart extends Component {
                         roll_pack_size={cartroll.roll_pack_size}
                         roll_price= {this.props.priceCalculator(cartroll.roll_base_price, cartroll.roll_glazing, cartroll.roll_pack_size)}
                         onRemove = {this.props.removeButtonHandler}
-                        />;
+                      />;
                     })}
                   </div>
 
@@ -68,8 +66,7 @@ class Cart extends Component {
 
           }
 
-          </div>
-
+        </div>
 
     );
   }

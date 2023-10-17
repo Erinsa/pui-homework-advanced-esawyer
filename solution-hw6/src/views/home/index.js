@@ -85,8 +85,6 @@ class HomePage extends Component {
         }
       ],
 
-      // cartrollData: [],
-      // cartData: JSON.parse(localStorage.getItem("cartData")) || [],
       cartData: JSON.parse(localStorage.getItem("cartData")) || [],
       popUpVisible: false,
       totalPrice: "0.00",
@@ -114,11 +112,8 @@ class HomePage extends Component {
 
   componentDidUpdate() {
     const oldLength = JSON.parse(localStorage.getItem("cartData")).length
-
     localStorage.setItem("cartData", JSON.stringify(this.state.cartData));
-
     const newLength = JSON.parse(localStorage.getItem("cartData")).length
-
     if (oldLength != newLength){
       console.log("Rolls have been added or removed from the cart. Here is the updated cart from local storage: ", JSON.parse(localStorage.getItem("cartData")) )
     }
@@ -337,12 +332,14 @@ class HomePage extends Component {
           </div>
 
           <div className = "cart_component_holder">
+
             <Cart
               cartData = {this.state.cartData}
               cartShowing = {this.state.cartShowing}
               removeButtonHandler = {this.removeButtonHandler}
               priceCalculator = {this.priceCalculator}
               />
+              
           </div>
 
           <div className = "search_sort_container">
