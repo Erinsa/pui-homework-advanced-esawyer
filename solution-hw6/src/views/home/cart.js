@@ -36,7 +36,7 @@ class Cart extends Component {
                     </div>
 
                     <div className = "cart-total-text-shown">
-                      {"Total: "+ `${this.props.cartData.reduce((sum, num) => parseFloat(sum) + parseFloat(num.roll_price), 0).toFixed(2)}`}
+                      {"Total: $ "+ `${this.props.cartData.reduce((sum, num) => parseFloat(sum) + parseFloat(num.roll_price), 0).toFixed(2)}`}
                     </div>
 
                   </div>
