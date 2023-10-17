@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './index.css';
 import Roll from './roll.js';
 import Header from './header.js';
+import CartRoll from './cartroll.js';
 import Cart from './cart.js';
 
 class HomePage extends Component {
@@ -85,9 +86,9 @@ class HomePage extends Component {
         }
       ],
 
+      // cartrollData: JSON.parse(localStorage.getItem("cartrollData")) || [],
+      cartRollData: JSON.parse(localStorage.getItem("cartRollData")) || [],
       // cartrollData: [],
-      // cartData: JSON.parse(localStorage.getItem("cartData")) || [],
-      cartData: JSON.parse(localStorage.getItem("cartData")) || [],
       popUpVisible: false,
       totalPrice: "0.00",
       totalItems: 0,
@@ -100,6 +101,7 @@ class HomePage extends Component {
       cart_roll_glazing: "Keep original",
       cart_roll_pack: 1,
       cart_roll_price: 2.49,
+      
 
     };
     
@@ -108,22 +110,17 @@ class HomePage extends Component {
 
   }
 
-  componentDidMount() {
-    localStorage.setItem("cartData", JSON.stringify(this.state.cartData));
-    console.log("cart check", JSON.parse(localStorage.getItem("cartData")) )
-  }
+  // componentDidMount() {
+  //   localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
+  //   // console.log("cart", this.state.cartrollData)
+  // }
 
-  componentDidUpdate() {
-    const oldLength = JSON.parse(localStorage.getItem("cartData")).length
-
-    localStorage.setItem("cartData", JSON.stringify(this.state.cartData));
-
-    const newLength = JSON.parse(localStorage.getItem("cartData")).length
-
-    if (oldLength != newLength){
-      console.log("Rolls have been added or removed from the cart. Here is the updated cart from local storage: ", JSON.parse(localStorage.getItem("cartData")) )
-    }
-  }
+  // componentDidUpdate() {
+  //   localStorage.setItem("cartrollData", JSON.stringify(this.state.cartrollData));
+  //   // console.log("cart", this.state.cartrollData)
+  //   // if 
+  //   // console.log("cart add", JSON.parse(localStorage.getItem("cartrollData")))
+  // }
 
   // This function helps us calculate the price based on the given formula
   priceCalculator (base_price, glazing, quantity) {
@@ -173,6 +170,7 @@ class HomePage extends Component {
 
   // This function handles adding rolls to the cart, updating associated values, and displaying the pop up and roll cards when the cart button is pressed.
   addToCartHandler = (cardIndex) => {
+    console.log("cart add", JSON.parse(localStorage.getItem("cartRollData")))
     const newRoll = this.state.rollcardData[cardIndex];
 
     let newCartRoll = {
@@ -187,16 +185,23 @@ class HomePage extends Component {
       roll_pack_size: newRoll.roll_pack_size,
     }
 
-    const newCartRollData = this.state.cartData
+    // const newCartRollData = this.state.cartrollData
+    // let newCartRollData = JSON.parse(localStorage.getItem("cartrollData"))
+    let newCartRollData = JSON.parse(localStorage.getItem("cartRollData"))
+    console.log("cart new add", newCartRollData)
     newCartRollData.push(newCartRoll)
+    console.log("cart new add post push", newCartRollData)
+    localStorage.setItem("cartRollData", JSON.stringify(newCartRollData));
 
-    let item_count = newCartRollData.length;
-    let itemText = "";
-    if (item_count == 1) {
-      itemText = " item";
-    } else {
-      itemText = " items";
-    }
+    // let item_count = newCartRollData.length;
+    // let itemText = "";
+    // if (item_count == 1) {
+    //   itemText = " item";
+    // } else {
+    //   itemText = " items";
+    // }
+
+    // console.log("cart add", JSON.parse(localStorage.getItem("cartrollData")))
 
     this.setState(prevState => ({
       ...prevState,
@@ -204,7 +209,6 @@ class HomePage extends Component {
       cart_roll_glazing: newRoll.roll_glazing,
       cart_roll_pack: newRoll.roll_pack_size,
       cart_roll_price: newRoll.roll_price,
-      cartData: newCartRollData,
       // cartrollData: newCartRollData,
       // totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
       // totalItems: item_count,
@@ -212,30 +216,37 @@ class HomePage extends Component {
     }))
   };
 
-  // This function handles removing rolls from the cart via the remove button on the cart roll cards, and updating associated values
-  removeButtonHandler = (rollIndex) => {
-    const newCartRollData = this.state.cartData;
-    let newTotalPrice = this.state.totalPrice;
-    newTotalPrice = (parseFloat(newTotalPrice) - parseFloat(newCartRollData[rollIndex].roll_price)).toFixed(2)
+  // // This function handles removing rolls from the cart via the remove button on the cart roll cards, and updating associated values
+  // removeButtonHandler = (rollIndex) => {
+  //   let newCartRollData = JSON.parse(localStorage.getItem("cartrollData"))
+  //   // newCartRollData.push(newCartRoll)
+  //   // localStorage.setItem("cartrollData", JSON.stringify(newCartRollData));
+  //   // let newCartRollData = this.state.cartrollData;
+  //   // let newCartRollData = JSON.parse(localStorage.getItem("cartrollData"))
+  //   // let newTotalPrice = this.state.totalPrice;
+  //   // newTotalPrice = (parseFloat(newTotalPrice) - parseFloat(newCartRollData[rollIndex].roll_price)).toFixed(2)
 
-    newCartRollData.splice(rollIndex, 1);
+  //   newCartRollData.splice(rollIndex, 1);
 
-    let item_count = newCartRollData.length;
-    let itemText = "";
-    if (item_count == 1) {
-      itemText = " item";
-    } else {
-      itemText = " items";
-    }
+  //   // let item_count = newCartRollData.length;
+  //   // let itemText = "";
+  //   // if (item_count == 1) {
+  //   //   itemText = " item";
+  //   // } else {
+  //   //   itemText = " items";
+  //   // }
 
-    this.setState(prevState => ({
-      ...prevState,
-      totalPrice: newTotalPrice,
-      totalItems: item_count,
-      totalItemsText: itemText,
-      cartData: newCartRollData
-    }))
-  };
+  //   // console.log("cart remove", newCartRollData)
+  //   // localStorage.setItem("cartrollData", JSON.stringify(newCartRollData));
+  //   localStorage.setItem("cartrollData", JSON.stringify(newCartRollData));
+  //   // this.setState(prevState => ({
+  //   //   ...prevState,
+  //   //   // totalPrice: newTotalPrice,
+  //   //   // totalItems: item_count,
+  //   //   // totalItemsText: itemText,
+  //   //   cartrollData: newCartRollData
+  //   // }))
+  // };
 
   // This function handles updating the value we store when users type new values in to the search bar
   handleSearchTextChange = (event) => {
@@ -322,6 +333,10 @@ class HomePage extends Component {
 
   render() {
 
+    const cartVisibility = {
+      visibility: this.state.cartShowing == true ? "visible" : "hidden"
+    }
+
     return (
 
       <div className = "HomePage">
@@ -341,14 +356,66 @@ class HomePage extends Component {
             />
           </div>
 
-          <div className = "cart_component_holder">
-            <Cart
-              cartData = {this.state.cartData}
-              cartShowing = {this.state.cartShowing}
-              removeButtonHandler = {this.removeButtonHandler}
-              priceCalculator = {this.priceCalculator}
-              />
-          </div>
+          {/* {console.log("cart roll check", JSON.parse(localStorage.getItem("cartrollData")))} */}
+
+          {/* {this.state.cartShowing && */}
+
+          <div className = "cart_holder" style={cartVisibility}>
+            <div className = "cart_holder">
+
+              {/* {(this.state.cartrollData.length == 0) && */}
+              {/* //   <div className = "cart_empty_text">The cart is empty!</div>
+
+              // {(this.state.cartrollData.length >= 1) && */}
+
+                {/* <div className = "cart_shown_holder">  */}
+
+                  {/* <div className = "cart_shown_price_items_text_holder">
+
+                    <div className = "cart-items-text-shown"> */}
+                      {/* {`Shopping Cart (`+`${this.state.totalItems}`+ `${this.state.totalItemsText}`+`)`} */}
+                      {/* {console.log("cart roll check", JSON.parse(localStorage.getItem("cartrollData")))}
+                      {`Shopping Cart (`+`${JSON.parse(localStorage.getItem("cartrollData")).length}`+ `${JSON.parse(localStorage.getItem("cartrollData")).length == 1 ? " item" : " items"}`+`)`} */}
+                      {/* "Work" ? "blue" : "green" */}
+                    {/* </div> */}
+
+                    {/* <div className = "cart-total-text-shown">
+                      {"Total: "+ `${JSON.parse(localStorage.getItem("cartrollData")).reduce((sum, num) => parseFloat(sum) + parseFloat(num.roll_price), 0).toFixed(2)}`} */}
+                      {/* {"Total: "+ `${this.state.cartrollData.reduce((sum, num) => console.log("num", num) )}`} */}
+                    {/* </div> */}
+
+                  {/* </div> */}
+
+                  <Cart
+                    // cartrollData = {this.state.cartrollData}
+                    onRemove = {this.removeButtonHandler}
+                    priceCalculator = {this.priceCalculator}
+                  />
+
+                  {/* <div className = "cartcard-list"> 
+
+                    {this.state.cartrollData.map((cartroll, idx) => {
+                      return <CartRoll
+                        key={idx}
+                        rollIndex={idx}
+                        roll_img_src={cartroll.roll_img_src}
+                        roll_img_alt={cartroll.roll_img_alt}
+                        roll_figcaption={cartroll.roll_figcaption}
+                        roll_base_price={cartroll.roll_base_price}
+                        roll_type={cartroll.roll_type}
+                        roll_glazing={cartroll.roll_glazing}
+                        roll_pack_size={cartroll.roll_pack_size}
+                        roll_price= {this.priceCalculator(cartroll.roll_base_price, cartroll.roll_glazing, cartroll.roll_pack_size)}
+                        onRemove = {this.removeButtonHandler}
+                        />;
+                    })}
+                  </div> */}
+
+                </div>
+
+            </div>
+
+          {/* } */}
 
           <div className = "search_sort_container">
 
