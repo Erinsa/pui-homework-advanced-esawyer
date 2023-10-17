@@ -110,7 +110,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     localStorage.setItem("cartData", JSON.stringify(this.state.cartData));
-    console.log("cart check", JSON.parse(localStorage.getItem("cartData")) )
   }
 
   componentDidUpdate() {
@@ -205,10 +204,6 @@ class HomePage extends Component {
       cart_roll_pack: newRoll.roll_pack_size,
       cart_roll_price: newRoll.roll_price,
       cartData: newCartRollData,
-      // cartrollData: newCartRollData,
-      // totalPrice: (parseFloat(this.state.totalPrice) + parseFloat(newRoll.roll_price)).toFixed(2),
-      // totalItems: item_count,
-      // totalItemsText: itemText,
     }))
   };
 
