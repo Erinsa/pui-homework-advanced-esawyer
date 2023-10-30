@@ -1,0 +1,185 @@
+/* Generally used the following order within styling throughout
+width
+height
+display
+position
+flex
+direction
+wrap
+justify-content
+align-content
+align-items
+column-gap
+text-align
+font-family
+font-size
+font-weight
+padding
+border
+margin
+color
+background-color
+opacity
+cursor
+anything else */
+
+/* for flex boxes and alignment throughout I used the following references
+I'm not citing specific examples because I combined learnings from many of them 
+and built upon that learning as I progressed through the assignment. 
+I didn't necessarily used specific code chunks for a specific section */
+/* https://www.w3schools.com/css/css3_flexbox.asp
+https://css-tricks.com/guides/
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_flex_boxes
+https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween
+https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-container  */
+
+/* Got this from css lecture */
+* {
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+/* Referenced css lecture */
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 50px;
+  color: black;
+}
+
+/* Styling for container holding header */
+.header_holder {
+  margin: 0px 0px 10px 0px;
+}
+
+/* Used the following source for help with setting just top and bottom borders
+https://www.w3schools.com/cssref/pr_border-top.php */
+/* Used this source to help find the hex code I wanted:
+afterhttps://colors.artyclick.com/color-names-dictionary/color-names/brownish-grey-color#:~:text=The%20color%20Brownish%20Grey%20corresponds,Green%2C%20and%2037%25%20Blue. */
+/* Styling for overall cart holder (whether cart ahs items or not) */
+.cart_holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 10pt;
+  padding: 10px 75px 15px 75px;
+  border-top: solid 10px #86775F;
+  border-bottom: solid 10px #86775F;
+  margin: 10px 0px -25px 0px;
+}
+
+/* Styling for container displaying items when there are items in cart */
+.cart_shown_holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for "The cart is empty!" text! */
+.cart_empty_text {
+  text-align: center;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: auto;
+}
+
+/* Styling for holder of items and total price text in the cart */
+.cart_shown_price_items_text_holder {
+  width: 110%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14pt;
+  margin: 10px 0px 15px 0px;
+}
+
+/* Styling for items in the cart text for the shopping cart */
+.cart-items-text-shown {
+  text-align: left;
+}
+
+/* Styling for the text that displays the total price of items in the cart */
+.cart-total-text-shown {
+  text-align: right;
+}
+
+/* Styling for holder of cart roll cards */
+.cartcard-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 50px;
+  row-gap: 20px;
+  margin: 0px 0px 0px;
+}
+
+/* Styling for holder of search and sort components */
+.search_sort_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0px 20px 0px 20px;
+  margin: 40px 50px 15px 50px;
+}
+
+/* Styling for text field and button holder */
+.search_holder {
+  display: flex;
+}
+
+/* Styling for text field and button */
+.search_bar {
+  margin: 0px 0px 0px 0px;
+}
+
+/* Styling for search text input field */
+.text_bar {
+  width: 200px;
+}
+
+/* Styling for "No Match!" text */
+.search_empty_text {
+  text-align: center;
+  font-size: 14pt;
+  margin: auto;
+}
+
+/* This was in the demo video, but not in the official instructions, 
+so commented out this functionality for now */
+/* .searchButton:hover {
+  background-color: yellow;
+} */
+
+/* Styling for the text next to the sorting drop down */
+.sort_text {
+  padding: 5px 5px 5px 5px;
+}
+
+/*  Styling for overarching holder of rollcards */
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+}
+
+/* Styling for roll card holder */
+#rollcard-list {
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0px 0px 0px;
+}

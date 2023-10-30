@@ -1,0 +1,151 @@
+/* Generally used the following order within styling throughout
+width
+height
+display
+position
+flex
+direction
+wrap
+justify-content
+align-content
+align-items
+column-gap
+text-align
+font-family
+font-size
+font-weight
+padding
+border
+margin
+color
+background-color
+opacity
+cursor
+anything else */
+
+/* header class includes logo, and header right which has nav, line, and slogan - also a flex parent */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+  
+/* logo image for header */
+.logo {
+    width: 400px;
+    display: flex;
+    padding-right: 30px;
+}
+
+/* flex container that is also a flex parent, contains nav, line, slogan */
+    /* This reference (from above) also helped me with understanding calc()and wrap
+https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween*/
+.header-right {
+    display: flex;
+    flex: 1 0 calc(100% - 400px - 30px);
+    flex-wrap: wrap;
+}
+
+/* References for styling a horizontal line:
+https://www.w3schools.com/howto/howto_css_style_hr.asp
+https://stackoverflow.com/questions/42986500/how-to-display-hr-horizontally-with-flex */
+.horizontal_line {
+    height: 5px;
+    flex: 1 0 102%;
+    color:black;
+    background-color: black;
+}
+
+/* flex child containing slogan */
+.slogan_box {
+    display: flex;
+    align-items: flex-end;
+    font-size: 24pt;
+}
+
+/* holds products and cart nav options as flex children */
+.header-nav{
+    width:100%;
+    height: 10%;
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    column-gap: 50px;
+    font-size: 20pt;
+    margin-right: 75px;
+}
+
+/* Styling of product text / link in nav bar */
+.product_link {
+    color: black;
+    text-decoration: none;
+}
+
+/* Used this as reference for hover:
+https://www.w3schools.com/cssref/sel_hover.php */
+/* makes product yellow when you hover over it */
+.product:hover {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+/* Styling of cart button in nav bar to make it look like plain text */
+.cart_show_button {
+    font-size: 20pt;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    color: black;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.cart-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.cart-contents {
+    display: flex;
+    flex-direction: column;
+    font-size: 12pt;
+}
+
+/* Reference for visibility property
+https://www.w3schools.com/cssref/pr_class_visibility.php */
+.cart_pop_up {
+    width: 160px;
+    height: 120px;
+    display: flex;
+    position: absolute;
+    right: 5px;
+    top: 80px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    row-gap: 0px;
+    text-align: left;
+    font-size: 8pt;
+    padding: 15px 10px 15px 10px;
+    border: solid black 1px;
+    background-color: white;
+    visibility: hidden;
+}
+  
+.cart_pop_up_visibility_visible {
+visibility: visible;
+}
+
+.cart-pop_up-added {
+padding-bottom: 10px;
+}
+
+.cart-pop_up-type {
+font-weight: bolder;
+}
