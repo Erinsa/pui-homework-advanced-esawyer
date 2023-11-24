@@ -36,21 +36,24 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
 /* Got this from css lecture */
 * {
   box-sizing: border-box;
-  max-width: 1200px;
+  max-width: 1300px;
 }
 
 /* Referenced css lecture */
 body {
+  width: 1400px;
+  height: 1000px;
   font-family: sans-serif;
   font-size: 14px;
-  margin: 50px;
+  /* margin: 50px; */
   color: black;
+  background-image: url("../../../public/assets/cards/Background_Image_Play.png");
 }
 
 /* Styling for container holding header */
-.header_holder {
+/* .header_holder {
   margin: 0px 0px 10px 0px;
-}
+} */
 
 /* Used the following source for help with setting just top and bottom borders
 https://www.w3schools.com/cssref/pr_border-top.php */
@@ -164,22 +167,41 @@ so commented out this functionality for now */
 }
 
 /*  Styling for overarching holder of rollcards */
-.section {
+/* .section {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0px 20px 0px 20px;
-}
+  perspective: 1000px;
+} */
 
 /* Styling for roll card holder */
 #rollcard-list {
-  width: calc(100% - 100px);
+  /* width: calc(100% - 100px); */
+  left: 670px;
+  top: 100px;
+  position: absolute;
+  width: 40%;
+  /* width: 3000px; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   margin: 0px 0px 0px;
+  /* perspective: 1000px; */
 }
+
+/* .HomePage{
+  width: 200%;
+  background-image: url("../../../public/assets/cards/Background_Image_Play.png");
+  background-color: aquamarine;
+} */
+
+/* .Outside{
+  width: 3000px;
+  background-image: url("../../../public/assets/cards/Background_Image_Play.png");
+  background-color: aquamarine;
+} */

@@ -2,423 +2,136 @@
 
 import React, { Component } from 'react';
 import './index.css';
-import Roll from './roll.js';
-import Header from './header.js';
-import Cart from './cart.js';
+import Card from './card.js';
+// import Header from './header.js';
+// import Cart from './cart.js';
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rollcardData: [
+      cardData: [
         {
-          roll_name: "Original cinnamon roll",
-          roll_img_src: "assets/products/original-cinnamon-roll.jpg",
-          roll_figcaption: "Original cinnamon roll",
-          roll_img_alt: "Picture of original cinnamon roll",
-          roll_base_price: "2.49",
-          roll_price: "2.49",
-          roll_type: "Original",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1",
-          radioChecked: "radio1",
+          card_name: "Tree_Eng",
+          term_text: "Tree_Eng",
+          match: "Tree",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Tree_Card_English.png",
+          front_img_alt: "Picture",
         },
         {
-          roll_name: "Apple cinnamon roll",
-          roll_img_src: "assets/products/apple-cinnamon-roll.jpg",
-          roll_figcaption: "Apple cinnamon roll",
-          roll_img_alt: "Picture of apple cinnamon roll",
-          roll_base_price: "3.49",
-          roll_price: "3.49",
-          roll_type: "Apple",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1",
-          radioChecked: "radio1",
+          card_name: "Person_Jpn",
+          term_text: "Person_Jpn",
+          match: "Person",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Person_Card_Japanese.png",
+          front_img_alt: "Picture",
         },
         {
-          roll_name: "Raisin cinnamon roll",
-          roll_img_src: "assets/products/raisin-cinnamon-roll.jpg",
-          roll_figcaption: "Raisin cinnamon roll",
-          roll_img_alt: "Picture of raisin cinnamon roll",
-          roll_base_price: "2.99",
-          roll_price: "2.99",
-          roll_type: "Raisin",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1",
-          radioChecked: "radio1",
+          card_name: "Person_Eng",
+          term_text: "Person_Eng",
+          match: "Person",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Person_Card_English.png",
+          front_img_alt: "Picture",
         },
         {
-          roll_name: "Walnut cinnamon roll",
-          roll_img_src: "assets/products/walnut-cinnamon-roll.jpg",
-          roll_figcaption: "Walnut cinnamon roll",
-          roll_img_alt: "Picture of walnut cinnamon roll",
-          roll_base_price: "3.49",
-          roll_price: "3.49",
-          roll_type: "Walnut",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1",
-          radioChecked: "radio1",
+          card_name: "Tree_Jpn",
+          term_text: "Tree_Jpn",
+          match: "Tree",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Tree_Card_Japanese.png",
+          front_img_alt: "Picture",
         },
-        {
-          roll_name: "Double-chocolate cinnamon roll",
-          roll_img_src: "assets/products/double-chocolate-cinnamon-roll.jpg",
-          roll_figcaption: "Double-chocolate cinnamon roll",
-          roll_img_alt: "Picture of double chocolate cinnamon roll",
-          roll_base_price: "3.99",
-          roll_price: "3.99",
-          roll_type: "Double-chocolate",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1",
-          radioChecked: "radio1",
-        },
-        {
-          roll_name: "Strawberry cinnamon roll",
-          roll_img_src: "assets/products/strawberry-cinnamon-roll.jpg",
-          roll_figcaption: "Strawberry cinnamon roll",
-          roll_img_alt: "Picture of strawberry cinnamon roll",
-          roll_base_price: "3.99",
-          roll_price: "3.99",
-          roll_type: "Strawberry",
-          roll_glazing: "Keep original",
-          roll_pack_size: "1",
-          radioChecked: "radio1",
-        }
-      ],
-
-      cartData: JSON.parse(localStorage.getItem("cartData")) || [],
-      popUpVisible: false,
-      totalPrice: "0.00",
-      totalItems: 0,
-      totalItemsText: " items",
-      cartShowing: false,
-      searchText: "",
-      termToSearch: "",
-      found: false,
-      cart_roll_type: "Original",
-      cart_roll_glazing: "Keep original",
-      cart_roll_pack: 1,
-      cart_roll_price: 2.49,
+        // {
+        //   card_name: "Month_Eng",
+        //   term_text: "Month_Eng",
+        //   match: "Month",
+        //   back_img_src: "assets/cards/Card_Back.png",
+        //   back_img_alt: "Picture",
+        //   front_img_src: "assets/cards/Month_Card_English.png",
+        //   front_img_alt: "Picture",
+        // },
+        // {
+        //   card_name: "Month_Jpn",
+        //   term_text: "Month_Jpn",
+        //   match: "Month",
+        //   back_img_src: "assets/cards/Card_Back.png",
+        //   back_img_alt: "Picture",
+        //   front_img_src: "assets/cards/Month_Card_Japanese.png",
+        //   front_img_alt: "Picture",
+        // },
+        // {
+        //   card_name: "Day_Eng",
+        //   term_text: "Day_Eng",
+        //   match: "Day",
+        //   back_img_src: "assets/cards/Card_Back.png",
+        //   back_img_alt: "Picture",
+        //   front_img_src: "assets/cards/Day_Card_English.png",
+        //   front_img_alt: "Picture",
+        // },
+        // {
+        //   card_name: "Day_Jpn",
+        //   term_text: "Day_Jpn",
+        //   match: "Day",
+        //   back_img_src: "assets/cards/Card_Back.png",
+        //   back_img_alt: "Picture",
+        //   front_img_src: "assets/cards/Day_Card_Japanese.png",
+        //   front_img_alt: "Picture",
+        // },
+      ]
 
     };
-    
-    this.togglePopUp = this.togglePopUp.bind(this);
-    this.toggleCart = this.toggleCart.bind(this);
 
-  }
-
-  componentDidMount() {
-    localStorage.setItem("cartData", JSON.stringify(this.state.cartData));
-  }
-
-  componentDidUpdate() {
-    const oldLength = JSON.parse(localStorage.getItem("cartData")).length
-    localStorage.setItem("cartData", JSON.stringify(this.state.cartData));
-    const newLength = JSON.parse(localStorage.getItem("cartData")).length
-    if (oldLength != newLength){
-      console.log("Rolls have been added or removed from the cart. Here is the updated cart from local storage: ", JSON.parse(localStorage.getItem("cartData")) )
-    }
-  }
-
-  // This function helps us calculate the price based on the given formula
-  priceCalculator (base_price, glazing, quantity) {
-    const glazes = {"Keep original": 0.00, "Sugar milk": 0.00, "Vanilla milk": 0.50, "Double chocolate": 1.50};
-    const quantities = {"1": 1, "3": 3, "6": 5, "12": 10};
-    let glaze_price_adjust = glazes[glazing];
-    let quantity_price_adjust = quantities[quantity];
-    let new_price = ((parseFloat(base_price) + parseFloat(glaze_price_adjust)) * parseFloat(quantity_price_adjust)).toFixed(2);
-    return new_price;
-  }
-
-  // This function helps us handle what needs to happen (price change, etc) when a different glaze is selected 
-  glazeChangeSelectorHandler = (event, cardIndex) => {
-    let selectValue = event.target.value;
-    let newRollData = this.state.rollcardData;
-    newRollData[cardIndex].roll_glazing = selectValue;
-    let new_price = this.priceCalculator (newRollData[cardIndex].roll_base_price, newRollData[cardIndex].roll_glazing, newRollData[cardIndex].roll_pack_size);
-    newRollData[cardIndex].roll_price = new_price;
-    this.setState(prevState => ({
-      ...prevState,
-      rollcardData: newRollData
-    }))
   };
 
-  // This function helps us handle what needs to happen (price change, etc) when a different quantity is selected 
-  quantityChangeHandler = (event, cardIndex) => {
-    let buttonValue = event.target.value;
-
-    let newRollData = this.state.rollcardData;
-
-    let quantities_list = [1, 3, 6, 12];
-    for (let quantity of quantities_list){
-      let radio_state = "radio" + buttonValue;
-      if (quantity == buttonValue){
-        newRollData[cardIndex].radioChecked = radio_state;
-      }
-    }
-
-    newRollData[cardIndex].roll_pack_size = buttonValue;
-    let new_price = this.priceCalculator (newRollData[cardIndex].roll_base_price, newRollData[cardIndex].roll_glazing, newRollData[cardIndex].roll_pack_size);
-    newRollData[cardIndex].roll_price = new_price;
-    this.setState(prevState => ({
-      ...prevState,
-      rollcardData: newRollData
-    }))
-  };
-
-  // This function handles adding rolls to the cart, updating associated values, and displaying the pop up and roll cards when the cart button is pressed.
-  addToCartHandler = (cardIndex) => {
-    const newRoll = this.state.rollcardData[cardIndex];
-
-    let newCartRoll = {
-      roll_name: newRoll.roll_name,
-      roll_img_src: newRoll.roll_img_src,
-      roll_figcaption: newRoll.roll_figcaption,
-      roll_img_alt: newRoll.roll_img_alt,
-      roll_base_price: newRoll.roll_base_price,
-      roll_price: newRoll.roll_price,
-      roll_type: newRoll.roll_type,
-      roll_glazing: newRoll.roll_glazing,
-      roll_pack_size: newRoll.roll_pack_size,
-    }
-
-    const newCartRollData = this.state.cartData
-    newCartRollData.push(newCartRoll)
-
-    let item_count = newCartRollData.length;
-    let itemText = "";
-    if (item_count == 1) {
-      itemText = " item";
-    } else {
-      itemText = " items";
-    }
-
-    this.setState(prevState => ({
-      ...prevState,
-      cart_roll_type: newRoll.roll_type,
-      cart_roll_glazing: newRoll.roll_glazing,
-      cart_roll_pack: newRoll.roll_pack_size,
-      cart_roll_price: newRoll.roll_price,
-      cartData: newCartRollData,
-    }))
-  };
-
-  // This function handles removing rolls from the cart via the remove button on the cart roll cards, and updating associated values
-  removeButtonHandler = (rollIndex) => {
-    const newCartRollData = this.state.cartData;
-    let newTotalPrice = this.state.totalPrice;
-    newTotalPrice = (parseFloat(newTotalPrice) - parseFloat(newCartRollData[rollIndex].roll_price)).toFixed(2)
-
-    newCartRollData.splice(rollIndex, 1);
-
-    let item_count = newCartRollData.length;
-    let itemText = "";
-    if (item_count == 1) {
-      itemText = " item";
-    } else {
-      itemText = " items";
-    }
-
-    this.setState(prevState => ({
-      ...prevState,
-      totalPrice: newTotalPrice,
-      totalItems: item_count,
-      totalItemsText: itemText,
-      cartData: newCartRollData
-    }))
-  };
-
-  // This function handles updating the value we store when users type new values in to the search bar
-  handleSearchTextChange = (event) => {
-    let newTerm = event.target.value;
-    this.setState(prevState => ({
-      ...prevState,
-      searchText: newTerm
-    }))
-  };
-
-  // This function handles what happens when the search button is pressed and we actually search for that value in the search bar
-  searchButtonHandler = () => {
-    const newTermToSearch = this.state.searchText;
-    this.setState(prevState => ({
-      ...prevState,
-      found: false,
-      termToSearch: newTermToSearch
-    }))
-  };
-
-  // Used this reference for help with custom sorting functions
-  // https://stackoverflow.com/questions/5002848/how-to-define-custom-sort-function-in-javascript
-  // This is a helper function for comparing roll names for sorting
-  nameCompareHelper = (a, b) => {
-    return function(a, b) {
-
-    // Used this for help with comparing strings
-    // https://stackoverflow.com/questions/10198257/comparing-2-strings-alphabetically-for-sorting-purposes
-    let compareValue = 0;
-    if (a.roll_name > b.roll_name){
-      compareValue = 1;
-    }
-    if (a.roll_name < b.roll_name){
-      compareValue = -1;
-    }
-    if (a.roll_name == b.roll_name){
-      compareValue = 0;
-    }
-    return compareValue;
-
-    }
-  };
-
-  // This function deals with sorting the rolls and displaying them in the new order when a sort by value is selected
-  handleSortChange = (event) => {
-    let sortValue = event.target.value;
-    let newRollData = this.state.rollcardData;
-
-    if (sortValue == "Name"){
-      newRollData = newRollData;
-      newRollData.sort(this.nameCompareHelper())
-    }
-
-    if (sortValue == "Base Price"){
-      // Used this reference for help with sorting by custom function:
-      // https://www.w3schools.com/js/js_array_sort.asp
-      newRollData.sort(function(a, b){return a.roll_base_price - b.roll_base_price})
-    }
-
-    this.setState(prevState => ({
-      ...prevState,
-      rollcardData: newRollData
-    }))
-  };
-
-  // This function helps us adjust the visibility of the cart pop up
-  togglePopUp() {
-    this.setState({
-      popUpVisible: true
-    })
-    setTimeout(() => {
-      this.setState({
-        popUpVisible: false
-      })
-    }, 3000);
-  };
-
-  // This function helps us adjust the visibility of the cart display
-  toggleCart() {
-    this.setState({
-      cartShowing: !this.state.cartShowing
-    })
-  };
+  // toggleFlip() {
+  //   this.setState({
+  //     flip_state: !this.state.flip
+  //   })
+  // };
 
   render() {
 
     return (
+    
 
+      <div className = "Outside">
       <div className = "HomePage">
-
-        <div id = "container">
-
-          <div className = "header_holder">
-            {/* Used this for help better understanding parent and child components: https://medium.com/@livajorge7/introduction-9e84391f4b83#:~:text=The%20parent%20component%20can%20define%20a%20function%20and%20pass%20it,to%20maintain%2C%20and%20more%20flexible. */}
-            <Header
-            popUpVisible = {this.state.popUpVisible}
-            cart_roll_type = {this.state.cart_roll_type}
-            cart_roll_glazing = {this.state.cart_roll_glazing}
-            cart_roll_pack = {this.state.cart_roll_pack}
-            cart_roll_price = {this.state.cart_roll_price}
-            onTogglePopUp = {this.togglePopUp}
-            onToggleCart = {this.toggleCart}
-            />
-          </div>
-
-          <div className = "cart_component_holder">
-
-            <Cart
-              cartData = {this.state.cartData}
-              cartShowing = {this.state.cartShowing}
-              removeButtonHandler = {this.removeButtonHandler}
-              priceCalculator = {this.priceCalculator}
-              />
-              
-          </div>
-
-          <div className = "search_sort_container">
-
-            <div className = "search_holder">
-                <form className = "search_bar">
-                  <input className = "text_bar" name="myInput" onChange={(event) => this.handleSearchTextChange(event)} value={this.state.searchText}/>
-                  {/* Used these sources for help with the search bar:
-                  https://www.w3schools.com/howto/howto_css_searchbar.asp
-                  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar2 */}
-                </form>
-                <button className = "searchButton" onClick={() => this.searchButtonHandler()}>Search</button>
-            </div>
-
-            <div className = "sort_option">
-
-                {/* Used the following sources for help calling functions with parameters in the jsx: 
-                https://stackoverflow.com/questions/42597602/react-onclick-pass-event-with-parameter
-                https://legacy.reactjs.org/docs/faq-functions.html */}
-                <span className = "sort_text">sort by:</span>
-                <select className = "sort_select" onChange={(event) => this.handleSortChange(event)}>
-                    <option value={null} hidden = "hidden" >Name</option>
-                    <option value="Name">Name</option>
-                    <option value="Base Price">Base Price</option>
-                </select>
-
-            </div>
-
-          </div>
 
           <div className = "section" id = "products_page">
 
             <div id = "rollcard-list"> 
 
-              {this.state.rollcardData.map((rollcard, idx) => {
-                // Used this to help figure out how to use includes in a way that's case insenitive
-                // https://stackoverflow.com/questions/48145432/javascript-includes-case-insensitive
-                // Used this for help with includes
-                //  https://www.w3schools.com/jsref/jsref_includes.asp
-                if ((this.state.termToSearch == "") || 
-                (rollcard.roll_figcaption.toLowerCase().includes(this.state.termToSearch.toLowerCase()))) {
-
-                  this.state.found = true;
-
-                  return <Roll
-                    key={rollcard.roll_name}
+              {this.state.cardData.map((matchcard, idx) => 
+                   <Card
+                    key={matchcard.card_name}
                     cardIndex={idx}
-                    roll_img_src={rollcard.roll_img_src}
-                    roll_img_alt={rollcard.roll_img_alt}
-                    roll_figcaption={rollcard.roll_figcaption}
-                    roll_base_price={rollcard.roll_base_price}
-                    roll_type={rollcard.roll_type}
-                    roll_glazing={rollcard.roll_glazing}
-                    roll_pack_size={rollcard.roll_pack_size}
-                    radioChecked = {rollcard.radioChecked}
-                    roll_price= {this.priceCalculator(rollcard.roll_base_price, rollcard.roll_glazing, rollcard.roll_pack_size)}
-                    onGlazeChange={this.glazeChangeSelectorHandler}
-                    onQuantityChange={this.quantityChangeHandler}
-                    onAddCart={this.addToCartHandler}
-                    onTogglePopUp={this.togglePopUp}
+                    card_term_text={matchcard.term_text}
+                    card_back_img_src={matchcard.back_img_src}
+                    card_back_img_alt={matchcard.back_img_alt}
+                    card_front_img_src={matchcard.front_img_src}
+                    card_front_img_alt={matchcard.front_img_alt}
+                    card_match = {matchcard.match}
+                    // card_has_flipped = {hasFlippedCard}
+                    // firstCard = {}
+
+                    onToggleFlip = {this.toggleFlip}
                     />
+              )}
 
-                } 
 
-                else {}
-
-              })}
-
-              { !this.state.found &&
-                <div className = "search_empty_text">No Match!</div>
-              }
               
             </div>
 
           </div>
 
         </div>
-
-      </div>
+        </div>
 
     );
   }

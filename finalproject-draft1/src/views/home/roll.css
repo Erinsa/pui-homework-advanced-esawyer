@@ -26,6 +26,7 @@ anything else */
 /* the basis of the product cards - section is its flex parent and it is also a flex container */
 .roll_card {
     width: 275px;
+    height: 375px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -33,29 +34,78 @@ anything else */
     align-content: center;
     text-align: left;
     margin: 0px 0px 60px 0px;
+    position: relative;
+    /* transform-style: preserve-3d; */
+    /* width: calc(25% - 10px); */
+    /* height: calc(33.333% - 10px); */
+    /* margin: 5px; */
+    /* position: relative; */
+    transform-style: preserve-3d;
+    /* box-shadow: 1px 1px 0 rgba(0, 0, 0, .3); */
+    
 }
 
-/* figure (flex container and flex child) containing image and caption */
-figure.roll_figure {
-    margin: 20px 0px 15px 0px;
+/* .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+} */
+
+.flip_state {
+    transform: rotateY(-180deg);
 }
+
+.roll_card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+
+/* .roll_card.flip {
+    transform: rotateY(180deg);
+} */
+
+.front-face,
+.back-face {
+  width: 100%;
+  /* height: 100%; */
+  /* padding: 20px; */
+  position: absolute;
+  border-radius: 5px;
+  /* background: #1C7CCC; */
+backface-visibility: hidden;
+}
+
+
+.front-face {
+    transform: rotateY(180deg);
+  }
+
+/* figure (flex container and flex child) containing image and caption */
+/* figure.roll_figure {
+    margin: 20px 0px 15px 0px;
+} */
+
+
 
 /* Used for reference for help adding a border to image:
 https://www.w3schools.com/howto/howto_css_border_image.asp */
 /* product image - set border here also */
-.product_image {
+/* .product_image {
     width: 275px;
     border: 3px solid black;
-}
+} */
 
 /* Used for reference for figure and figcaption: 
 https://www.w3schools.com/tags/tag_figcaption.asp */
 /* used for product name as a part of the figure */
-.roll_title {
+/* .roll_title {
     font-size: 17pt;
     font-weight: 600;
     padding-top: 5px;
-}
+} */
 
 /* Used the following reference for ideas on structuring the buttons/options and labels.
 Thinking about it like outer, rows, and items really helped me.
@@ -65,6 +115,7 @@ https://stackoverflow.com/questions/55738082/how-to-make-a-flexible-2x3-grid-usi
     display: flex;
     flex-direction: column;
     font-size: 14pt;
+    background-color: yellow;
 }
 
 /* this row flex container helped organize the buttons and labels into grid */
