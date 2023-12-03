@@ -104,6 +104,9 @@ class Card extends Component {
           // this.props.firstCard.state.flip = false;
           let new_matched_state = true;
           let new_match_state2 = false;
+          console.log("score", this.props.score)
+          let prev_score = parseInt(this.props.score)
+          let new_score = prev_score + 1
           this.setState({
             matched: new_matched_state,
             // hasFlippedCard: hasFlippedCard_var,
@@ -111,8 +114,8 @@ class Card extends Component {
           })
           this.props.setParentFirstCard(matched_first_card)
           this.props.setParentMatch(new_match_state2)
-
-      }, 2000); 
+          this.props.setParentScore(new_score)
+        }, 2000); 
         
 
       }

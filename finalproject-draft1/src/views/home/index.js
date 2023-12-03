@@ -187,6 +187,10 @@ class HomePage extends Component {
     this.setState({match: new_match}); 
   }
 
+  setParentScore = (new_score) => { 
+    this.setState({score: new_score}); 
+  }
+
   // toggleFlip() {
   //   this.setState({
   //     flip_state: !this.state.flip
@@ -229,7 +233,7 @@ class HomePage extends Component {
 
     const message_state = {
       visibility: this.state.match ? 'visible': 'hidden', 
-      opacity: this.state.matched ? 0 : 1,
+      opacity: this.state.match ? 1 : 0,
       transition: "visibility 0.3s linear,opacity 0.3s linear"
       // transform: this.state.flip == true ? `rotateY(-180deg)` : `rotateY(-180deg)`,
       // transition: "transform 2s",
@@ -272,12 +276,14 @@ class HomePage extends Component {
                     // firstCard = {}
                     firstCard = {this.state.firstCard}
                     secondCard = {this.state.secondCard}
+                    score = {this.state.score}
 
                     // onToggleFlip = {this.toggleFlip}
                     setParentFlippedCard = {this.setParentFlippedCard}
                     setParentFirstCard = {this.setParentFirstCard}
                     setParentSecondCard = {this.setParentSecondCard}
                     setParentMatch = {this.setParentMatch}
+                    setParentScore = {this.setParentScore}
                     />
               )}
 
