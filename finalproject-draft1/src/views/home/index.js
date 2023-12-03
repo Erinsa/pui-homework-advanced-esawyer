@@ -47,42 +47,114 @@ class HomePage extends Component {
           front_img_src: "assets/cards/Tree_Card_Japanese.png",
           front_img_alt: "Picture",
         },
-        // {
-        //   card_name: "Month_Eng",
-        //   term_text: "Month_Eng",
-        //   match: "Month",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Month_Card_English.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Month_Jpn",
-        //   term_text: "Month_Jpn",
-        //   match: "Month",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Month_Card_Japanese.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Day_Eng",
-        //   term_text: "Day_Eng",
-        //   match: "Day",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Day_Card_English.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Day_Jpn",
-        //   term_text: "Day_Jpn",
-        //   match: "Day",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Day_Card_Japanese.png",
-        //   front_img_alt: "Picture",
-        // },
+        {
+          card_name: "Month_Eng",
+          term_text: "Month_Eng",
+          match: "Month",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Month_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Month_Jpn",
+          term_text: "Month_Jpn",
+          match: "Month",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Month_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Day_Eng",
+          term_text: "Day_Eng",
+          match: "Day",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Day_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Day_Jpn",
+          term_text: "Day_Jpn",
+          match: "Day",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Day_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Tree_Eng",
+          term_text: "Tree_Eng",
+          match: "Tree",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Tree_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Person_Jpn",
+          term_text: "Person_Jpn",
+          match: "Person",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Person_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Person_Eng",
+          term_text: "Person_Eng",
+          match: "Person",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Person_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Tree_Jpn",
+          term_text: "Tree_Jpn",
+          match: "Tree",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Tree_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Month_Eng",
+          term_text: "Month_Eng",
+          match: "Month",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Month_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Month_Jpn",
+          term_text: "Month_Jpn",
+          match: "Month",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Month_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Day_Eng",
+          term_text: "Day_Eng",
+          match: "Day",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Day_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Day_Jpn",
+          term_text: "Day_Jpn",
+          match: "Day",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Day_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
       ]
 
     };
@@ -102,10 +174,10 @@ class HomePage extends Component {
 
       <div className = "Outside">
       <div className = "HomePage">
+      <button className='help_button'>How to Play</button>
+      <button className='menu_button'>Moji Match</button>
 
-          <div className = "section" id = "products_page">
-
-            <div id = "rollcard-list"> 
+            <div className = "rollcard-list"> 
 
               {this.state.cardData.map((matchcard, idx) => 
                    <Card
@@ -130,7 +202,6 @@ class HomePage extends Component {
 
           </div>
 
-        </div>
         </div>
 
     );

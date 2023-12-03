@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { useState } from "react";
-import './roll.css';
+import './card.css';
 
 class Card extends Component {
   constructor(props) {
@@ -62,16 +62,16 @@ class Card extends Component {
         // <article className = "roll_card" >
         // <div className='outer'>
 
-          <div className='holder' onClick={() => {this.toggleFlip()}} style = {flip_state}>
+          // <div className='holder' onClick={() => {this.toggleFlip()}} style = {flip_state}>
 
-            {/* <div classname = "outer">  */}
-                <div className= "roll_card">
+            // {/* <div classname = "outer">  */}
+                <div className= "memory_card" onClick={() => {this.toggleFlip()}} style = {flip_state}>
                     <img className = "back-face" src = {this.props.card_back_img_src} width = "200" alt = {this.props.card_back_img_alt} />
                     <img className = "front-face" src = {this.props.card_front_img_src} width = "200" alt = {this.props.card_front_img_alt} />
                 </div>
-            {/* </div> */}
+            // {/* </div> */}
 
-          </div>
+          // </div>
         // </div>
 
 

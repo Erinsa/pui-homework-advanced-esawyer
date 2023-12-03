@@ -1,0 +1,99 @@
+/* Generally used the following order within styling throughout
+width
+height
+display
+position
+flex
+direction
+wrap
+justify-content
+align-content
+align-items
+column-gap
+text-align
+font-family
+font-size
+font-weight
+padding
+border
+margin
+color
+background-color
+opacity
+cursor
+anything else */
+
+/* .holder {
+    flex: 1 1 100%;
+} */
+  
+/* the basis of the product cards - section is its flex parent and it is also a flex container */
+.memory_card {
+    flex: 0 1 18%;
+    /* height: 18%; */
+    /* width: 200px; */
+    /* height: 375px; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    /* text-align: left; */
+    /* margin: 0px 0px 60px 0px; */
+    position: relative;
+    /* transform-style: preserve-3d; */
+    /* width: calc(25% - 10px); */
+    /* height: calc(33.333% - 10px); */
+    /* margin: 5px; */
+    /* position: relative; */
+    transform-style: preserve-3d;
+    /* box-shadow: 1px 1px 0 rgba(0, 0, 0, .3); */
+    background-color: green;
+    
+}
+
+/* .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+} */
+
+.flip_state {
+    transform: rotateY(-180deg);
+}
+
+.memory:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+
+/* .roll_card.flip {
+    transform: rotateY(180deg);
+} */
+
+.front-face,
+.back-face {
+/* flex: 1 0 10%; */
+  width: 100%;
+  /* height: 100%; */
+  /* padding: 20px; */
+  position: absolute;
+  /* border-radius: 5px; */
+  background: #1C7CCC;
+backface-visibility: hidden;
+}
+
+
+.front-face {
+    transform: rotateY(180deg);
+  }
+
+/* figure (flex container and flex child) containing image and caption */
+/* figure.roll_figure {
+    margin: 20px 0px 15px 0px;
+} */
+
+

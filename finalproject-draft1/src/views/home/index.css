@@ -36,161 +36,104 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
 /* Got this from css lecture */
 * {
   box-sizing: border-box;
-  max-width: 1300px;
+  /* max-width: 1300px; */
 }
 
 /* Referenced css lecture */
-body {
-  width: 1400px;
+/* body { */
+  /* width: 1400px;
   height: 1000px;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 14px; */
   /* margin: 50px; */
-  color: black;
-  background-image: url("../../../public/assets/cards/Background_Image_Play.png");
-}
+  /* color: black;
+  background-image: url("../../../public/assets/cards/Background_Image_Play.png"); */
+/* } */
 
-/* Styling for container holding header */
-/* .header_holder {
-  margin: 0px 0px 10px 0px;
-} */
-
-/* Used the following source for help with setting just top and bottom borders
-https://www.w3schools.com/cssref/pr_border-top.php */
-/* Used this source to help find the hex code I wanted:
-afterhttps://colors.artyclick.com/color-names-dictionary/color-names/brownish-grey-color#:~:text=The%20color%20Brownish%20Grey%20corresponds,Green%2C%20and%2037%25%20Blue. */
-/* Styling for overall cart holder (whether cart ahs items or not) */
-.cart_holder {
+.HomePage{
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 10pt;
-  padding: 10px 75px 15px 75px;
-  border-top: solid 10px #86775F;
-  border-bottom: solid 10px #86775F;
-  margin: 10px 0px -25px 0px;
+  height: 100%;
+  position:relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background-image: url("../../../public/assets/MojiMatchHome_AdjustedAgain4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #80c7cc;
+  background-position: center top;
+  margin: 0;
+  padding: 0;
 }
 
-/* Styling for container displaying items when there are items in cart */
-.cart_shown_holder {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+/* .section{
+  width: 60%;
+  position:absolute;
+  left: 1;
+  bottom: 0;
+  top: 0;
+  right: 0;
 
-/* Styling for "The cart is empty!" text! */
-.cart_empty_text {
-  text-align: center;
-  font-size: 14pt;
-  font-weight: bold;
-  margin: auto;
-}
-
-/* Styling for holder of items and total price text in the cart */
-.cart_shown_price_items_text_holder {
-  width: 110%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 14pt;
-  margin: 10px 0px 15px 0px;
-}
-
-/* Styling for items in the cart text for the shopping cart */
-.cart-items-text-shown {
-  text-align: left;
-}
-
-/* Styling for the text that displays the total price of items in the cart */
-.cart-total-text-shown {
-  text-align: right;
-}
-
-/* Styling for holder of cart roll cards */
-.cartcard-list {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 50px;
-  row-gap: 20px;
-  margin: 0px 0px 0px;
-}
-
-/* Styling for holder of search and sort components */
-.search_sort_container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 0px 20px 0px 20px;
-  margin: 40px 50px 15px 50px;
-}
-
-/* Styling for text field and button holder */
-.search_holder {
-  display: flex;
-}
-
-/* Styling for text field and button */
-.search_bar {
-  margin: 0px 0px 0px 0px;
-}
-
-/* Styling for search text input field */
-.text_bar {
-  width: 200px;
-}
-
-/* Styling for "No Match!" text */
-.search_empty_text {
-  text-align: center;
-  font-size: 14pt;
-  margin: auto;
-}
-
-/* This was in the demo video, but not in the official instructions, 
-so commented out this functionality for now */
-/* .searchButton:hover {
+  background-image: url("../../../public/assets/Union.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   background-color: yellow;
-} */
-
-/* Styling for the text next to the sorting drop down */
-.sort_text {
-  padding: 5px 5px 5px 5px;
-}
-
-/*  Styling for overarching holder of rollcards */
-/* .section {
-  width: 100%;
+  background-position: center top;
+  margin: 0;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 20px 0px 20px;
-  perspective: 1000px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 } */
 
 /* Styling for roll card holder */
-#rollcard-list {
-  /* width: calc(100% - 100px); */
+/* .rollcard-list {
+  width: calc(100% - 100px);
   left: 670px;
   top: 100px;
-  position: absolute;
-  width: 40%;
+  position: relative;
+  background-image: url("../../../public/assets/Union.png"); */
+  /* width: 40%; */
   /* width: 3000px; */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   margin: 0px 0px 0px;
+  background-color: green; */
+  /* perspective: 1000px; */
+/* } */
+
+/* Styling for roll card holder */
+.rollcard-list {
+  width: 60%;
+  height: calc(.57 * 100vw);
+  left: 40%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: relative;
+  background-image: url("../../../public/assets/Union.png");
+  /* width: 40%; */
+  /* width: 3000px; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  margin: 0;
+  /* padding: 20px; */
+  column-gap: 3%;
+  row-gap: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: .7% 0% 0% 0%;
+  /* background-color: yellow; */
+  padding: 3% 7% 7% 7%;
+  /* border: solid 5px black; */
   /* perspective: 1000px; */
 }
 
@@ -205,3 +148,40 @@ so commented out this functionality for now */
   background-image: url("../../../public/assets/cards/Background_Image_Play.png");
   background-color: aquamarine;
 } */
+
+/* https://www.w3schools.com/howto/howto_css_pill_button.asp */
+/* https://www.w3schools.com/csS/css3_shadows_box.asp */
+/* https://stackoverflow.com/questions/5458716/is-it-possible-to-set-transparency-in-css3-box-shadow */
+
+.help_button {
+  width: 15%;
+  height: 4%;
+  position: absolute;
+  top: 92%;
+  right: 70%;
+  font-size: 1.5vw;
+  border: none;
+  border-radius: 16px;
+  background-color: #018E8E;
+  color: white;
+  box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5);
+}
+
+.menu_button {
+  width: 30%;
+  height: 14%;
+  position: absolute;
+  top: 5%;
+  right: 69%;
+  font-size: 4vw;
+  color: #018E8E;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Menu_Button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
