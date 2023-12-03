@@ -127,8 +127,35 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
+  z-index: 3;
+
+}
+
+.win_message {
+  width: 40%;
+  height: 20%;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 5vw;
+  padding: 2.5% 0% 0% 0%;
+  color: white;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  /* background-image: url("../../../public/assets/Match_Message.png");
+  opacity: .9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom; */
   z-index: 2;
 
+}
+
+
+.winning_squid{
+  transform: rotate(-90deg);
 }
 
 /* Styling for roll card holder */
@@ -211,7 +238,7 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
 }
 
 
-.matches_counter {
+.matches_counter_small {
   width: 30%;
   height: 17%;
   position: absolute;
@@ -249,4 +276,120 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
   background-position: bottom;
 
 }
+
+.matches_counter_expanded {
+  width: 39%;
+  height: 39%;
+  position: absolute;
+  top: 16%;
+  right: 59%;
+  font-size: 3vw;
+  color: #018E8E;
+  border: none;
+  padding: 5% 0% 0% 0%;
+  background-color: rgba(0, 0, 0, 0);
+  /* margin: 1% 1% 1% 10%; */
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Match_Background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: blue; */
+
+}
+
+.matches_made_holder {
+  /* background-color: yellow; */
+  width: 80%;
+  height: 40%;
+  /* height: 10px; */
+  display:flex;
+  flex-direction: row;
+  column-gap: 2%;
+  /* flex: 1 0 16%; */
+  /* justify-content: ; */
+}
+
+.minimize_button {
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  top: 60%;
+  right: -6%;
+  color: #018E8E;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Minimize_Button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.help_message{
+  width: 64%;
+  height: 47%;
+  position: absolute;
+  top: 51%;
+  right: 46%;
+  font-size: 3vw;
+  color: white;
+  border: none;
+  padding: 5% 0% 0% 0%;
+  background-color: rgba(0, 0, 0, 0);
+  /* margin: 1% 1% 1% 10%; */
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Instructions_Background2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.match_locker{
+    width: 60%;
+    height: calc(.57 * 100vw);
+    opacity: 0;
+    left: 40%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    /* width: 40%; */
+    /* width: 3000px; */
+    margin: 0;
+    /* padding: 20px; */
+    column-gap: 3%;
+    row-gap: 10%;
+    padding: 3% 7% 7% 7%;
+    /* border: solid 5px black; */
+    /* perspective: 1000px; */
+    z-index: 4;
+  }
+
+  .close_button {
+    width: 15%;
+    height: 15%;
+    position: relative;
+    top: 60%;
+    right: 0;
+    /* color: #018E8E; */
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    /* color: white; */
+    /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+    background-image: url("../../../public/assets/X_Button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
 

@@ -93,9 +93,18 @@ class Card extends Component {
         // this.props.firstCard.removeEventListener('click');
         // this.removeEventListener('click');
         // console.log("hello");
+        let collected_card_choice = ""
         setTimeout(() => { 
           let new_match_state = true;
           this.props.setParentMatch(new_match_state)
+          if (this.props.card_lang == "Jpn"){
+            collected_card_choice = this;
+          }
+          else {
+            collected_card_choice = this.props.firstCard;
+          }
+          console.log("card", collected_card_choice )
+          this.props.addToMatchHandler(collected_card_choice);
         }, 1000); 
 
         setTimeout(() => { 

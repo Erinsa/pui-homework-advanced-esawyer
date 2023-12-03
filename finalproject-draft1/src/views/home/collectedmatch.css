@@ -1,0 +1,17 @@
+
+.collected_card{
+    width: 11%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.jpn_card{
+    width: 100%;
+}
+
+.collected_definition{
+    font-size: 1vw;
+    color: black;
+    text-align: center;
+}
