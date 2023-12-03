@@ -33,9 +33,11 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox#nested_fle
 https://stackoverflow.com/questions/69852513/100-total-width-for-flex-items-in-flex-container-with-gap-inbetween
 https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-container  */
 
+
 /* Got this from css lecture */
 * {
   box-sizing: border-box;
+  font-family: "Itim", sans-serif;
   /* max-width: 1300px; */
 }
 
@@ -106,6 +108,28 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
   background-color: green; */
   /* perspective: 1000px; */
 /* } */
+
+.match_message {
+  width: 40%;
+  height: 20%;
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  font-size: 5vw;
+  padding: 2.5% 0% 0% 0%;
+  color: #018E8E;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Match_Message.png");
+  opacity: .9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: 2;
+
+}
 
 /* Styling for roll card holder */
 .rollcard-list {
@@ -185,3 +209,44 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
   background-position: bottom;
 
 }
+
+
+.matches_counter {
+  width: 30%;
+  height: 17%;
+  position: absolute;
+  top: 22%;
+  right: 69%;
+  font-size: 3vw;
+  color: #018E8E;
+  border: none;
+  padding: 1% 0% 0% 0%;
+  background-color: rgba(0, 0, 0, 0);
+  /* margin: 1% 1% 1% 10%; */
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Match_Background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
+
+.expand_button {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 56%;
+  right: -11%;
+  color: #018E8E;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  /* color: white; */
+  /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+  background-image: url("../../../public/assets/Expand_Button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
+
