@@ -393,3 +393,39 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
     background-position: bottom;
   }
 
+  .music_button_true {
+    width: 6%;
+    height: 6%;
+    position: absolute;
+    top: 91.4%;
+    right: 64%;
+    color: #018E8E;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    /* color: white; */
+    /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+    background-image: url("../../../public/assets/Music_Button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  
+  }
+
+  .music_button_false {
+    width: 6%;
+    height: 6%;
+    position: absolute;
+    top: 91.4%;
+    right: 64%;
+    color: #018E8E;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    /* color: white; */
+    /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
+    background-image: url("../../../public/assets/No_Music_Button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  
+  }
+

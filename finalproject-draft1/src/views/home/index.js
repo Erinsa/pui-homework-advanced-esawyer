@@ -7,6 +7,10 @@ import Card from './card.js';
 import CollectedMatch from './collectedmatch.js';
 // import Header from './header.js';
 // import Cart from './cart.js';
+import {JackInTheBox, Fade} from "react-awesome-reveal";
+import { AttentionSeeker } from "react-awesome-reveal";
+import { Howl, Howler } from 'howler';
+// import newSound from './GameMusic_3DPlatformer.mp3';
 
 class HomePage extends Component {
   constructor(props) {
@@ -176,10 +180,26 @@ class HomePage extends Component {
       matchList: [],
       match_collection_expanded: false,
       instructions_expanded: false,
-
+      music: false, 
+      sound: new Howl({
+        src: ["assets/GameMusic_3DPlatformer.mp3"],
+        loop: true,
+        volume: 0.5,
+      })
     };
 
   };
+
+  musicController = () => { 
+    if (this.state.music == false){
+      this.state.sound.play();
+    }
+    else {
+      this.state.sound.pause()
+    }
+    let new_music_state = !this.state.music;
+    this.setState({music: new_music_state});
+  }
 
   checkState = () => { 
     console.log("parent state", this.state.matchList); 
@@ -293,7 +313,7 @@ class HomePage extends Component {
     };
 
     const instructions_state = {
-      visibility: this.state.instructions_expanded ? 'hidden' : 'visible',
+      visibility: this.state.instructions_expanded ? 'visible' : 'hidden',
     };
 
     const win_state = {
@@ -305,11 +325,19 @@ class HomePage extends Component {
       // transformStyle: "preserve-3d"
     };
 
+    // const music_state = {
+    //   style : this.state.music ? , 
+    //   // transform: this.state.flip == true ? `rotateY(-180deg)` : `rotateY(-180deg)`,
+    //   // transition: "transform 2s",
+    //   // transformStyle: "preserve-3d"
+    // };
+
     return (
     
 
       <div className = "Outside">
       <div className = "HomePage">
+      <button className= {this.state.music ? 'music_button_true' : 'music_button_false'} onClick={() => {this.musicController()}}></button>
         <button className='help_button' onClick={() => {this.instructionsExpansionHandler()}}>How to Play</button>
         <div className='help_message' style = {instructions_state}>
           INSTRUCTIONS HERE
@@ -344,16 +372,22 @@ class HomePage extends Component {
           <button className='minimize_button' onClick={() => {this.matchCollectionExpansionHandler()}}></button>
         </div>
 
-
-        <div className='match_message' style={message_state}>
-          MATCH!
-        </div>
+        <div className = 'test_holder' style={message_state}>
+        {/* <Fade> */}
+          <div className='match_message' >
+            MATCH!
+          </div>
+        {/* </Fade> */}
+          </div>
         <div className = "match_locker" style={match_locker_state}>
 
         </div>
 
         <div className='win_message' style={win_state}>
-        <img className = "winning_squid" src = {"assets/Squid_Happy.png"} width = "200" alt = {"ADD"}  />
+          <AttentionSeeker effect='bounce'>
+            <img className = "winning_squid" src = {"assets/Squid_Happy.png"} width = "200" alt = {"ADD"}  />
+          </AttentionSeeker>
+        {/* <img className = "winning_squid" src = {"assets/Squid_Happy.png"} width = "200" alt = {"ADD"}  /> */}
           CONGRATS! You've won! Great job studying!
           <div className='winning_button_holder'>
             <button className='back_to_menu_button' onClick={() => {this.checkState()}}>Play Again</button>
@@ -362,10 +396,9 @@ class HomePage extends Component {
         </div>
 
 
-
             <div className = "rollcard-list"> 
 
-
+              
               {this.state.cardData.map((matchcard, idx) => 
                    <Card
                     key={matchcard.card_name}
@@ -393,6 +426,7 @@ class HomePage extends Component {
                     addToMatchHandler = {this.addToMatchHandler}
                     />
               )}
+
 
 
               
