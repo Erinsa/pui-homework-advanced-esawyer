@@ -66,8 +66,8 @@ body {
   bottom:0;
   background-image: url("../../../public/assets/MojiMatchHome_AdjustedAgain4.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #80c7cc;
+  background-size: contain;
+  background-color: #018E8E;
   background-position: center top;
   margin: 0;
   padding: 0;
@@ -165,7 +165,7 @@ body {
 /* Styling for roll card holder */
 .rollcard-list {
   width: 60%;
-  height: calc(.58 * 100vw);
+  height: 57.6vw;
   left: 40%;
   top: 0;
   bottom: 0;
@@ -185,9 +185,9 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: .7% 0% 0% 0%;
+  margin: 0% 0% 0% 0%;
   /* background-color: yellow; */
-  padding: 3% 7% 7% 7%;
+  padding: 3.5% 7% 7% 7%;
   /* border: solid 5px black; */
   /* perspective: 1000px; */
 }
