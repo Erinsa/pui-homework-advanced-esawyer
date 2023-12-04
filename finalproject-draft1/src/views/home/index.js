@@ -97,78 +97,86 @@ class HomePage extends Component {
           front_img_src: "assets/cards/Day_Card_Japanese.png",
           front_img_alt: "Picture",
         },
-        // {
-        //   card_name: "Tree_Eng2",
-        //   term_text: "Tree_Eng",
-        //   match: "Tree",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Tree_Card_English.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Person_Jpn2",
-        //   term_text: "Person_Jpn",
-        //   match: "Person",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Person_Card_Japanese.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Person_Eng2",
-        //   term_text: "Person_Eng",
-        //   match: "Person",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Person_Card_English.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Tree_Jpn2",
-        //   term_text: "Tree_Jpn",
-        //   match: "Tree",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Tree_Card_Japanese.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Month_Eng2",
-        //   term_text: "Month_Eng",
-        //   match: "Month",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Month_Card_English.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Month_Jpn2",
-        //   term_text: "Month_Jpn",
-        //   match: "Month",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Month_Card_Japanese.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Day_Eng2",
-        //   term_text: "Day_Eng",
-        //   match: "Day",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Day_Card_English.png",
-        //   front_img_alt: "Picture",
-        // },
-        // {
-        //   card_name: "Day_Jpn2",
-        //   term_text: "Day_Jpn",
-        //   match: "Day",
-        //   back_img_src: "assets/cards/Card_Back.png",
-        //   back_img_alt: "Picture",
-        //   front_img_src: "assets/cards/Day_Card_Japanese.png",
-        //   front_img_alt: "Picture",
-        // },
+        {
+          card_name: "Book_Eng",
+          term_text: "Book_Eng",
+          match: "Book",
+          lang: "Eng", 
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Book_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Book_Jpn",
+          term_text: "Book_Jpn",
+          match: "Book",
+          lang: "Jpn", 
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Book_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Year_Eng",
+          term_text: "Year_Eng",
+          match: "Year",
+          lang: "Eng",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Year_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Year_Jpn",
+          term_text: "Year_Jpn",
+          match: "Year",
+          lang: "Jpn",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Year_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Country_Eng",
+          term_text: "Country_Eng",
+          match: "Country",
+          lang: "Eng",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Country_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Country_Jpn",
+          term_text: "Country_Jpn",
+          match: "Country",
+          lang: "Jpn",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Country_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Car_Eng",
+          term_text: "Car_Eng",
+          match: "Car",
+          lang: "Eng",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Car_Card_English.png",
+          front_img_alt: "Picture",
+        },
+        {
+          card_name: "Car_Jpn",
+          term_text: "Car_Jpn",
+          match: "Car",
+          lang: "Jpn",
+          back_img_src: "assets/cards/Card_Back.png",
+          back_img_alt: "Picture",
+          front_img_src: "assets/cards/Car_Card_Japanese.png",
+          front_img_alt: "Picture",
+        },
       ],
       score: 0,
       hasFlippedCard: false,
@@ -176,7 +184,7 @@ class HomePage extends Component {
       secondCard: "",
       match: false,
       win: true,
-      num_matches: 4,
+      num_matches: 8,
       matchList: [],
       match_collection_expanded: false,
       instructions_expanded: false,
@@ -296,8 +304,8 @@ class HomePage extends Component {
 
     const message_state = {
       visibility: this.state.match ? 'visible': 'hidden', 
-      opacity: this.state.match ? 1 : 0,
-      transition: "visibility 0.3s linear,opacity 0.3s linear"
+      opacity: this.state.match ? .9 : 0,
+      transition: "visibility 0.3s linear, opacity 0.3s linear"
       // transform: this.state.flip == true ? `rotateY(-180deg)` : `rotateY(-180deg)`,
       // transition: "transform 2s",
       // transformStyle: "preserve-3d"
@@ -372,13 +380,13 @@ class HomePage extends Component {
           <button className='minimize_button' onClick={() => {this.matchCollectionExpansionHandler()}}></button>
         </div>
 
-        <div className = 'test_holder' style={message_state}>
+        {/* <div className = 'test_holder' style={message_state}> */}
         {/* <Fade> */}
-          <div className='match_message' >
+          <div className='match_message'style={message_state} >
             MATCH!
           </div>
         {/* </Fade> */}
-          </div>
+          {/* </div> */}
         <div className = "match_locker" style={match_locker_state}>
 
         </div>

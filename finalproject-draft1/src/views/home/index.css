@@ -52,6 +52,10 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
   background-image: url("../../../public/assets/cards/Background_Image_Play.png"); */
 /* } */
 
+body {
+  background-color: #018E8E;
+}
+
 .HomePage{
   width: 100%;
   height: 100%;
@@ -161,7 +165,7 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
 /* Styling for roll card holder */
 .rollcard-list {
   width: 60%;
-  height: calc(.57 * 100vw);
+  height: calc(.58 * 100vw);
   left: 40%;
   top: 0;
   bottom: 0;
@@ -281,7 +285,7 @@ https://stackoverflow.com/questions/38896055/how-to-center-align-a-flexbox-conta
   width: 39%;
   height: 39%;
   position: absolute;
-  top: 16%;
+  top: 15%;
   right: 59%;
   font-size: 3vw;
   color: #018E8E;
