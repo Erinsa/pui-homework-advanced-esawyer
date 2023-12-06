@@ -35,9 +35,9 @@ class App extends Component {
                     </ul> */}
   
        <Routes>
-          <Route exact path="/" element={<MenuPage />} />
+          <Route path="https://erinsa.github.io/pui-homework-advanced-esawyer/finalproject-draft1/" element={<MenuPage />} />
           {/* <Route path="/menupage" element={<MenuPage />} /> */}
-          <Route path="/gamepage" element={<GamePage />} />
+          <Route path="https://erinsa.github.io/pui-homework-advanced-esawyer/finalproject-draft1/gamepage" element={<GamePage />} />
       </Routes>
         {/* <Switch>
               <Route exact path='/' component={MenuPage} />
