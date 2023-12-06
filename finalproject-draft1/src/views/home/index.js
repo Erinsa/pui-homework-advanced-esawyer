@@ -1,7 +1,7 @@
 // Used lab activity (notecard) for reference
 
 import React, { Component } from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import './index.css';
 import Card from './card.js';
 import CollectedMatch from './collectedmatch.js';
@@ -10,9 +10,11 @@ import CollectedMatch from './collectedmatch.js';
 import {JackInTheBox, Fade} from "react-awesome-reveal";
 import { AttentionSeeker } from "react-awesome-reveal";
 import { Howl, Howler } from 'howler';
+import { Link, Route, Routes } from 'react-router-dom';
+import MenuPage from './menu.js';
 // import newSound from './GameMusic_3DPlatformer.mp3';
 
-class HomePage extends Component {
+class GamePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -313,7 +315,6 @@ class HomePage extends Component {
 
     const match_locker_state = {
       visibility: this.state.match ? 'visible': 'hidden',
-      transition: "visibility 0.3s linear"
     };
 
     const match_collection_state = {
@@ -351,7 +352,12 @@ class HomePage extends Component {
           INSTRUCTIONS HERE
           <button className='close_button' onClick={() => {this.instructionsExpansionHandler()}}></button>
         </div>
-        <button className='menu_button'>Moji Match</button>
+
+        {/* <Link className='menu_button' to="/menupage">Moji Match</Link> */}
+        {/* <form action="portfolio.html">
+          <button type="link" class="menu_button">Moji Match</button>
+        </form> */}
+        <Link to="/"><button className='menu_button'>Moji Match</button></Link>
         <div className='matches_counter_small'>
           Matches:
           <div className = "score_holder">
@@ -392,14 +398,14 @@ class HomePage extends Component {
         </div>
 
         <div className='win_message' style={win_state}>
-          <AttentionSeeker effect='bounce'>
+          {/* <AttentionSeeker effect='bounce'> */}
             <img className = "winning_squid" src = {"assets/Squid_Happy.png"} width = "200" alt = {"ADD"}  />
-          </AttentionSeeker>
+          {/* </AttentionSeeker> */}
         {/* <img className = "winning_squid" src = {"assets/Squid_Happy.png"} width = "200" alt = {"ADD"}  /> */}
-          CONGRATS! You've won! Great job studying!
+          <div className='winning_text'>CONGRATS! You've won! Great job studying!</div>
           <div className='winning_button_holder'>
-            <button className='back_to_menu_button' onClick={() => {this.checkState()}}>Play Again</button>
-            <button className='play_again_button' onClick={() => {this.checkState()}}>Return to Menu</button>
+          <Link to="/"><button className='back_to_menu_button'>Return to Menu</button></Link>
+            {/* <button className='play_again_button' onClick={() => {this.checkState()}}>Play Again</button> */}
           </div>
         </div>
 
@@ -442,11 +448,18 @@ class HomePage extends Component {
 
           </div>
 
+        <Routes>
+          <Route path="/menupage" element={<MenuPage />} />
+          <Route path="/homepage" element={<GamePage />} />
+        </Routes>
+
         </div>
+
+        
 
     );
   }
 }
 
-export default HomePage;
+export default GamePage;
 

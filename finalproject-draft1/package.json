@@ -1,5 +1,5 @@
 {
-  "name": "solution-hw6",
+  "name": "finalproject-draft1",
   "homepage": ".",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +14,7 @@
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.7",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -23,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b gh-pages -e solution-hw6"
+    "deploy": "gh-pages -d build -b gh-pages -e finalproject-draft1"
   },
   "eslintConfig": {
     "extends": [

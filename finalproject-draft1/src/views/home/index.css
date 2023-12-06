@@ -139,7 +139,7 @@ body {
   width: 40%;
   height: 20%;
   position: absolute;
-  top: 10%;
+  top: 8%;
   right: 10%;
   font-size: 5vw;
   padding: 2.5% 0% 0% 0%;
@@ -159,6 +159,10 @@ body {
 
 
 .winning_squid{
+  width: 80%;
+  position: relative;
+  top: 0%;
+  right: 0%;
   transform: rotate(-90deg);
 }
 
@@ -222,6 +226,20 @@ body {
   box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5);
 }
 
+.back_to_menu_button{
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  top: 370%;
+  right: 29%;
+  font-size: 2vw;
+  border: none;
+  border-radius: 16px;
+  background-color: white;
+  color:#018E8E;
+  box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5);
+}
+
 .menu_button {
   width: 30%;
   height: 14%;
@@ -253,6 +271,7 @@ body {
   border: none;
   padding: 1% 0% 0% 0%;
   background-color: rgba(0, 0, 0, 0);
+  text-align: center;
   /* margin: 1% 1% 1% 10%; */
   /* color: white; */
   /* box-shadow: .2vw .2vw .2vw rgba(0, 0, 0, 0.5); */
@@ -357,6 +376,12 @@ body {
   flex-direction: column;
   align-items: center;
   /* background-color: blue; */
+}
+
+.winning_text{
+  position: absolute;
+  top: 180%;
+
 }
 
 .match_locker{
