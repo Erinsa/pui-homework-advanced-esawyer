@@ -448,10 +448,10 @@ class GamePage extends Component {
 
           </div>
 
-        <Routes>
-          <Route path="/" element={<MenuPage />} />
+        {/* <Routes>
+          <Route exact path="/" element={<MenuPage />} />
           <Route path="/gamepage" element={<GamePage />} />
-        </Routes>
+        </Routes> */}
 
         </div>
 
