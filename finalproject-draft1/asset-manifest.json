@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "./static/css/main.add6ef73.css",
+    "main.js": "./static/js/main.c298c54a.js",
+    "static/js/787.77899c5a.chunk.js": "./static/js/787.77899c5a.chunk.js",
+    "static/media/MojiMatchHome_AdjustedAgain4.png": "./static/media/MojiMatchHome_AdjustedAgain4.b610dbb274e87710d4d4.png",
+    "static/media/Union.png": "./static/media/Union.d0abb558f15c90050c06.png",
+    "static/media/Ink.png": "./static/media/Ink.c4df6b871c1fef48f40a.png",
+    "static/media/Menu_Button.png": "./static/media/Menu_Button.4e88cf38371a8ce2f8a1.png",
+    "static/media/Instructions_Background2.png": "./static/media/Instructions_Background2.ae5846b7d8fee3dd4881.png",
+    "static/media/Match_Message.png": "./static/media/Match_Message.f2a44070ab0658ebd7a8.png",
+    "static/media/Match_Background.png": "./static/media/Match_Background.b43ac6b04466336ebd68.png",
+    "static/media/X_Button.png": "./static/media/X_Button.7435bc853c2ad124219a.png",
+    "static/media/Expand_Button.png": "./static/media/Expand_Button.edd315086de540879df6.png",
+    "static/media/Minimize_Button.png": "./static/media/Minimize_Button.7c576c995b092bc480bd.png",
+    "static/media/Music_Button.png": "./static/media/Music_Button.7fb8f23569e044dab7b7.png",
+    "static/media/No_Music_Button.png": "./static/media/No_Music_Button.aa8b83223f67e1f44ba2.png",
+    "index.html": "./index.html",
+    "main.add6ef73.css.map": "./static/css/main.add6ef73.css.map",
+    "main.c298c54a.js.map": "./static/js/main.c298c54a.js.map",
+    "787.77899c5a.chunk.js.map": "./static/js/787.77899c5a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.add6ef73.css",
+    "static/js/main.c298c54a.js"
+  ]
+}
