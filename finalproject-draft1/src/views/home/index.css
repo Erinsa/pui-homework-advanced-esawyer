@@ -384,6 +384,13 @@ body {
 
 }
 
+.help_text{
+  width: 50%;
+  position: absolute;
+  top: 10%;
+
+}
+
 .match_locker{
     width: 60%;
     height: calc(.57 * 100vw);
@@ -409,7 +416,7 @@ body {
     width: 15%;
     height: 15%;
     position: relative;
-    top: 60%;
+    top: 70%;
     right: 0;
     /* color: #018E8E; */
     border: none;

@@ -349,7 +349,7 @@ class GamePage extends Component {
       <button className= {this.state.music ? 'music_button_true' : 'music_button_false'} onClick={() => {this.musicController()}}></button>
         <button className='help_button' onClick={() => {this.instructionsExpansionHandler()}}>How to Play</button>
         <div className='help_message' style = {instructions_state}>
-          INSTRUCTIONS HERE
+          <div className = "help_text"> Flip over cards to try to match the Japanese characters to their English meaning!</div>
           <button className='close_button' onClick={() => {this.instructionsExpansionHandler()}}></button>
         </div>
 
