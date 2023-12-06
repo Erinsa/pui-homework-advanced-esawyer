@@ -449,8 +449,8 @@ class GamePage extends Component {
           </div>
 
         <Routes>
-          <Route path="/menupage" element={<MenuPage />} />
-          <Route path="/homepage" element={<GamePage />} />
+          <Route path="/" element={<MenuPage />} />
+          <Route path="/gamepage" element={<GamePage />} />
         </Routes>
 
         </div>
